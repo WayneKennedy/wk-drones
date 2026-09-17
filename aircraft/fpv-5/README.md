@@ -14,7 +14,7 @@ Not a wk-robotics robot: a human on the sticks ([F-DEC-01](../../fleet/decisions
 account). Firmware confirmed as Betaflight by the owner in the SpeedyBee app, 2026-09-15.
 Switching to iNav is open ([OQ-01](docs/open-questions.md)). Parts as ordered are in
 [`docs/bom.md`](docs/bom.md). Not yet recorded: Betaflight
-version and config, video system, props, pack count and condition, and maintenance
+version and config, props, pack count and condition, and maintenance
 history ([F-OQ-01](../../fleet/open-questions.md)).
 
 ## Idea, not a plan
