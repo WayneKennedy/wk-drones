@@ -21,9 +21,8 @@ In hand and assigned to no aircraft (owner, 2026-09-17):
 
 | Part | State | Source of the fact |
 |---|---|---|
-| Matek F405 Wing V2 | Unused. Ordered 2025-08-07, £39.95. Matek lists 10 PWM outputs and multirotor support, so it could fly a quad | HobbyRC #303459 invoice; [Matek](https://www.mateksys.com/?portfolio=f405-wing-v2) |
 | T-Motor F2004 1700KV ×4 | Unused; the Bee35 mis-order ([DEC-03](../aircraft/bee35/docs/decisions.md)). Ordered 2026-09-07, £75.60. 1700KV is the 6S variant | Owner; Unmanned Tech #18596 invoice |
-| SpeedyBee F405 | Used. Exact model and origin TBC; whether it is related to the 5"'s SpeedyBee F405 V3 stack is unknown. Candidates, inferred only: three SpeedyBee F405 WING boards were bought (HobbyRC #232315, #233536, #242930; 2023-07 to 2023-10, £35.90 each) | Owner; HobbyRC invoices |
+| SpeedyBee F405 | Used. Exact model and origin TBC; whether it is related to the 5"'s SpeedyBee F405 V3 stack is unknown. Candidates, inferred only: three SpeedyBee F405 WING boards were bought (HobbyRC #232315 with the Swordfish, #233536, #242930; 2023-07 to 2023-10, £35.90 each) | Owner; HobbyRC invoices |
 
 ## Bought, not assigned to any aircraft
 
@@ -33,9 +32,9 @@ On invoices read 2026-09-17; whether still in hand is unknown.
 |---|---|---|
 | Matek M10Q-5883 GPS/compass (a third; two are on the Holybro BOM) | HobbyRC #262164, 2024-05-20 | £31.80 |
 | Walksnail WS-M181 GPS (a second; one is on the 5") | HobbyRC #266365, 2024-07-01 | £16.99 |
-| Radiomaster RP3 V2 ELRS Diversity receiver | HobbyRC #303808, 2025-08-11, with a glider | £22.99 |
+| Radiomaster RP3 V2 ELRS Diversity receiver (likely the Phoenix's) | HobbyRC #303808, 2025-08-11, with the Phoenix | £22.99 |
 | Walksnail Avatar HD Pro Micro Kit, 32 GB, ×2 (one may be on the 5") | HobbyRC #231336, 2023-06-29; #236190, 2023-08-16 | £159.00 each |
-| Receivers: Matek R24-D ×2, Radiomaster ER6, ER8, ER5A ×2 | HobbyRC #232315, #235115, #268168, #231404 (2023-07 to 2024-07) | not totalled |
+| Receivers: Matek R24-D ×2 (one with the Swordfish), Radiomaster ER6, ER8, ER5A ×2 | HobbyRC #232315, #235115, #268168, #231404 (2023-07 to 2024-07) | not totalled |
 
 Everything else about the fleet, tooling, field procedures, is not yet recorded
 ([F-OQ-01](open-questions.md)).

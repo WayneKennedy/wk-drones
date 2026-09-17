@@ -5,8 +5,9 @@ this same file.
 
 ## What this repository is
 
-The build, configuration and maintenance record for a fleet of DIY multirotors. See
-[`README.md`](README.md) for the fleet table. Most of the fleet is FPV aircraft; **only
+The build, configuration and maintenance record for a fleet of DIY aircraft, multirotors
+and planes. See
+[`README.md`](README.md) for the fleet table. Most of the fleet is human-piloted; **only
 the Holybro 10" is a robot in the wk-robotics sense**, and the criterion that decides
 that is defined in wk-robotics, not here.
 

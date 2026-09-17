@@ -19,3 +19,12 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   A human pilot is neither topology. Any of the three could cross the line later under the
   off-board topology (a ground machine commanding the flight controller over radio); that
   would be a new decision here, not an edit to this one.
+
+- **F-DEC-02 — Every plane and drone is "SMART": ELRS plus a flight controller**
+  (2026-09-17, owner). Going forward, each aircraft in the fleet flies an ExpressLRS
+  receiver into a programmable flight controller, never a proprietary radio or
+  stabilisation ecosystem. Reason, the owner's: to avoid lock-in to closed ecosystems such
+  as Spektrum's. The owner's word "SMART" is not otherwise defined; GPS, telemetry or a
+  firmware choice are not implied by this decision. Already so by their BOMs: Bee35 and 5".
+  Holybro 10": flight controller chosen, receiver TBC. To commission to it: the Swordfish
+  and the Phoenix.

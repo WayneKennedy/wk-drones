@@ -15,12 +15,12 @@ the row says otherwise; the reasoning is in [`decisions.md`](decisions.md) and
 | Flight controller | Matek H743 Wing V3 | [DEC-01](decisions.md). In hand, unused (owner, 2026-09-17) | HobbyRC #302285 | £96.30 | 2025-07-27 |
 | Flow/lidar | Matek Optical Flow & Lidar Sensor | Exact model not on the invoice; same order as the flight controller | HobbyRC #302285 | £23.26 | 2025-07-27 |
 | GPS/compass 1 | Matek M10Q-5883 | [OQ-01](open-questions.md) | HobbyRC #301738 | £31.80 | 2025-07-22 |
-| GPS/compass 2 | Matek M10Q-5883 | [OQ-01](open-questions.md). Ordered with the fleet's F405 Wing V2 spare | HobbyRC #303459 | £31.80 | 2025-08-07 |
+| GPS/compass 2 | Matek M10Q-5883 | [OQ-01](open-questions.md). Ordered with the F405 Wing V2 now assigned to the [Phoenix](../../phoenix/docs/decisions.md) | HobbyRC #303459 | £31.80 | 2025-08-07 |
 | Rangefinder | Benewake TFmini Plus lidar, I²C version, 12 m | Assignment to this aircraft not confirmed by the owner | 3DXR #32525 | £50.00 | 2025-08-15 |
 | GPS mast | Holybro 29 mm fixed carbon GPS stand, 100 mm tube | | 3DXR #32525 | £11.50 | 2025-08-15 |
 | CAN adapters | 2× Matek AP_Periph CAN Node L431 | £16.00 each. [OQ-01](open-questions.md) | 3DXR #32918 | £32.00 | 2025-09-01 |
 | Companion computer | TBC | Raspberry Pi or Jetson Orin Nano; [OQ-03](open-questions.md) | TBC | TBC | TBC |
-| RX | TBC | No receiver found on a 2025 Holybro-period order. A Radiomaster RP3 V2 ELRS Diversity (HobbyRC #303808, 2025-08-11, £22.99) was bought with a glider; its aircraft is unknown | TBC | TBC | TBC |
+| RX | TBC | No receiver found on a 2025 Holybro-period order. A Radiomaster RP3 V2 ELRS Diversity (HobbyRC #303808, 2025-08-11, £22.99) was bought with the Phoenix glider and is likely its receiver | TBC | TBC | TBC |
 | Video | TBC | None found in the mail, June–October 2025 | TBC | TBC | TBC |
 | Battery | TBC | Holybro recommends 4S 3000–5000 mAh, XT60; nothing on these invoices | TBC | TBC | TBC |
 
