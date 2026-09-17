@@ -15,6 +15,16 @@ belongs in that aircraft's folder. Decisions: [`decisions.md`](decisions.md). Op
 | Charger | HOTA D6 Pro dual-channel AC/DC, ordered 2025-08-07 (£83.75). Also 1S whoop chargers: VIFLY WhoopStor 3 (HobbyRC #256755, 2024-03-24) and a VIFLY Whoop charging board (#231460, 2023-06-30) | HobbyRC invoices, read 2026-09-17 |
 | Printed parts | Every printable part comes off the family printer; materials and profiles are in wk-robotics [`docs/common.md`](https://github.com/WayneKennedy/wk-robotics/blob/main/docs/common.md#printing) | wk-robotics |
 
+## Flying status
+
+Owner, 2026-09-17:
+
+- **BMFA membership: active** — insured to fly.
+- **CAA Operator ID: active.** Registration numbers are not recorded in this public repo.
+- **No club.** The owner has not joined a local flying club since moving house, so there is
+  no runway for the large planes. This is why the Twin Otter's recommissioning is low
+  priority. Renewal dates for both registrations are unrecorded.
+
 ## Spares and written-off aircraft
 
 Parts and aircraft owned but assigned to no aircraft — the 1700KV motors, the spare

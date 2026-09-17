@@ -27,4 +27,4 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   as Spektrum's. The owner's word "SMART" is not otherwise defined; GPS, telemetry or a
   firmware choice are not implied by this decision. Already so by their BOMs: Bee35 and 5".
   Holybro 10": flight controller chosen, receiver TBC. To commission to it: the Swordfish
-  and the Phoenix. State unrecorded: the Twin Otter, Seagull 40 and Avanti S.
+  and the Phoenix. The Twin Otter flies a receiver with no flight controller; bringing it to this standard is a rebuild, low priority (owner, 2026-09-17). State unrecorded: the Seagull 40 and Avanti S.

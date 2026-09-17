@@ -6,9 +6,12 @@ An XFLY Twin Otter, 1800 mm wingspan: **the largest aircraft in the fleet** (own
 
 ## Status
 
-**Owned; state unrecorded.** Nothing about its build, electronics, firmware, flights or
-condition is written down. It falls under [F-DEC-02](../../fleet/decisions.md) (ELRS plus a
-flight controller); whether it already meets it is unknown.
+**Flight ready, in storage** (owner, 2026-09-17). Built with a plain ELRS receiver and **no
+flight controller**, so it does not meet [F-DEC-02](../../fleet/decisions.md) (ELRS plus a
+flight controller): recommissioning it to that standard is a rebuild. **Low priority** —
+it needs a club runway, and the owner has not joined a local club since moving house
+([fleet flying status](../../fleet/README.md#flying-status)). Receiver model, servos, power
+system and flight history are unrecorded.
 
 ## Purchases
 
