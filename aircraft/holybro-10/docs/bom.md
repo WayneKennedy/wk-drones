@@ -20,8 +20,8 @@ the row says otherwise; the reasoning is in [`decisions.md`](decisions.md) and
 | GPS mast | Holybro 29 mm fixed carbon GPS stand, 100 mm tube | | 3DXR #32525 | £11.50 | 2025-08-15 |
 | CAN adapters | 2× Matek AP_Periph CAN Node L431 | £16.00 each. [OQ-01](open-questions.md) | 3DXR #32918 | £32.00 | 2025-09-01 |
 | Companion computer | TBC | Raspberry Pi or Jetson Orin Nano; [OQ-03](open-questions.md) | TBC | TBC | TBC |
-| RX | TBC | | TBC | TBC | TBC |
-| Video | TBC | | TBC | TBC | TBC |
+| RX | TBC | No receiver found on a 2025 Holybro-period order. A Radiomaster RP3 V2 ELRS Diversity (HobbyRC #303808, 2025-08-11, £22.99) was bought with a glider; its aircraft is unknown | TBC | TBC | TBC |
+| Video | TBC | None found in the mail, June–October 2025 | TBC | TBC | TBC |
 | Battery | TBC | Holybro recommends 4S 3000–5000 mAh, XT60; nothing on these invoices | TBC | TBC | TBC |
 
 Order totals inc VAT and shipping: Flying Tech #83693 £273.60; HobbyRC #301738 £34.30,
@@ -37,7 +37,7 @@ the ARF kit ships with these preinstalled: 4× Holybro 2216 motors with XT30 plu
 BLHeli_S 20 A ESCs, a power distribution board (XT60 battery input, XT30 outputs to the
 ESCs and peripherals), and 6× 1045 propellers. No flight controller, GPS, receiver,
 telemetry radio or battery. **Motor KV is TBC:** Holybro lists KV920, Flying Tech's
-listing for the ARTF option lists KV880; read it off the motors.
+listing for the ARTF option lists KV880, and the order emails give none; read it off the motors.
 
 One ESC per motor, each powered from the distribution board, so the flight controller
 supplies four signal lines only. The H743 Wing V3's own ESC power pads are not needed.

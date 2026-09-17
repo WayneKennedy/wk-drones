@@ -23,6 +23,9 @@ reasoning, not just the outcome. Format: `DEC-nn — decision (date)`.
   variant) and exchanged for 3000KV. Considered building 6S P45B packs instead:
   ~50% more energy for ~50% more pack mass nets only ~10% endurance gain, at ~£60
   and a second pack format. Fleet commonality on the existing 4S1P P45B packs won.
+  *Note (2026-09-17, invoices):* not an exchange. The 3000KV set is a separate purchase
+  from Drone Authority; no return of the 1700KV set to Unmanned Tech is in the mail
+  ([`bom.md`](bom.md)). The decision is unaffected.
 
 - **DEC-04 — MTF-01P over MTF-02P** (2026-09-11). The -02P was the original spec and
   has been out of stock for months. The -01P is the better sensor anyway: 12 m lidar

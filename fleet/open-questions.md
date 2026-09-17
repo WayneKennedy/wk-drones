@@ -9,6 +9,9 @@ Pending decisions true of more than one aircraft. Resolved items move to
   flight-controller decision and its own open questions from invoices on 2026-09-17; its
   build state is still unknown. Needed, from the owner, against hardware: for the 5", the
   gaps on its page; for the Holybro, receiver, video system, battery, build state, and
-  which companion computer and how it is wired. Also unrecorded at fleet level: transmitter
-  model, goggles, tooling. Resolves when each aircraft's `README.md` has a status and a
+  which companion computer and how it is wired. Also unrecorded at fleet level: tooling
+  (transmitter and goggles were identified from invoices on 2026-09-17). Invoices also show
+  aircraft outside the fleet table — an ATOMRC Swordfish (HobbyRC #232315, 2023-07-09), a
+  VolantexRC Phoenix glider (#303808, 2025-08-11) and a NewBeeDrone Cockroach frame
+  (#231404, 2023-06-30); whether each is still owned, and belongs in the fleet, is unknown. Resolves when each aircraft's `README.md` has a status and a
   BOM, and `fleet/README.md` has no TBC in the kit table.

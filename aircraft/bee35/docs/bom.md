@@ -1,18 +1,33 @@
 # Bill of materials
 
-As ordered. Prices and order dates are TBC until reconciled against invoices.
+As ordered, per the supplier invoices in the owner's mailbox, read 2026-09-17 (how:
+[wk-robotics `AGENTS.md`](https://github.com/WayneKennedy/wk-robotics/blob/main/AGENTS.md#invoices-and-order-history)).
+Prices are line totals inc VAT; no order had a discount. All orders below were delivered;
+which parts are in hand now is not recorded beyond the [README](../README.md) status.
 
 | Item | Part | Notes | Source | Price | Ordered |
 |---|---|---|---|---|---|
-| Frame | SpeedyBee Bee35 Pro | 153 mm, CNC VTX heatsink + alloy front end, 138 g + 15 g heatsink | Unmanned Tech | TBC | TBC |
-| FC/ESC | MicoAir743 V2 | BMI088, 30.5×30.5, 2–6S, 55 A AM32. Ships with ArduPilot preloaded; reflash to iNav | Unmanned Tech | TBC | TBC |
-| Flow/ToF | MicoAir MTF-01P | Optical flow + 12 m lidar, MSP mode | Unmanned Tech | TBC | TBC |
-| GPS/compass | Flywoo GOKU GM10 Mini V3 | u-blox M10050 + QMC5883L, 18×18 mm, 4.1 g | Unmanned Tech | TBC | TBC |
-| RX | RadioMaster RP3 V2 ELRS 2.4 GHz nano | CRSF | Unmanned Tech | TBC | TBC |
-| VTX/cam | Walksnail Avatar HD (model TBC, confirm from invoice) | MSP DisplayPort | FlyingTech | TBC | TBC |
-| Motors | 4× T-Motor F2004 3000KV | 1.5 mm T-mount shaft, 12×12 mm bolt pattern, 16.4 g | third supplier (TBC) | TBC | TBC |
-| Props | HQProp Duct-T90MMX3 | 90 mm, 3" pitch, 3-blade, 2.35 g, 1.5 mm T-mount | RCHobby | TBC | TBC |
-| Battery | 3× existing 4S1P 21700, Molicel P45B | 4500 mAh, 315 g, self-built, shared across fleet | existing | — | — |
+| Frame | SpeedyBee Bee35 Pro | 153 mm, CNC VTX heatsink + alloy front end, 138 g + 15 g heatsink | Unmanned Tech #18595 | £35.75 | 2026-09-07 |
+| FC/ESC | MicoAir743 V2 | BMI088, 30.5×30.5, 2–6S, 55 A AM32. Ships with ArduPilot preloaded; reflash to iNav | Unmanned Tech #18595 | £64.99 | 2026-09-07 |
+| Flow/ToF | MicoAir MTF-01P | Optical flow + 12 m lidar, MSP mode | Unmanned Tech #18595 | £22.99 | 2026-09-07 |
+| GPS/compass | Flywoo GOKU GM10 Mini V3 | u-blox M10050 + QMC5883L, 18×18 mm, 4.1 g | Unmanned Tech #18595 | £16.90 | 2026-09-07 |
+| RX | RadioMaster RP3 V2 ELRS 2.4 GHz nano | CRSF | Unmanned Tech #18595 | £19.99 | 2026-09-07 |
+| VTX | Walksnail Avatar HD Mini VTX V3 Module, 32 GB | MSP DisplayPort | Flying Tech #118823 | £79.00 | 2026-09-07 |
+| Camera | Walksnail Avatar HD Nano Camera V3 | | HobbyRC #344663 | £40.00 | 2026-09-11 |
+| VTX antenna | Walksnail Avatar HD VTX V2 Antenna | | HobbyRC #344663 | £7.80 | 2026-09-11 |
+| Motors | 4× T-Motor F2004 3000KV (TM-A) | 1.5 mm T-mount shaft, 12×12 mm bolt pattern, 16.4 g. £18.90 each | Drone Authority DA-23129 | £75.60 | 2026-09-11 |
+| Props | HQProp Duct-T90MMX3, transparent grey | 90 mm, 3" pitch, 3-blade, 2.35 g, 1.5 mm T-mount. Invoiced qty 2 at £1.85: pairs or singles TBC, 4 needed | HobbyRC #344663 | £3.70 | 2026-09-11 |
+| Battery | 3× existing 4S1P 21700, Molicel P45B | 4500 mAh, 315 g, self-built, shared across fleet. Pack count vs cells bought: see [fleet](../../../fleet/README.md) | existing | — | — |
+
+Order totals inc shipping: Unmanned Tech #18595 £160.62 (free shipping), delivered
+2026-09-10; Flying Tech #118823 £82.90, delivered 2026-09-09; Drone Authority DA-23129
+£81.30, delivered 2026-09-15; HobbyRC #344663 £54.99, a HobbyRC parcel delivered
+2026-09-16 (taken to be this order, the only one open).
+
+**Also bought, not fitted:** 4× T-Motor F2004 **1700KV**, Unmanned Tech #18596, 2026-09-07,
+£75.60 (£79.19 with shipping), delivered 2026-09-10 — the mis-order in
+[DEC-03](decisions.md). No return or refund is in the mail; whether they are still in hand
+is unknown.
 
 Decisions behind several of these choices: [`decisions.md`](decisions.md).
 
@@ -24,4 +39,4 @@ Decisions behind several of these choices: [`decisions.md`](decisions.md).
 
 ## Existing kit assumed present
 
-Walksnail goggles, RadioMaster ELRS transmitter, 5" Betaflight quad ([`../../fpv-5/`](../../fpv-5/README.md)), DJI Neo.
+Walksnail goggles and RadioMaster ELRS transmitter (models in [`fleet/README.md`](../../../fleet/README.md)), 5" Betaflight quad ([`../../fpv-5/`](../../fpv-5/README.md)), DJI Neo.
