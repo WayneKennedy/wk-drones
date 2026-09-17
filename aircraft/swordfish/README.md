@@ -8,6 +8,13 @@ wk-robotics robot (criterion: [F-DEC-01](../../fleet/decisions.md)).
 **Repaired, not commissioned** (owner, 2026-09-17). In hand; it has taken two hard,
 high-speed crashes and been repaired since. Nothing about the repair or its firmware is recorded.
 
+**Video: a Walksnail Avatar HD Pro Micro Kit, 32 GB, on the canopy** — VTX, matching camera and
+antenna, fitted (owner, 2026-09-17, on finding the canopy). This is the **second of the two kits
+bought in 2023**; the first is on the 5". Which of the two orders — HobbyRC #231336 or #236190 —
+this one came from is unknown and immaterial: same item, £159.00 either way
+([fleet Walksnail kit](../../fleet/README.md#walksnail-kit-bought)). Its condition after the two
+crashes is **unassessed**, and it should be bench-tested alongside the flight controller.
+
 **Flight controller: a SpeedyBee F405, out of the airframe.** It was the Swordfish's own
 board and is on the owner's desk; it is to be bench-tested for damage from the last crash
 and will probably go back in (owner, 2026-09-17; not decided). Model inferred, not
