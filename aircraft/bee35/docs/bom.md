@@ -12,8 +12,8 @@ which parts are in hand now is not recorded beyond the [README](../README.md) st
 | Flow/ToF | MicoAir MTF-01P | Optical flow + 12 m lidar, MSP mode | Unmanned Tech #18595 | £22.99 | 2026-09-07 |
 | GPS/compass | Flywoo GOKU GM10 Mini V3 | u-blox M10050 + QMC5883L, 18×18 mm, 4.1 g | Unmanned Tech #18595 | £16.90 | 2026-09-07 |
 | RX | RadioMaster RP3 V2 ELRS 2.4 GHz nano | CRSF | Unmanned Tech #18595 | £19.99 | 2026-09-07 |
-| VTX | Walksnail Avatar HD Mini VTX V3 Module, 32 GB | MSP DisplayPort | Flying Tech #118823 | £79.00 | 2026-09-07 |
-| Camera | Walksnail Avatar HD Nano Camera V3 | | HobbyRC #344663 | £40.00 | 2026-09-11 |
+| VTX | Walksnail Avatar HD Mini VTX V3 Module, 32 GB | MSP DisplayPort. Mis-order: VTX only, no camera or antenna (owner, 2026-09-17) | Flying Tech #118823 | £79.00 | 2026-09-07 |
+| Camera | Walksnail Avatar HD Nano Camera V3 | Bought to fill that gap; also a mistake (owner, 2026-09-17). Why, and the camera the Bee35 will fly, TBC | HobbyRC #344663 | £40.00 | 2026-09-11 |
 | VTX antenna | Walksnail Avatar HD VTX V2 Antenna | | HobbyRC #344663 | £7.80 | 2026-09-11 |
 | Motors | 4× T-Motor F2004 3000KV (TM-A) | 1.5 mm T-mount shaft, 12×12 mm bolt pattern, 16.4 g. £18.90 each | Drone Authority DA-23129 | £75.60 | 2026-09-11 |
 | Props | HQProp Duct-T90MMX3, transparent grey | 90 mm, 3" pitch, 3-blade, 2.35 g, 1.5 mm T-mount. Invoiced qty 2 at £1.85: pairs or singles TBC, 4 needed | HobbyRC #344663 | £3.70 | 2026-09-11 |

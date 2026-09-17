@@ -20,6 +20,6 @@ it and its £5.90 shipping refunded (HobbyRC support, 2024-02-12); #261858 £47.
 −£2.19 discount and £5.90 shipping.
 
 **VTX/cam candidates, inferred only:** no video system was bought near this build. Two
-Walksnail Avatar HD Pro Micro Kits (32 GB), £159.00 each, were bought earlier — HobbyRC
-#231336 (2023-06-29) and #236190 (2023-08-16). Whether the 5" carries one of them is
+Walksnail Avatar HD Pro Micro Kits (32 GB) were bought earlier; see
+[fleet Walksnail kit](../../../fleet/README.md#walksnail-kit-bought). Whether the 5" carries one of them is
 unconfirmed; read it off the aircraft.
