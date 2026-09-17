@@ -23,7 +23,8 @@ Format: `OQ-nn — question (date raised)`.
     telemetry but cannot upload missions or change parameters. Unverified whether any
     other MAVLink commands are accepted.
   - A third path, iNav now and ArduPilot when the fleet role is real, keeps DEC-01's
-    commonality with the 5" quad for the maiden and tune.
+    commonality with the 5" quad for the maiden and tune. (That commonality proved
+    false on 2026-09-15: the 5" runs Betaflight. See the DEC-01 correction.)
 
   Unlike every other robot in the family, the flight controller is reflex and
   intent tier in one MCU; there is no on-board Pi. How it joins the topic contract

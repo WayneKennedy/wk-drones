@@ -10,8 +10,11 @@ hardware.
 
 ## Status
 
-**Parts ordered, not yet in hand.** Nothing has been built, flashed or flown.
-Every value marked TBC is unconfirmed until hardware arrives.
+**Build started.** As of 2026-09-15 the four T-Motor F2004 3000KV motors
+([DEC-03](docs/decisions.md)) are in hand and mounted on the frame. **Next step:
+soldering** — record pads, wire gauges and jumpers in [`docs/wiring.md`](docs/wiring.md)
+as it is done. Not yet flashed or flown. Which of the other ordered parts are in hand is
+not recorded; every value marked TBC stays unconfirmed until checked against hardware.
 
 Role: an FPV aircraft in the wk-drones fleet, **not** a robot in the
 [wk-robotics](https://github.com/WayneKennedy/wk-robotics) family. The frame has no

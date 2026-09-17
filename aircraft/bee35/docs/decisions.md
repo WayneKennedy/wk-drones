@@ -9,6 +9,10 @@ reasoning, not just the outcome. Format: `DEC-nn — decision (date)`.
   commonality with the existing 5" quad, a familiar configurator, and an easier
   tune. Hardware is identical either way, so ArduPilot remains a reflash away if
   iNav's hold disappoints. Confirmed by DEC-06.
+  *Correction (2026-09-15):* the 5" runs Betaflight, not iNav (owner, checked on the
+  aircraft in the SpeedyBee app). The commonality reason was false, and "familiar
+  configurator" may have rested on the same belief. The easier tune, DEC-06's goal and
+  the reflash path do not depend on it. The decision has not been revisited.
 
 - **DEC-02 — Bee35 Pro over standard Bee35** (2026-09-11). Not a preference: the
   standard version was out of stock. Turned out favourable. The alloy heatsink has
@@ -31,7 +35,8 @@ reasoning, not just the outcome. Format: `DEC-nn — decision (date)`.
 - **DEC-06 — iNav first; ArduPilot and the mission-planning tier are a later
   evolution** (2026-09-11, owner). The project's initial goal is a DIY build that
   gets close to the DJI Neo experience: reliable hands-off loiter and docile flight.
-  Build on iNav to reach that, keeping DEC-01's commonality with the 5" quad. Only
+  Build on iNav to reach that, keeping DEC-01's commonality with the 5" quad (a premise
+  since found false; see the DEC-01 correction). Only
   once the basic goal is met and the flight envelope is predictable does the
   aircraft become a fleet node reachable from the wk-robotics mission-planning
   tier, which needs ArduPilot: a native ROS 2 interface (AP_DDS) and two-way

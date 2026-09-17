@@ -24,4 +24,4 @@ Decisions behind several of these choices: [`decisions.md`](decisions.md).
 
 ## Existing kit assumed present
 
-Walksnail goggles, RadioMaster ELRS transmitter, 5" Betaflight/iNav quad, DJI Neo.
+Walksnail goggles, RadioMaster ELRS transmitter, 5" Betaflight quad ([`../../fpv-5/`](../../fpv-5/README.md)), DJI Neo.
