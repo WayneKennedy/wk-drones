@@ -21,6 +21,7 @@ In hand and assigned to no aircraft (owner, 2026-09-17):
 
 | Part | State | Source of the fact |
 |---|---|---|
+| NewBeeDrone Cockroach frame | Unused, never built (owner, 2026-09-17). £6.90 | HobbyRC #231404 invoice, 2023-06-30 |
 | T-Motor F2004 1700KV ×4 | Unused; the Bee35 mis-order ([DEC-03](../aircraft/bee35/docs/decisions.md)). Ordered 2026-09-07, £75.60. 1700KV is the 6S variant | Owner; Unmanned Tech #18596 invoice |
 | SpeedyBee F405 | Used. Exact model and origin TBC; whether it is related to the 5"'s SpeedyBee F405 V3 stack is unknown. Candidates, inferred only: three SpeedyBee F405 WING boards were bought (HobbyRC #232315 with the Swordfish, #233536, #242930; 2023-07 to 2023-10, £35.90 each) | Owner; HobbyRC invoices |
 
@@ -41,7 +42,8 @@ Not in the fleet table; kept as parts.
 
 - **Happymodel Moblite7 75 mm Walksnail whoop (ELRS)** — written off; its parts are in the
   bits box. It could be recommissioned, but the owner probably will not (owner,
-  2026-09-17). Bought HobbyRC #231460, 2023-06-30.
+  2026-09-17). An idea, not a plan and not a priority: rebuild its parts on another frame,
+  possibly the spare Cockroach frame above (owner's recollection, "I think"). Bought HobbyRC #231460, 2023-06-30.
 
 ## Walksnail kit bought
 
