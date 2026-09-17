@@ -14,6 +14,6 @@ Pending decisions true of more than one aircraft. Resolved items move to
   invoices, joined the fleet table on 2026-09-17. The other aircraft
   found on invoices are settled: the Moblite7 whoop is written off and the Cockroach frame
   is an unused spare ([wk-inventory `docs/stock.md`](https://github.com/WayneKennedy/wk-inventory/blob/main/docs/stock.md)). A full supplier sweep on 2026-09-17 found three more planes: the Twin
-  Otter (flight ready, in storage, no FC — its page), and the Seagull 40 and Avanti S (still owned unknown).
-  Needed from the owner for each: owned or not, built or not, electronics and condition. Resolves when each aircraft's `README.md` has a status and a
+  Otter (flight ready, in storage, no FC — its page), the Avanti S (crashed, repairable, in storage — its page) and the Seagull 40 (written off
+  in a tree crash; wk-inventory stock). Resolves when each aircraft's `README.md` has a status and a
   BOM, and `fleet/README.md` has no TBC in the kit table.

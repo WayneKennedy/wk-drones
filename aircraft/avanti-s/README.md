@@ -5,8 +5,10 @@ wk-robotics robot ([F-DEC-01](../../fleet/decisions.md)).
 
 ## Status
 
-**Found on an invoice only.** Whether it is still owned, built or flown is unrecorded
-([F-OQ-01](../../fleet/open-questions.md)).
+**Crashed on its maiden flight; repairable; in storage** "until I get brave enough" (owner,
+2026-09-17). Built with a receiver and **no flight controller**, so it does not meet
+[F-DEC-02](../../fleet/decisions.md); the repair is the natural time to fit one. Damage,
+receiver, servos, power system and the cause of the crash are unrecorded.
 
 ## Purchases
 

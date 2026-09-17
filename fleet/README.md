@@ -28,7 +28,7 @@ Owner, 2026-09-17:
 ## Spares and written-off aircraft
 
 Parts and aircraft owned but assigned to no aircraft — the 1700KV motors, the spare
-SpeedyBee F405, the Cockroach frame, the written-off Moblite7, and receivers and GPS
+SpeedyBee F405, the Cockroach frame, the written-off Moblite7 and Seagull 40, and receivers and GPS
 units found only on invoices — are in the owner's private stock list,
 [wk-inventory `docs/stock.md`](https://github.com/WayneKennedy/wk-inventory/blob/main/docs/stock.md) (moved there 2026-09-17). An aircraft that takes one moves it into its
 own BOM.
