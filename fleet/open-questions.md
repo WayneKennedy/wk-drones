@@ -3,7 +3,7 @@
 Pending decisions true of more than one aircraft. Resolved items move to
 [`decisions.md`](decisions.md) as an `F-DEC`. Format: `F-OQ-nn — question (date raised)`.
 
-- **F-OQ-01 — The Holybro and the 5" are unrecorded** (2026-09-13). This repo was the
+- **F-OQ-01 — Aircraft records are incomplete** (2026-09-13; first raised for the Holybro and the 5"). This repo was the
   Bee35's alone until 2026-09-13. The 5" gained a status and an as-ordered BOM on
   2026-09-15; its remaining gaps are listed on its page. The Holybro gained a BOM, a
   flight-controller decision and its own open questions from invoices on 2026-09-17; its
