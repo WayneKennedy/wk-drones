@@ -16,7 +16,7 @@ which parts are in hand now is not recorded beyond the [README](../README.md) st
 | Camera | Walksnail Avatar HD Nano Camera V3 | Bought to fill that gap; also a mistake (owner, 2026-09-17). Why, and the camera the Bee35 will fly, TBC | HobbyRC #344663 | £40.00 | 2026-09-11 |
 | VTX antenna | Walksnail Avatar HD VTX V2 Antenna | | HobbyRC #344663 | £7.80 | 2026-09-11 |
 | Motors | 4× T-Motor F2004 3000KV (TM-A) | 1.5 mm T-mount shaft, 12×12 mm bolt pattern, 16.4 g. £18.90 each | Drone Authority DA-23129 | £75.60 | 2026-09-11 |
-| Props | HQProp Duct-T90MMX3, transparent grey | 90 mm, 3" pitch, 3-blade, 2.35 g, 1.5 mm T-mount. Invoiced qty 2 at £1.85: pairs or singles TBC, 4 needed | HobbyRC #344663 | £3.70 | 2026-09-11 |
+| Props | HQProp Duct-T90MMX3, transparent grey | 90 mm, 3" pitch, 3-blade, 2.35 g, 1.5 mm T-mount. 2 packs at £1.85 each (owner, 2026-09-17); props per pack not recorded, 4 needed | HobbyRC #344663 | £3.70 | 2026-09-11 |
 | Battery | 3× existing 4S1P 21700, Molicel P45B | 4500 mAh, 315 g, self-built, shared across fleet. Pack count vs cells bought: see [fleet](../../../fleet/README.md) | existing | — | — |
 
 Order totals inc shipping: Unmanned Tech #18595 £160.62 (free shipping), delivered
