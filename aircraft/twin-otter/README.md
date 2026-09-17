@@ -21,5 +21,7 @@ From invoices read 2026-09-17 (full lines in the private [wk-inventory `docs/pur
 - Wheelspin Models #1086883, 2024-07-23: XFly Twin Otter front landing gear [XF116-18]
   £23.74 and main landing gear [XF116-19] £22.33 (with an FMS airplane stand, £61.74);
   front gear back-ordered, dispatched 2024-09-25.
-- *Inferred only:* two GNB 6000 mAh 6S 100C packs were bought from HobbyRC (#256755) the
-  same day as the aircraft. Which aircraft they fly is unrecorded.
+- **Batteries: 6S.** The aircraft specifies 6S, which surprised the owner at purchase
+  because the rest of the fleet is 4S (owner, 2026-09-17). Two GNB 6000 mAh 6S 100C packs
+  were bought from HobbyRC (#256755) the same day as the aircraft and are likely its
+  ("likely", owner). Exact pack size and count for flight are unrecorded.

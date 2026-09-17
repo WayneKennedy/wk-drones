@@ -20,6 +20,15 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   off-board topology (a ground machine commanding the flight controller over radio); that
   would be a new decision here, not an edit to this one.
 
+- **F-DEC-03 — Consolidate battery types; share packs across aircraft** (2026-09-17,
+  owner). Packs are costly and inconvenient to store and charge, so the fleet keeps as few
+  variants as it can and flies them across several aircraft rather than buying a format per
+  airframe. A new aircraft that needs a new pack format is a cost to weigh, not a given.
+  **Today that means two standards:** 4S for the quads and the Holybro, 6S for the large
+  planes. The Twin Otter specified 6S, which surprised the owner at purchase precisely
+  because the rest of the fleet is 4S. Pack holdings and which aircraft fly them are in
+  [`README.md`](README.md).
+
 - **F-DEC-02 — Every plane and drone is "SMART": ELRS plus a flight controller**
   (2026-09-17, owner). Going forward, each aircraft in the fleet flies an ExpressLRS
   receiver into a programmable flight controller, never a proprietary radio or
