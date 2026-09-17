@@ -52,9 +52,14 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
     clean Jetson shutdown before it; fusing; how each pack's voltage is monitored (the
     flight controller's second battery input, or an I²C monitor on the Jetson); and whether
     the fleet's charger handles Li-ion.
-  - **Stock:** no spare 21700 cells are recorded; the three 4S1P P45B packs are the fleet's
-    flight packs ([fleet](../../../fleet/README.md)). A new pack means buying cells, unless
-    one of those doubles as the control pack.
+  - **Stock, so nothing need be bought yet:** the fleet's **4S 1300 mAh LiPo packs** are in
+    range at 14.8–16.8 V and are the lightest option in hand — the owner reports several,
+    stored at storage voltage about a year ago and not puffy (2026-09-17), untested since.
+    Two GNB 1300 mAh 4S 120C were bought 2024-05-17 and three GNB 1300 mAh 4S 120C **LiHV**
+    2025-08-07 ([fleet](../../../fleet/README.md)); the 5" flies packs of this size, so they
+    are shared. A LiPo has no protection circuit, so the cut-off above is the builder's job.
+    No spare 21700 cells are recorded, and the three 4S1P P45B packs are flight packs, so a
+    purpose-built control pack would mean buying cells.
 
 - **OQ-04 — Build state and the remaining parts** (2026-09-17). Whether the frame is
   assembled, and the receiver, video system and battery, are unrecorded
