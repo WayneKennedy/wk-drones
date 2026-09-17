@@ -35,6 +35,14 @@ On invoices read 2026-09-17; whether still in hand is unknown.
 | Radiomaster RP3 V2 ELRS Diversity receiver (likely the Phoenix's) | HobbyRC #303808, 2025-08-11, with the Phoenix | £22.99 |
 | Receivers: Matek R24-D ×2 (one with the Swordfish), Radiomaster ER6, ER8, ER5A ×2 | HobbyRC #232315, #235115, #268168, #231404 (2023-07 to 2024-07) | not totalled |
 
+## Written off
+
+Not in the fleet table; kept as parts.
+
+- **Happymodel Moblite7 75 mm Walksnail whoop (ELRS)** — written off; its parts are in the
+  bits box. It could be recommissioned, but the owner probably will not (owner,
+  2026-09-17). Bought HobbyRC #231460, 2023-06-30.
+
 ## Walksnail kit bought
 
 Every Walksnail-related purchase in the owner's mailbox, searched 2026-09-17. Prices are
@@ -46,7 +54,7 @@ item is now is unrecorded unless a row says so.
 | Fat Shark Dominator Avatar HD goggles (Walksnail) | HobbyRC #231336, 2023-06-29 | £504.00 |
 | Walksnail Avatar HD Pro Micro Kit, 32 GB | HobbyRC #231336, 2023-06-29 | £159.00 |
 | Walksnail Avatar HD Pro Micro Kit, 32 GB | HobbyRC #236190, 2023-08-16 | £159.00 |
-| Happymodel Moblite7 75 mm Walksnail whoop, ELRS — a complete aircraft with Walksnail built in | HobbyRC #231460, 2023-06-30 | £195.95 |
+| Happymodel Moblite7 75 mm Walksnail whoop, ELRS — a complete aircraft with Walksnail built in; written off, see below | HobbyRC #231460, 2023-06-30 | £195.95 |
 | Walksnail Avatar HD Mini VTX V3 module, 32 GB — Bee35; VTX only, a mis-order | Flying Tech #118823, 2026-09-07 | £79.00 |
 | Walksnail Avatar HD Nano Camera V3 — Bee35; also a mis-order | HobbyRC #344663, 2026-09-11 | £40.00 |
 | Walksnail Avatar HD VTX V2 antenna — Bee35 | HobbyRC #344663, 2026-09-11 | £7.80 |

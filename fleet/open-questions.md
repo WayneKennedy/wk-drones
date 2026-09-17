@@ -11,7 +11,7 @@ Pending decisions true of more than one aircraft. Resolved items move to
   gaps on its page; for the Holybro, receiver, video system, battery, build state, and
   which companion computer and how it is wired. Also unrecorded at fleet level: tooling
   (transmitter and goggles were identified from invoices on 2026-09-17). The Swordfish and Phoenix, found on
-  invoices, joined the fleet table on 2026-09-17. A NewBeeDrone Cockroach frame (#231404,
-  2023-06-30) and a Happymodel Moblite7 Walksnail whoop (#231460, 2023-06-30) are also on
-  invoices; whether each is still owned, and belongs in the fleet, is unknown. Resolves when each aircraft's `README.md` has a status and a
+  invoices, joined the fleet table on 2026-09-17. The Moblite7 whoop is written off
+  (`README.md`). A NewBeeDrone Cockroach frame (#231404, 2023-06-30) is also on an invoice;
+  whether it is still owned, and belongs in the fleet, is unknown. Resolves when each aircraft's `README.md` has a status and a
   BOM, and `fleet/README.md` has no TBC in the kit table.
