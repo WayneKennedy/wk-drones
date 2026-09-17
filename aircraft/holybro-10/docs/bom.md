@@ -22,7 +22,7 @@ the row says otherwise; the reasoning is in [`decisions.md`](decisions.md) and
 | Companion computer | TBC | Raspberry Pi or Jetson Orin Nano; [OQ-03](open-questions.md) | TBC | TBC | TBC |
 | RX | TBC | No receiver found on a 2025 Holybro-period order. A Radiomaster RP3 V2 ELRS Diversity (HobbyRC #303808, 2025-08-11, £22.99) was bought with the Phoenix glider and is likely its receiver | TBC | TBC | TBC |
 | Video | TBC | None found in the mail, June–October 2025 | TBC | TBC | TBC |
-| Battery | TBC | Holybro recommends 4S 3000–5000 mAh, XT60; nothing on these invoices | TBC | TBC | TBC |
+| Battery | TBC | Holybro recommends "4S 3000-5000mAh 20C+ with XT60 Lipo" and quotes ~18 min hover with no payload on 5000 mAh ([product page](https://holybro.com/products/x500-v2-kits), read 2026-09-17). Candidates already owned, none tested on this airframe: 2 × GNB 5500 mAh 4S 70C (XT90, HobbyRC 2023-07; aircraft unrecorded) and the fleet's 4S1P P45B Li-ion packs ([fleet](../../../fleet/README.md)) | TBC | TBC | TBC |
 
 Order totals inc VAT and shipping: Flying Tech #83693 £273.60; HobbyRC #301738 £34.30,
 #302285 £116.53, #303459 £218.06 (also holds fleet items, see
@@ -36,10 +36,11 @@ Per [Holybro's product page](https://holybro.com/products/x500-v2-kits) (read 20
 the ARF kit ships with these preinstalled: 4× Holybro 2216 motors with XT30 plugs, 4×
 BLHeli_S 20 A ESCs, a power distribution board (XT60 battery input, XT30 outputs to the
 ESCs and peripherals), and 6× 1045 propellers. No flight controller, GPS, receiver,
-telemetry radio or battery. **Motor KV: likely 880, TBC.** Flying Tech, the seller, lists
+telemetry radio or battery. **Motor KV: taken as 880** (owner, 2026-09-17): the motor cases carry no markings, so the seller's listing is accepted as accurate. Flying Tech, the seller, lists
 the X500 V2 ARF Kit (SKU30125) with "Holybro 2216 KV880" motors (owner's screenshot of the
 listing, 2026-09-17); Holybro's own page lists KV920; the order emails give none. Both
-listings were read in 2026-09, not at the 2025-07-24 purchase, so confirm on a motor label.
+listings were read in 2026-09, not at the 2025-07-24 purchase. Holybro's recommended
+battery is the same 4S either way.
 
 Frame per the same Flying Tech listing: 500 mm wheelbase, 16 × 16 mm motor mount pattern,
 144 × 144 mm body plates 2 mm thick with 28 mm between them, 215 mm landing gear, 610 g.
