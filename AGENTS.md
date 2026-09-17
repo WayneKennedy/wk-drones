@@ -42,6 +42,10 @@ for. New aircraft copy that shape; empty folders are not created ahead of conten
 
 - **Never state an open question as settled.** Decisions and open questions are separate
   files at both levels.
+- **Check what is owned before suggesting a purchase.** Read the private
+  [wk-inventory `docs/stock.md`](https://github.com/WayneKennedy/wk-inventory/blob/main/docs/stock.md) and search the owner's invoices, and say what was found. Full rule and
+  the owner's goal (fewer unused parts, more finished projects):
+  [wk-inventory `AGENTS.md`](https://github.com/WayneKennedy/wk-inventory/blob/main/AGENTS.md#before-anything-is-bought).
 - **TBC means TBC.** Do not fill in a value that has not been confirmed against hardware,
   an invoice or a datasheet. **Unknown** is a valid entry in the fleet table.
 - **Config discipline.** Every `config/diff/` file is `YYYY-MM-DD-description.txt` with a

@@ -13,5 +13,5 @@ Pending decisions true of more than one aircraft. Resolved items move to
   (transmitter and goggles were identified from invoices on 2026-09-17). The Swordfish and Phoenix, found on
   invoices, joined the fleet table on 2026-09-17. The other aircraft
   found on invoices are settled: the Moblite7 whoop is written off and the Cockroach frame
-  is an unused spare (`README.md`). Resolves when each aircraft's `README.md` has a status and a
+  is an unused spare ([wk-inventory `docs/stock.md`](https://github.com/WayneKennedy/wk-inventory/blob/main/docs/stock.md)). Resolves when each aircraft's `README.md` has a status and a
   BOM, and `fleet/README.md` has no TBC in the kit table.
