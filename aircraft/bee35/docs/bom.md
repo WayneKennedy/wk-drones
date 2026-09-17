@@ -26,8 +26,8 @@ Order totals inc shipping: Unmanned Tech #18595 £160.62 (free shipping), delive
 
 **Also bought, not fitted:** 4× T-Motor F2004 **1700KV**, Unmanned Tech #18596, 2026-09-07,
 £75.60 (£79.19 with shipping), delivered 2026-09-10 — the mis-order in
-[DEC-03](decisions.md). No return or refund is in the mail; whether they are still in hand
-is unknown.
+[DEC-03](decisions.md). Kept, not returned: in hand and unassigned (owner, 2026-09-17), listed with the
+[fleet spares](../../../fleet/README.md#spares-in-hand).
 
 Decisions behind several of these choices: [`decisions.md`](decisions.md).
 

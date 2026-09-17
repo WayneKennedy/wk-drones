@@ -15,13 +15,14 @@ belongs in that aircraft's folder. Decisions: [`decisions.md`](decisions.md). Op
 | Charger | HOTA D6 Pro dual-channel AC/DC, ordered 2025-08-07 (£83.75). Also 1S whoop chargers: VIFLY WhoopStor 3 (HobbyRC #256755, 2024-03-24) and a VIFLY Whoop charging board (#231460, 2023-06-30) | HobbyRC invoices, read 2026-09-17 |
 | Printed parts | Every printable part comes off the family printer; materials and profiles are in wk-robotics [`docs/common.md`](https://github.com/WayneKennedy/wk-robotics/blob/main/docs/common.md#printing) | wk-robotics |
 
-## Spare flight controllers
+## Spares in hand
 
 In hand and assigned to no aircraft (owner, 2026-09-17):
 
 | Part | State | Source of the fact |
 |---|---|---|
 | Matek F405 Wing V2 | Unused. Ordered 2025-08-07, £39.95. Matek lists 10 PWM outputs and multirotor support, so it could fly a quad | HobbyRC #303459 invoice; [Matek](https://www.mateksys.com/?portfolio=f405-wing-v2) |
+| T-Motor F2004 1700KV ×4 | Unused; the Bee35 mis-order ([DEC-03](../aircraft/bee35/docs/decisions.md)). Ordered 2026-09-07, £75.60. 1700KV is the 6S variant | Owner; Unmanned Tech #18596 invoice |
 | SpeedyBee F405 | Used. Exact model and origin TBC; whether it is related to the 5"'s SpeedyBee F405 V3 stack is unknown. Candidates, inferred only: three SpeedyBee F405 WING boards were bought (HobbyRC #232315, #233536, #242930; 2023-07 to 2023-10, £35.90 each) | Owner; HobbyRC invoices |
 
 ## Bought, not assigned to any aircraft
@@ -33,7 +34,6 @@ On invoices read 2026-09-17; whether still in hand is unknown.
 | Matek M10Q-5883 GPS/compass (a third; two are on the Holybro BOM) | HobbyRC #262164, 2024-05-20 | £31.80 |
 | Walksnail WS-M181 GPS (a second; one is on the 5") | HobbyRC #266365, 2024-07-01 | £16.99 |
 | Radiomaster RP3 V2 ELRS Diversity receiver | HobbyRC #303808, 2025-08-11, with a glider | £22.99 |
-| T-Motor F2004 1700KV ×4 (the Bee35 mis-order) | Unmanned Tech #18596, 2026-09-07 | £75.60 |
 | Walksnail Avatar HD Pro Micro Kit, 32 GB, ×2 (one may be on the 5") | HobbyRC #231336, 2023-06-29; #236190, 2023-08-16 | £159.00 each |
 | Receivers: Matek R24-D ×2, Radiomaster ER6, ER8, ER5A ×2 | HobbyRC #232315, #235115, #268168, #231404 (2023-07 to 2024-07) | not totalled |
 
