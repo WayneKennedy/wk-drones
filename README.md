@@ -15,6 +15,9 @@ restorable onto replacement hardware.
 | **Holybro 10"** | [`aircraft/holybro-10/`](aircraft/holybro-10/README.md) | Holybro X500 V2, 10" props, bought to carry a Raspberry Pi or Jetson wired to its flight controller (Matek H743 Wing V3) | None flashed; ArduPilot implied | **Yes — the fleet's only candidate** | Parts identified from invoices 2026-09-17; build state unknown ([F-OQ-01](fleet/open-questions.md)) |
 | **Swordfish** | [`aircraft/swordfish/`](aircraft/swordfish/README.md) | ATOMRC Swordfish V-tail plane, PNP | Unknown | No | Repaired after two hard crashes; not commissioned (2026-09-17) |
 | **Phoenix** | [`aircraft/phoenix/`](aircraft/phoenix/README.md) | VolantexRC Phoenix 2400 mm glider, PNP; Matek F405 Wing V2 chosen | None | No | Unbuilt (2026-09-17) |
+| **Twin Otter** | [`aircraft/twin-otter/`](aircraft/twin-otter/README.md) | XFLY Twin Otter, 1800 mm — the largest in the fleet | Unknown | No | Owned; state unrecorded (2026-09-17) |
+| **Seagull 40** | [`aircraft/seagull-40/`](aircraft/seagull-40/README.md) | Seagull 40 Low Wing Sport | Unknown | No | Found on an invoice (2023-04-28); still owned unknown |
+| **Avanti S** | [`aircraft/avanti-s/`](aircraft/avanti-s/README.md) | Freewing Avanti S V2 80 mm EDF jet, PNP | Unknown | No | Found on an invoice (2024-06-02); still owned unknown |
 | **5" freestyle** | [`aircraft/fpv-5/`](aircraft/fpv-5/README.md) | Existing 5" freestyle quad, TBS Source One V5 frame; covers the acro use case | Betaflight | No | Flight ready; last flown about a year before 2026-09-15. Partly recorded ([F-OQ-01](fleet/open-questions.md)) |
 
 **Family robot?** means: does it meet the wk-robotics criterion for an aerial robot, an
