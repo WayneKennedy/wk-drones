@@ -30,6 +30,32 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
   Payload, power and mounting budgets for either are not done; Holybro quotes a 1500 g
   maximum payload excluding battery.
 
+- **OQ-05 — A separate control pack for the companion computer** (2026-09-17, owner).
+  Proposed: power the Jetson from its own 21700 pack, completely separate from the flight
+  controller and ESC supply, as the hexapod does (its LOAD and CTRL rails,
+  [wk-hexapod `docs/hardware.md`](https://github.com/WayneKennedy/wk-hexapod/blob/main/docs/hardware.md)).
+  It matches the family power rule — isolate the logic rail
+  ([wk-robotics `common.md`](https://github.com/WayneKennedy/wk-robotics/blob/main/docs/common.md#power-integrity)).
+  Constraints found 2026-09-17, none tested here:
+  - **2S is below the kit's input range.** The Orin Nano developer kit takes **9–20 V** on
+    its 5.5 × 2.5 mm jack (NVIDIA staff,
+    [forum](https://forums.developer.nvidia.com/t/jetson-orin-nano-input-voltage/298625);
+    carrier spec SP-11324-001). A 2S1P Li-ion pack is 6.0–8.4 V, so it needs a boost
+    converter. A **3S1P** (9.0–12.6 V) feeds it directly but sits on the floor of the range
+    at cut-off; a **4S1P** (12.0–16.8 V) sits comfortably inside it.
+  - **Energy is not the constraint.** At the Super profile's 25 W ceiling, a 4S1P P45B pack
+    (~65 Wh) outlasts any flight; pack choice is about mass and simplicity.
+  - **Separate does not mean floating.** The Jetson-to-flight-controller UART needs a common
+    ground reference (OQ-02), so the two packs share a ground at that link, or the link is
+    isolated.
+  - **Still to decide:** cell count and where the pack mounts; low-voltage cut-off and a
+    clean Jetson shutdown before it; fusing; how each pack's voltage is monitored (the
+    flight controller's second battery input, or an I²C monitor on the Jetson); and whether
+    the fleet's charger handles Li-ion.
+  - **Stock:** no spare 21700 cells are recorded; the three 4S1P P45B packs are the fleet's
+    flight packs ([fleet](../../../fleet/README.md)). A new pack means buying cells, unless
+    one of those doubles as the control pack.
+
 - **OQ-04 — Build state and the remaining parts** (2026-09-17). Whether the frame is
   assembled, and the receiver, video system and battery, are unrecorded
   ([`bom.md`](bom.md), [F-OQ-01](../../../fleet/open-questions.md)).
