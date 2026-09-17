@@ -36,8 +36,14 @@ Per [Holybro's product page](https://holybro.com/products/x500-v2-kits) (read 20
 the ARF kit ships with these preinstalled: 4× Holybro 2216 motors with XT30 plugs, 4×
 BLHeli_S 20 A ESCs, a power distribution board (XT60 battery input, XT30 outputs to the
 ESCs and peripherals), and 6× 1045 propellers. No flight controller, GPS, receiver,
-telemetry radio or battery. **Motor KV is TBC:** Holybro lists KV920, Flying Tech's
-listing for the ARTF option lists KV880, and the order emails give none; read it off the motors.
+telemetry radio or battery. **Motor KV: likely 880, TBC.** Flying Tech, the seller, lists
+the X500 V2 ARF Kit (SKU30125) with "Holybro 2216 KV880" motors (owner's screenshot of the
+listing, 2026-09-17); Holybro's own page lists KV920; the order emails give none. Both
+listings were read in 2026-09, not at the 2025-07-24 purchase, so confirm on a motor label.
+
+Frame per the same Flying Tech listing: 500 mm wheelbase, 16 × 16 mm motor mount pattern,
+144 × 144 mm body plates 2 mm thick with 28 mm between them, 215 mm landing gear, 610 g.
+Not measured here.
 
 One ESC per motor, each powered from the distribution board, so the flight controller
 supplies four signal lines only. The H743 Wing V3's own ESC power pads are not needed.
