@@ -20,6 +20,12 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   off-board topology (a ground machine commanding the flight controller over radio); that
   would be a new decision here, not an edit to this one.
 
+- **F-DEC-04 — The fleet is all-electric** (2026-09-17, owner). No internal-combustion
+  aircraft. The Seagull 40 was glow-powered and was the owner's "last gasp" before
+  converting to all-electric; it is written off (wk-inventory stock), and the fuelproofer
+  and fuel tubing bought from Wheelspin in 2023 were for it. Every aircraft since is
+  electric.
+
 - **F-DEC-03 — Consolidate battery types; share packs across aircraft** (2026-09-17,
   owner). Packs are costly and inconvenient to store and charge, so the fleet keeps as few
   variants as it can and flies them across several aircraft rather than buying a format per
