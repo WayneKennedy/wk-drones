@@ -23,9 +23,10 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
   specifies. Pi and Jetson Orin Nano header UARTs are 3.3 V logic. Open: which H743
   serial port, baud rate, and UART or USB.
 
-- **OQ-03 — Raspberry Pi or Jetson Orin Nano?** (2026-09-17, owner). Undecided. The
-  Jetson purchase is itself open in wk-robotics
-  [`docs/status.md`](https://github.com/WayneKennedy/wk-robotics/blob/main/docs/status.md#ai-compute-purchase--ai-hat-2-jetson-or-dgx-spark).
+- **OQ-03 — Raspberry Pi or Jetson Orin Nano?** (2026-09-17, owner). **Leaning Jetson,
+  not decided:** the owner thinks this airframe is "probably the highest value use" of the
+  Jetson Orin Nano Super Developer Kit ordered 2026-09-17 (wk-robotics
+  [`docs/status.md`](https://github.com/WayneKennedy/wk-robotics/blob/main/docs/status.md#ai-compute-purchase--ai-hat-2-jetson-or-dgx-spark)).
   Payload, power and mounting budgets for either are not done; Holybro quotes a 1500 g
   maximum payload excluding battery.
 
