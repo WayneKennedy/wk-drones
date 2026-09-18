@@ -23,7 +23,7 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
   specifies. Pi and Jetson Orin Nano header UARTs are 3.3 V logic. Open: which H743
   serial port, baud rate, and UART or USB.
 
-- **OQ-03 — Raspberry Pi or Jetson Orin Nano?** (2026-09-17, owner). **Leaning Jetson,
+- **OQ-03 — Raspberry Pi or Jetson Orin Nano?** (2026-09-17, owner; 2026-09-18: the Orin is banked as a pair with the D435i and whether the pair comes here is open, see OQ-09). **Leaning Jetson,
   not decided:** the owner thinks this airframe is "probably the highest value use" of the
   Jetson Orin Nano Super Developer Kit ordered 2026-09-17 (wk-robotics
   [`docs/status.md`](https://github.com/WayneKennedy/wk-robotics/blob/main/docs/status.md#ai-compute-purchase--ai-hat-2-jetson-or-dgx-spark)).
@@ -117,7 +117,12 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
 - **OQ-09 — Which vision camera for the Jetson, and from where?** (2026-09-17, owner).
   The companion computer ([OQ-03](#)) needs a camera for AI vision, separate from the FPV
   camera ([OQ-08](#)). The owner asked whether to repurpose the hexapod's RealSense and
-  whether a camera of that age earns its weight. Findings, 2026-09-17:
+  whether a camera of that age earns its weight. **Update 2026-09-18:** the D435i has left
+  the hexapod (its DEC-25) and is banked with the Orin Nano as a pair, so the "Not the
+  hexapod's" and "no depth camera is free" findings below no longer hold. Whether the pair
+  comes to this aircraft is open, and the owner is not sold: an unflown airframe puts both
+  at crash risk ([wk-robotics `status.md`](https://github.com/WayneKennedy/wk-robotics/blob/main/docs/status.md)).
+  Findings, 2026-09-17:
   - **The airframe was already planned for one.** A **Holybro Depth Camera Mount for Intel
     RealSense** was bought with the frame on 2025-07-24 ([`bom.md`](bom.md), £12.90). The
     intent predates this conversation.
