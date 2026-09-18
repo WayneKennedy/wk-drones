@@ -122,7 +122,11 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
   hexapod's" and "no depth camera is free" findings below no longer hold. Whether the pair
   comes to this aircraft is open, and the owner is not sold: an unflown airframe puts both
   at crash risk ([wk-robotics `status.md`](https://github.com/WayneKennedy/wk-robotics/blob/main/docs/status.md)).
-  Findings, 2026-09-17:
+  **Second objection, utilisation (owner, 2026-09-18):** the aircraft is too large for the
+  owner to be comfortable flying in the garden or on the local beach, so it flies only at
+  a flying field or on private land with permission. Anything mounted on it is idle
+  between those trips. The owner also judges it probably the easiest of the aircraft to
+  get flight-ready. Findings, 2026-09-17:
   - **The airframe was already planned for one.** A **Holybro Depth Camera Mount for Intel
     RealSense** was bought with the frame on 2025-07-24 ([`bom.md`](bom.md), £12.90). The
     intent predates this conversation.
