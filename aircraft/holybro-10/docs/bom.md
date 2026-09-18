@@ -21,7 +21,7 @@ the row says otherwise; the reasoning is in [`decisions.md`](decisions.md) and
 | CAN adapters | 2× Matek AP_Periph CAN Node L431 | £16.00 each. [OQ-01](open-questions.md) | 3DXR #32918 | £32.00 | 2025-09-01 |
 | Companion computer | TBC | Raspberry Pi or Jetson Orin Nano; [OQ-03](open-questions.md) | TBC | TBC | TBC |
 | RX | TBC | No receiver found on a 2025 Holybro-period order. A Radiomaster RP3 V2 ELRS Diversity (HobbyRC #303808, 2025-08-11, £22.99) was bought with the Phoenix glider and is likely its receiver | TBC | TBC | TBC |
-| Video | TBC | None found in the mail, June–October 2025 | TBC | TBC | TBC |
+| Video | TBC — a Walksnail Avatar HD Pro Micro Kit is intended ([OQ-08](open-questions.md)) | None found in the mail, June–October 2025, and **neither of the two kits bought in 2023 is free** — both are fitted to other aircraft | TBC | TBC | TBC |
 | Battery | TBC | Holybro recommends "4S 3000-5000mAh 20C+ with XT60 Lipo" and quotes ~18 min hover with no payload on 5000 mAh ([product page](https://holybro.com/products/x500-v2-kits), read 2026-09-17). Candidates already owned, none tested on this airframe: 2 × GNB 5500 mAh 4S 70C (XT90, HobbyRC 2023-07; aircraft unrecorded) and the fleet's 4S1P P45B Li-ion packs ([fleet](../../../fleet/README.md)) | TBC | TBC | TBC |
 
 Order totals inc VAT and shipping: Flying Tech #83693 £273.60; HobbyRC #301738 £34.30,
@@ -44,7 +44,10 @@ battery is the same 4S either way.
 
 Frame per the same Flying Tech listing: 500 mm wheelbase, 16 × 16 mm motor mount pattern,
 144 × 144 mm body plates 2 mm thick with 28 mm between them, 215 mm landing gear, 610 g.
-Not measured here.
+Not measured here. Plate dimensions and the full hole map, taken from Holybro's own STEP
+file rather than the listing, are in [`../print/sources.md`](../print/sources.md): the
+plates are 143.72 mm square, the 28 mm gap is confirmed, and the flight-controller
+patterns are on the lower plate, not the upper one.
 
 One ESC per motor, each powered from the distribution board, so the flight controller
 supplies four signal lines only. The H743 Wing V3's own ESC power pads are not needed.

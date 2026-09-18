@@ -11,7 +11,9 @@ lists as a project.
 **Parts identified from invoices 2026-09-17; build state unknown.** Frame kit bought
 2025-07-24; flight controller is a Matek H743 Wing V3, in hand and unused
 ([DEC-01](docs/decisions.md)). Parts as ordered are in [`docs/bom.md`](docs/bom.md).
-Nothing is flashed; the family rule implies ArduPilot. Open: the two-GPS plan, the
+A deck to carry the flight controller on the frame's upper plate is designed and ready to
+print ([DEC-02](docs/decisions.md)), dimensioned from Holybro's and Matek's own CAD; it has
+not been printed. Nothing is flashed; the family rule implies ArduPilot. Open: the two-GPS plan, the
 companion link wiring, Pi or Jetson, and everything about build state, receiver, video
 and battery ([`docs/open-questions.md`](docs/open-questions.md)). Nothing has been
 checked against the hardware.
@@ -32,3 +34,5 @@ content for them, not before.
 - [`docs/bom.md`](docs/bom.md) — bill of materials, suppliers, prices, order dates
 - [`docs/decisions.md`](docs/decisions.md) — decisions (`DEC-nn`)
 - [`docs/open-questions.md`](docs/open-questions.md) — pending decisions (`OQ-nn`)
+- [`print/sources.md`](print/sources.md) — vendor CAD for the frame and the flight
+  controller, and the plate and board dimensions measured from it
