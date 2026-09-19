@@ -38,7 +38,7 @@ Constraints for the flow sensor mount:
 ## Camera tilt inserts
 
 Low-tilt inserts (0/5/10°) to try before any servo tilt axis. See
-[`../docs/setup-inav.md`](../docs/setup-inav.md). Source TBC.
+[`../docs/setup-ardupilot.md`](../docs/setup-ardupilot.md). Source TBC.
 
 ## Materials
 

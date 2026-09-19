@@ -6,8 +6,8 @@ Pending decisions for the 5". Decisions, once taken, go in `decisions.md` as a D
 - **OQ-01 — Switch from Betaflight to iNav?** (2026-09-15, owner). The owner is open to
   it. On Betaflight the aircraft is very fast and position hold is poor ("a feather in a
   storm"); the owner puts much of that down to pilot skill and plans more simulator
-  time. A switch would also make true the firmware commonality that Bee35 DEC-01 assumed
-  ([its correction](../../bee35/docs/decisions.md)).
+  time. The firmware-commonality argument Bee35 DEC-01 made no longer applies: the Bee35 runs
+  ArduPilot ([Bee35 DEC-08](../../bee35/docs/decisions.md), 2026-09-19).
   - **Firmware support:** iNav has a `SPEEDYBEEF405V3` target, in the iNav repo since
     2022-09 (checked 2026-09-15; latest release 9.1.0). Not flashed or tested on this
     board.

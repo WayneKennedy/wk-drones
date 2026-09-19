@@ -3,8 +3,8 @@
 The existing 5" freestyle quad, on a TBS Source One V5 frame, running Betaflight. It covers
 the acro use case, which is why the Bee35 deliberately does not
 ([Bee35 README](../bee35/README.md)). Bee35 DEC-01 chose iNav partly for commonality with
-this aircraft in the belief that it ran iNav; see the correction there
-([Bee35 DEC-01](../bee35/docs/decisions.md)).
+this aircraft in the belief that it ran iNav; that premise was false, and the Bee35 now runs
+ArduPilot ([Bee35 DEC-08](../bee35/docs/decisions.md)).
 
 Not a wk-robotics robot: a human on the sticks ([F-DEC-01](../../fleet/decisions.md)).
 

@@ -4,7 +4,7 @@ Architecture decision records. Unresolved items live in
 [`open-questions.md`](open-questions.md). Each captures the decision, the alternatives and the
 reasoning, not just the outcome. Format: `DEC-nn — decision (date)`.
 
-- **DEC-01 — iNav over ArduPilot** (2026-09-11). ArduPilot's EKF3 Loiter is the
+- **DEC-01 — iNav over ArduPilot** (2026-09-11). **Superseded by DEC-08 (2026-09-19).** ArduPilot's EKF3 Loiter is the
   stronger position hold and was the original plan. Chose iNav for firmware
   commonality with the existing 5" quad, a familiar configurator, and an easier
   tune. Hardware is identical either way, so ArduPilot remains a reflash away if
@@ -36,7 +36,8 @@ reasoning, not just the outcome. Format: `DEC-nn — decision (date)`.
   smaller patch antenna.
 
 - **DEC-06 — iNav first; ArduPilot and the mission-planning tier are a later
-  evolution** (2026-09-11, owner). The project's initial goal is a DIY build that
+  evolution** (2026-09-11, owner). **The firmware half is superseded by DEC-08
+  (2026-09-19): ArduPilot from the start.** The goal below stands. The project's initial goal is a DIY build that
   gets close to the DJI Neo experience: reliable hands-off loiter and docile flight.
   Build on iNav to reach that, keeping DEC-01's commonality with the 5" quad (a premise
   since found false; see the DEC-01 correction). Only
@@ -52,7 +53,31 @@ reasoning, not just the outcome. Format: `DEC-nn — decision (date)`.
   and the wk-robotics criterion for an aerial robot (`docs/common.md`, *Aircraft and the
   tiers*) is that an intent tier commands the flight controller, which nothing here does
   or will. The fleet's aerial-robot candidate is the Holybro 10" (`../../holybro-10/`),
-  bought to carry a Pi or Jetson wired to its flight controller. DEC-06 stands as written:
-  the ArduPilot reflash remains available, and the off-board intent topology in the same
+  bought to carry a Pi or Jetson wired to its flight controller. DEC-06's goal stands
+  (its firmware half is superseded by DEC-08, so no reflash is needed), and the off-board intent topology in the same
   `common.md` section means this airframe could still become a fleet node without any
   onboard change. It is not planned. OQ-02 applies only if this is revisited.
+
+- **DEC-08 — ArduPilot Copter from the first flash** (2026-09-19, owner). Supersedes
+  DEC-01 and the firmware half of DEC-06. The goal is unchanged from DEC-06/DEC-07: fly
+  FPV on the radio, no freestyle, and **confidence that the aircraft holds position when
+  the sticks are centred** (owner). Reasons:
+  - Position hold is the priority, and DEC-01 itself rated ArduPilot's EKF3 Loiter the
+    stronger hold. EKF3 fuses GPS, compass, optical flow and rangefinder as standard.
+    iNav's flow-aided hold needs SURFACE + POSHOLD + ALTHOLD combined and has open
+    user reports of trouble
+    ([#8530](https://github.com/iNavFlight/inav/discussions/8530),
+    [#9889](https://github.com/iNavFlight/inav/issues/9889)).
+  - DEC-01's commonality reason was false (its 2026-09-15 correction).
+  - The board ships with ArduPilot and has a maintained hwdef (`MicoAir743v2`); Copter
+    stable for it is 4.7.1 (firmware.ardupilot.org, checked 2026-09-19). MicoAir
+    publishes the MTF-01 ArduPilot setup.
+  - ArduPilot has multirotor AutoTune; iNav documents autotune for fixed-wing (no
+    multirotor equivalent found, search not exhaustive).
+
+  Against it: more parameters, and a less FPV-oriented feel in acro, which is not a goal
+  here. **A ground station is a setup tool, not a flight requirement.** It is used on the
+  bench (or over the FC's Bluetooth) to configure; in the field the aircraft flies from
+  the radio and goggles alone, and the GCS failsafe is off by default. Mission Planner
+  in flight remains the later, optional step (OQ-02, dormant per DEC-07). Nothing here
+  is measured on this airframe yet. Setup: [`setup-ardupilot.md`](setup-ardupilot.md).

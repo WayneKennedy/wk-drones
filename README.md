@@ -11,7 +11,7 @@ restorable onto replacement hardware.
 
 | Aircraft | Folder | What it is | Firmware | Family robot? | State |
 |---|---|---|---|---|---|
-| **Bee35** | [`aircraft/bee35/`](aircraft/bee35/README.md) | 3.5" ducted cinewhoop, SpeedyBee Bee35 Pro frame, built for a DJI-like hands-off FPV experience | iNav | No — [DEC-07](aircraft/bee35/docs/decisions.md) | Motors mounted on frame (2026-09-15); next: soldering. Not flashed or flown |
+| **Bee35** | [`aircraft/bee35/`](aircraft/bee35/README.md) | 3.5" ducted cinewhoop, SpeedyBee Bee35 Pro frame, built for a DJI-like hands-off FPV experience | ArduPilot ([DEC-08](aircraft/bee35/docs/decisions.md)) | No — [DEC-07](aircraft/bee35/docs/decisions.md) | Motors mounted on frame (2026-09-15); next: soldering. Not flashed or flown |
 | **Holybro 10"** | [`aircraft/holybro-10/`](aircraft/holybro-10/README.md) | Holybro X500 V2, 10" props, bought to carry a Raspberry Pi or Jetson wired to its flight controller (Matek H743 Wing V3) | None flashed; ArduPilot implied | **Yes — the fleet's only candidate** | Parts identified from invoices 2026-09-17; build state unknown ([F-OQ-01](fleet/open-questions.md)) |
 | **Swordfish** | [`aircraft/swordfish/`](aircraft/swordfish/README.md) | ATOMRC Swordfish V-tail plane, PNP | Unknown | No | Repaired after two hard crashes; not commissioned (2026-09-17) |
 | **Phoenix** | [`aircraft/phoenix/`](aircraft/phoenix/README.md) | VolantexRC Phoenix 2400 mm glider, PNP; Matek F405 Wing V2 chosen | None | No | Unbuilt (2026-09-17) |

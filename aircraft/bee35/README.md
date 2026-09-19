@@ -1,7 +1,7 @@
 # Bee35 — 3.5" ducted cinewhoop
 
 Build, configuration and maintenance record for a 3.5" ducted cinewhoop on the
-SpeedyBee Bee35 Pro frame, running iNav, built for stability and endurance rather
+SpeedyBee Bee35 Pro frame, running ArduPilot ([DEC-08](docs/decisions.md)), built for stability and endurance rather
 than speed.
 
 This is a living engineering record, not a one-off build log. Config files are the
@@ -20,7 +20,7 @@ Role: an FPV aircraft in the wk-drones fleet, **not** a robot in the
 [wk-robotics](https://github.com/WayneKennedy/wk-robotics) family. The frame has no
 room for an intent-tier computer, and the family criterion (wk-robotics `docs/common.md`,
 *Aircraft and the tiers*) puts it outside. The Holybro 10" in `../holybro-10/` is the
-aerial-robot candidate. See [DEC-07](docs/decisions.md); the ArduPilot reflash path in
+aerial-robot candidate. See [DEC-07](docs/decisions.md); the fleet-node step in
 [DEC-06](docs/decisions.md) stays open but is not planned.
 
 ## Design intent
@@ -60,11 +60,11 @@ cost of a machine that is safe to fly near people and survives contact.
 
 - [`docs/bom.md`](docs/bom.md) — bill of materials, suppliers, order dates
 - [`docs/wiring.md`](docs/wiring.md) — port map, solder notes, jumper settings
-- [`docs/setup-inav.md`](docs/setup-inav.md) — first flash through maiden checklist
+- [`docs/setup-ardupilot.md`](docs/setup-ardupilot.md) — first flash through maiden checklist
 - [`docs/decisions.md`](docs/decisions.md) — architecture decision records
 - [`docs/open-questions.md`](docs/open-questions.md) — pending decisions
 - [`docs/tuning.md`](docs/tuning.md) — PID and filter changes, with rationale
-- [`config/`](config/README.md) — iNav `diff all` and `dump all` snapshots, and how to restore
+- [`config/`](config/README.md) — ArduPilot parameter snapshots, and how to restore
 - [`print/sources.md`](print/sources.md) — upstream URLs and licences for every STL
 - [`maintenance.md`](maintenance.md) — crashes, repairs, parts replaced
 

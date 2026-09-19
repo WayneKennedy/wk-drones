@@ -5,8 +5,9 @@ Format: `OQ-nn — question (date raised)`.
 
 - **OQ-01 — Aerial robot: how the fleet mission planner reaches it, and what that
   means for firmware** (2026-09-11). **Resolved 2026-09-11 by
-  [DEC-06](decisions.md): iNav first, ArduPilot as a later evolution.** The
-  analysis is kept below for when that step is taken.
+  [DEC-06](decisions.md): iNav first, ArduPilot as a later evolution.** DEC-06's firmware
+  half is superseded by [DEC-08](decisions.md) (2026-09-19): ArduPilot from the start. The
+  analysis is kept below for the fleet-node step.
 
   Original question: The aircraft is to be treated as an aerial robot
   in the wk-robotics family, reachable from the mission planner. In that family
@@ -33,7 +34,7 @@ Format: `OQ-nn — question (date raised)`.
 - **OQ-02 — Radio link for the mission-planning step: ELRS MAVLink mode or a third
   radio** (2026-09-11). Dormant since [DEC-07](decisions.md): the fleet-node step is not
   planned for this airframe. Kept because the analysis applies to any aircraft in the
-  fleet taking the off-board intent topology. When DEC-06's ArduPilot step is taken, Mission Planner and the
+  fleet taking the off-board intent topology. If the fleet-node step is taken, Mission Planner and the
   ground-side ROS 2 bridge need a two-way MAVLink link. The aircraft carries two
   radios already: ELRS 2.4 GHz for RC and Walksnail Avatar for video. Walksnail is
   video only as far as known; not verified. Options:
@@ -54,5 +55,5 @@ Format: `OQ-nn — question (date raised)`.
 
   In every option the hive-mind tier reaches the aircraft through the ground host
   (MAVLink to a ROS 2 bridge there), not over an air link of its own, which keeps the
-  aircraft flying when that tier is unreachable. Nothing to buy until DEC-06's step
+  aircraft flying when that tier is unreachable. Nothing to buy until that step
   is due. Sources: <https://www.expresslrs.org/software/mavlink/>.
