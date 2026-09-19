@@ -219,7 +219,10 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
   - **Without the D435i (2026-09-19, the pair may not come here):** ArduPilot's avoidance
     takes distances from any proximity source, not only a depth camera, so the options
     by weight and cost (UK prices unverified): (1) **1-D lidar rangefinders**, one per
-    direction — Benewake TFmini-S (~5 g, 12 m, ~£40) or TF-Luna (~£25); forward plus
+    direction — Benewake TFmini-S (~5 g, 12 m, ~£40) or TF-Luna (~£25). **One TFmini
+    Plus (I²C) is already owned** ([`bom.md`](bom.md)), but the owner bought it for this
+    aircraft as a *downward* rangefinder for landing height (confirmed 2026-09-19), so
+    obstacle sensing needs further units, not that one. Forward plus
     two sides gives stop-before-wall in the directions the aircraft flies, no companion
     needed (`RNGFND` + `PRX_TYPE` for rangefinders). Trees register only as their trunk
     at close range. (2) **A scanning lidar** — LightWare SF45/B (~59 g, 50 m, 320°,

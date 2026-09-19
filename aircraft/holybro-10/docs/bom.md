@@ -16,7 +16,7 @@ the row says otherwise; the reasoning is in [`decisions.md`](decisions.md) and
 | Flow/lidar | Matek Optical Flow & Lidar Sensor | Exact model not on the invoice; same order as the flight controller | HobbyRC #302285 | £23.26 | 2025-07-27 |
 | GPS/compass 1 | Matek M10Q-5883 | [OQ-01](open-questions.md) | HobbyRC #301738 | £31.80 | 2025-07-22 |
 | GPS/compass 2 | Matek M10Q-5883 | [OQ-01](open-questions.md). Ordered with the F405 Wing V2 now assigned to the [Phoenix](../../phoenix/docs/decisions.md) | HobbyRC #303459 | £31.80 | 2025-08-07 |
-| Rangefinder | Benewake TFmini Plus lidar, I²C version, 12 m | Assignment to this aircraft not confirmed by the owner | 3DXR #32525 | £50.00 | 2025-08-15 |
+| Rangefinder | Benewake TFmini Plus lidar, I²C version, 12 m, IP65 | **Confirmed by the owner 2026-09-19: bought for this aircraft, downward-facing, for accurate height on landing** (ArduPilot `RNGFND1_TYPE` 25, TFminiPlus-I2C; `RNGFND1_ORIENT` 25 down). Not an obstacle sensor in that role — see OQ-09 | 3DXR #32525 | £50.00 | 2025-08-15 |
 | GPS mast | Holybro 29 mm fixed carbon GPS stand, 100 mm tube | | 3DXR #32525 | £11.50 | 2025-08-15 |
 | CAN adapters | 2× Matek AP_Periph CAN Node L431 | £16.00 each. [OQ-01](open-questions.md) | 3DXR #32918 | £32.00 | 2025-09-01 |
 | Companion computer | TBC | Raspberry Pi or Jetson Orin Nano; [OQ-03](open-questions.md) | TBC | TBC | TBC |
