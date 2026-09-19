@@ -21,7 +21,7 @@ Lens damping inserts are on the separate speedybee.com Bee35 frame download page
 ### GPS mount for the Matek M10Q-5883 (2026-09-19)
 
 The GM10 is mislaid ([`../docs/bom.md`](../docs/bom.md)); the spare M10Q-5883 does not fit
-the frame's supplied TPU mount (owner). The M10Q-5883 PCB is 20 × 20 mm (owner, and Matek:
+the frame's supplied TPU mount, which is ~12 × 16 (owner). The M10Q-5883 PCB is 20 × 20 mm (owner, and Matek:
 20 × 20 × 12.4 mm, 8 g, JST-GH 6-pin; STEP in `M10Q-5883_step.zip` on Matek's product page).
 
 SpeedyBee's page says nothing about which module each file is for. SpeedyBee sells the
@@ -30,7 +30,8 @@ STLs by slicing (2026-09-19, not printed; the reading of the geometry is inferre
 
 | File | Overall (mm) | Board pocket (mm) |
 |---|---|---|
-| `181.stl` | 22.0 × 26.3 × 21.7 | 18.0 wide: the GM10's 18 × 18 |
+| `121.stl` | 16.0 × 20.0 × 16.7 | ~13 wide. The frame's supplied mount is ~12 × 16 (owner, 2026-09-19), so probably this one |
+| `181.stl` | 22.0 × 26.3 × 21.7 | 18.0 wide: fits an 18 × 18 module — the GM10 Mini V3 (18 × 18 × 4.8 mm, [Flywoo](https://flywoo.net/products/goku-gm10-mini-v3-gps-w-compass)) or the BN-180 stand-in. **The GM10 never fitted the supplied ~12 × 16 mount either**; the Bee35 needs a printed GPS mount whichever unit flies |
 | `220.stl` | 24.4 × 26.4 × 16.0 | 20.4 × 22.4, ~4–5 deep, open on one face, closed by a solid plate on the other |
 | `251.stl` | 28.4 × 30.5 × 24.6 | ~25 wide |
 | `880.stl` | 32.5 × 32.5 × 20.0 | 28.5 × 28.5 |
