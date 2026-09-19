@@ -44,7 +44,10 @@ MicoAir's diagram: **12V, GND, TX2, RX2, GND, RX6.**
   does not mate with the FC's GPS plug, and the FC's supplied GPS lead mates but carries
   only 4 wires, no SCL/SDA (owner). Wire by the silkscreen labels at both ends, not by
   colour or position: GPS TX → RX3, GPS RX → TX3, 5V, GND; SDA → SDA1, SCL → SCL1 (not
-  crossed). SCL/SDA can go to the separate I2C1 plug instead of the GPS plug.
+  crossed). Plan: the FC box's leads all mate with every FC socket (4- and 6-way are one
+  style; owner), so a lead in the GPS socket carries TX/RX/5V/GND and a 4-way lead in the
+  I2C1 socket carries SDA/SCL only, its 5V and GND cut back and insulated. Both spliced
+  to the M10Q's lead, which keeps its GPS-end connector.
 
 TBC. Record pad locations, wire gauges, and anything non-obvious about the physical
 build here as it is done.
