@@ -222,7 +222,12 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
     direction — Benewake TFmini-S (~5 g, 12 m, ~£40) or TF-Luna (~£25). **One TFmini
     Plus (I²C) is already owned** ([`bom.md`](bom.md)), but the owner bought it for this
     aircraft as a *downward* rangefinder for landing height (confirmed 2026-09-19), so
-    obstacle sensing needs further units, not that one. Forward plus
+    obstacle sensing needs further units, not that one. **Recommendation, not
+    accepted (2026-09-19): one more TFmini Plus, the UART variant, facing forward** —
+    same sensor, no I²C address change (all I²C units ship at one address), a spare
+    serial port on the H743 (`RNGFND2_TYPE` 20), and `PRX1_TYPE` 4 so ArduPilot's
+    avoidance reads the rangefinders as proximity. Beam ~3.6°, so a wall or trunk on the
+    flight line registers and branches do not; range shortens in bright sun. Forward plus
     two sides gives stop-before-wall in the directions the aircraft flies, no companion
     needed (`RNGFND` + `PRX_TYPE` for rangefinders). Trees register only as their trunk
     at close range. (2) **A scanning lidar** — LightWare SF45/B (~59 g, 50 m, 320°,
