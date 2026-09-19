@@ -216,6 +216,20 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
     **D455 £543.30**. **The D455 will not fit the mount already owned** — the Holybro
     depth-camera mount in [`bom.md`](bom.md) is sized for the 90 × 25 × 25 mm D435 body and
     the D455 is 124 mm long. A printed mount would be needed.
+  - **Without the D435i (2026-09-19, the pair may not come here):** ArduPilot's avoidance
+    takes distances from any proximity source, not only a depth camera, so the options
+    by weight and cost (UK prices unverified): (1) **1-D lidar rangefinders**, one per
+    direction — Benewake TFmini-S (~5 g, 12 m, ~£40) or TF-Luna (~£25); forward plus
+    two sides gives stop-before-wall in the directions the aircraft flies, no companion
+    needed (`RNGFND` + `PRX_TYPE` for rangefinders). Trees register only as their trunk
+    at close range. (2) **A scanning lidar** — LightWare SF45/B (~59 g, 50 m, 320°,
+    ~£350–400, ArduPilot-native) is the aircraft-grade answer; the cheap 360° lidars
+    (LD19, RPLidar A1, ~50–170 g, 12 m) are indoor parts and degrade in sunlight,
+    untested here. (3) **Stereo depth camera** — the OAK-D below, or the D435i if the
+    pair does come. (4) **Monocular depth** on the companion from a global-shutter
+    camera: relative depth only, research-grade for avoidance, not recommended as the
+    sole sensor. The right first step for slow flight is (1): cheap, light, no software
+    beyond parameters, and it does not pre-empt a camera later.
   - **The value alternative is a Luxonis OAK-D S2**, $329 at
     [Luxonis](https://shop.luxonis.com/products/oak-d-s2), UK through Amazon and RoboSavvy
     — roughly half a D435i. Its stereo pair is global shutter and it runs neural inference
