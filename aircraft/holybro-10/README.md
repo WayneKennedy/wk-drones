@@ -8,7 +8,7 @@ lists as a project.
 
 ## Status
 
-**Parts identified from invoices 2026-09-17; build state mostly unknown.** One Matek M10Q-5883 GPS/compass is fitted (owner, 2026-09-19). Frame kit bought
+**Parts identified from invoices 2026-09-17; build state mostly unknown.** One Matek M10Q-5883 GPS/compass is fitted and the TFmini Plus rangefinder is in hand (owner, 2026-09-19). Frame kit bought
 2025-07-24; flight controller is a Matek H743 Wing V3, in hand and unused
 ([DEC-01](docs/decisions.md)). Parts as ordered are in [`docs/bom.md`](docs/bom.md).
 A deck to carry the flight controller on the frame's upper plate is designed and ready to
