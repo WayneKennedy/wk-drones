@@ -17,7 +17,7 @@ the same wiring would serve either firmware.
 |---|---|---|---|---|
 | RadioMaster RP3 V2 | CRSF | UART6 (SBUS/CRSF plug: GND 5V TX6 RX6) | SERIAL6, RCIN (default) | CRSF needs both TX6 and RX6 |
 | Flywoo GM10 Mini V3 (GPS) | UBX | UART3 (GPS plug: GND 5V TX3 RX3 SCL SDA) | SERIAL3, GPS (default) | |
-| Flywoo GM10 Mini V3 (compass) | I2C | I2C1, same GPS plug | Probed as external | QMC5883L. The FC's own QMC5883L is on I2C2 and is disabled, see [`setup-ardupilot.md`](setup-ardupilot.md) |
+| Flywoo GM10 Mini V3 (compass) | I2C | I2C1, same GPS plug | Probed as external | QMC5883L. The FC's own QMC5883L is on I2C2 and is disabled, see [`setup-ardupilot.md`](setup-ardupilot.md). I2C1 is also on its own 4-pin plug on the board's underside (SDA1, SCL1, 5V, GND; MicoAir diagram) |
 | MicoAir MTF-01P | MAVLink ("mav-apm") | UART4 (UART4 plug: GND 5V TX4 RX4) | SERIAL4, set to MAVLink1 | Default there is MAVLink2; parameters in the setup doc. UART1 is kept free, below |
 | Walksnail Avatar VTX | MSP DisplayPort | UART2 (HD VTX plug) | SERIAL2, DisplayPort (default) | See the VTX plug notes below |
 | ESC telemetry | ESC serial | UART7, RX only (RX7 pin on the ESC plug) | SERIAL7, ESC telemetry (default) | Part of the stack harness |
@@ -39,6 +39,12 @@ MicoAir's diagram: **12V, GND, TX2, RX2, GND, RX6.**
   Camera V3 is powered through the VTX.
 
 ## Solder notes
+
+- **Interim M10Q-5883 harness (2026-09-19, not yet made):** the M10Q's own 6-wire lead
+  does not mate with the FC's GPS plug, and the FC's supplied GPS lead mates but carries
+  only 4 wires, no SCL/SDA (owner). Wire by the silkscreen labels at both ends, not by
+  colour or position: GPS TX → RX3, GPS RX → TX3, 5V, GND; SDA → SDA1, SCL → SCL1 (not
+  crossed). SCL/SDA can go to the separate I2C1 plug instead of the GPS plug.
 
 TBC. Record pad locations, wire gauges, and anything non-obvious about the physical
 build here as it is done.
