@@ -42,14 +42,12 @@ MicoAir's diagram: **12V, GND, TX2, RX2, GND, RX6.**
 
 ## Solder notes
 
-- **Interim M10Q-5883 harness (2026-09-19, not yet made):** the M10Q's own 6-wire lead
-  does not mate with the FC's GPS plug, and the FC's supplied GPS lead mates but carries
-  only 4 wires, no SCL/SDA (owner). Wire by the silkscreen labels at both ends, not by
-  colour or position: GPS TX → RX3, GPS RX → TX3, 5V, GND; SDA → SDA1, SCL → SCL1 (not
-  crossed). Plan: the FC box's leads all mate with every FC socket (4- and 6-way are one
-  style; owner), so a lead in the GPS socket carries TX/RX/5V/GND and a 4-way lead in the
-  I2C1 socket carries SDA/SCL only, its 5V and GND cut back and insulated. Both spliced
-  to the M10Q's lead, which keeps its GPS-end connector.
+- **Interim M10Q-5883 harness (made 2026-09-22, not yet powered):** the M10Q's own
+  6-wire lead does not mate with the FC's GPS plug, so a 6-wire lead that mates with the
+  FC's GPS socket is spliced 6-to-6 to the M10Q's lead, which keeps its GPS-end
+  connector (owner). All six signals go through the GPS socket; the I2C1 plug is unused.
+  Wired by the silkscreen labels at both ends, not by colour or position: GPS TX → RX3,
+  GPS RX → TX3, 5V, GND; SDA → SDA, SCL → SCL (I2C is a shared bus, not crossed).
 
 TBC. Record pad locations, wire gauges, and anything non-obvious about the physical
 build here as it is done.
