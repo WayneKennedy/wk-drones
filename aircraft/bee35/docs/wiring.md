@@ -29,8 +29,10 @@ the same wiring would serve either firmware.
 
 MicoAir's diagram: **12V, GND, TX2, RX2, GND, RX6.**
 
-- **Leave pin 6 (RX6) unconnected.** It is the same UART6 input the CRSF receiver
-  uses; a DJI-style harness with the SBUS wire fitted would fight the receiver.
+- **The Walksnail lead is 4-pin** in the same order as the first four DJI wires, so it
+  plugs into socket pins 1–4 and pins 5–6 stay open (owner, 2026-09-22). That leaves
+  pin 6 (RX6) unconnected, as it must be: it is the same UART6 input the CRSF receiver
+  uses, and a DJI-style harness with the SBUS wire fitted would fight the receiver.
 - **Pin 1 voltage is unconfirmed:** MicoAir's diagram says 12 V (the board's 12 V 3 A
   BEC); ArduPilot's README says 9 V. Either is inside the **Mini VTX V3's 3.1–13 V
   input** ([Caddx](https://www.caddxfpv.com/products/walksnail-avatar-hd-mini-vtx-v3),
