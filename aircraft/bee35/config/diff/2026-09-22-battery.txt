@@ -1,0 +1,18 @@
+# ArduCopter 4.7.1 (git dbe79216), board MicoAir743v2 (Bee35)
+# Changes from config/dump/2026-09-22-frame-motors.params; full result in
+# config/dump/2026-09-22-battery.params. Setup checklist step 10 (battery part), docs/setup-ardupilot.md.
+# Voltage reading bench-verified against a meter. Failsafe actions untested. Not flown.
+
+# Set by hand: 4S1P Molicel P45B Li-Ion packs (docs/bom.md)
+BATT_CAPACITY 4500      # mAh, one 4S1P P45B pack
+BATT_LOW_VOLT 13.2      # 3.3 V/cell
+BATT_FS_LOW_ACT 2       # RTL
+BATT_CRT_VOLT 12        # 3.0 V/cell
+BATT_FS_CRT_ACT 1       # Land
+BATT_VOLT_MULT 21.21    # hwdef default 21.12 read 16.094 V against 16.16 V metered at the ESC
+                        # battery terminals, battery plugged in; after the change FC 16.17 V, meter 16.16 V
+
+# Calibration, not listed value by value: accelerometer calibration (QGC) set INS_ACC*OFFS_*,
+# INS_ACC*SCAL_*, INS_ACC_ID, INS_ACC2_ID, INS_ACC*_CALTEMP and AHRS_TRIM_X/Y.
+# Also changed, omitted as calibration/statistics: BARO1_GND_PRESS, INS_GYR*, STAT_*.
+# MAV1_RC_CHAN returned from 2 to 0 without being set; see 2026-09-22-frame-motors.txt.

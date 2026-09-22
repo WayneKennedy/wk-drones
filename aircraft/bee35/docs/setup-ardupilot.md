@@ -74,7 +74,8 @@ hardware is in hand; the settings below are the target configuration. Port map:
 - **Receiver:** CRSF on UART6 (`SERIAL6_PROTOCOL` 23, RCIN, the board default).
 - **Battery: Li-Ion, 4S P45B.** Not LiPo defaults. Full 4.2 V/cell; `BATT_LOW_VOLT`
   13.2 (3.3 V/cell) with `BATT_FS_LOW_ACT` RTL; `BATT_CRT_VOLT` 12.0 (3.0 V/cell) with
-  `BATT_FS_CRT_ACT` Land.
+  `BATT_FS_CRT_ACT` Land. `BATT_CAPACITY` 4500 (one 4S1P pack). `BATT_VOLT_MULT` 21.21,
+  calibrated against a meter 2026-09-22 (board default 21.12 read 0.4% low).
 - **Anti-crash features to enable:**
   - Radio failsafe `FS_THR_ENABLE` → RTL; verify by switching the transmitter off,
     props off.
@@ -108,12 +109,16 @@ Stub. Fill in as each step is done, in order.
    motor only; unexplained, not used
 3. Ports per [`wiring.md`](wiring.md)
 4. Receiver: CRSF, channel map, radio failsafe
-5. GPS and external compass; calibrate compass and accelerometer
+5. GPS and external compass; calibrate compass and accelerometer — accelerometer
+   **done 2026-09-22** (QGC, after `AHRS_ORIENTATION` was set); compass pending, to be
+   done away from the bench
 6. CompassMot, then keep or disable the internal compass on its result
 7. MTF-01P: mav-apm mode, parameters above, verify live flow and range values
 8. EKF source sets and their switch
 9. Walksnail DisplayPort OSD
-10. Battery: Li-Ion thresholds and failsafes; geofence; RTL altitude
+10. Battery: Li-Ion thresholds and failsafes; geofence; RTL altitude — battery part
+    **set 2026-09-22** (values above; failsafe actions not yet tested); geofence and RTL
+    altitude pending
 11. Notch filter, then bench hover checks
 12. Maiden in AltHold, then Loiter; AutoTune; then optical-flow calibration flight
 

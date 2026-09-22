@@ -38,8 +38,10 @@ MicoAir's diagram: **12V, GND, TX2, RX2, GND, RX6.**
 - **Pin 1 voltage is unconfirmed:** MicoAir's diagram says 12 V (the board's 12 V 3 A
   BEC); ArduPilot's README says 9 V. Either is inside the **Mini VTX V3's 3.1–13 V
   input** ([Caddx](https://www.caddxfpv.com/products/walksnail-avatar-hd-mini-vtx-v3),
-  read 2026-09-19). 12 V leaves 1 V of margin. **Measure pin 1 with a meter before
-  plugging the VTX in.** Never power the VTX from 4S VBAT (up to 16.8 V). The Nano
+  read 2026-09-19). 12 V leaves 1 V of margin. **Not measured:** the VTX
+  was plugged in from the first battery power-up (2026-09-22), and the owner accepts
+  either value since both are inside the VTX's input range; the SH1.0 pins are too fine
+  for the owner's meter. Never power the VTX from 4S VBAT (up to 16.8 V). The Nano
   Camera V3 is powered through the VTX.
 
 ## Solder notes
