@@ -65,7 +65,9 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
   The owner expects a 10" airframe to be a high-vibration one and is minded to change the
   deck ([DEC-02](decisions.md)) in two ways: **brass hex M3 standoffs pressed into the
   deck** so it sits snug on the plate, and **TPU** for the deck itself so it isolates the
-  board. Neither is decided. What is established:
+  board. **Both decided and built: [DEC-03](decisions.md#dec-03)** — the board on a floating
+  platform (not the whole deck), M3 × 20 brass standoffs at 4.55 AF, TPU 95A. What remains
+  open is below. What was established:
   - **Big props make the harder case, not just a louder one.** Vibration sits at motor
     rotation frequency. A 5" quad turns roughly 15,000–20,000 rpm, i.e. 250–330 Hz. These
     2216 KV880 motors on 4S with 1045 props will hover somewhere near 4,000–6,000 rpm,
@@ -80,10 +82,9 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
     relaxes (compression set) and the joints go loose; a brass standoff carries the
     preload in metal and leaves the TPU to flex, which is the standard way to bolt a soft
     part. The two proposed changes therefore belong together.
-  - **Open:** whether to isolate the whole deck or only the board on four pads; the target
-    natural frequency and how it is verified; standoff length, across-flats and thread;
-    TPU durometer; and whether isolated mass should be added deliberately to lower the
-    frequency.
+  - **Still open:** verifying the natural frequency in flight (`VIBE`, and the FFT from IMU
+    batch sampling) and tuning the arms from it; and whether isolated mass should be added
+    deliberately to lower the frequency.
   - **Filtering cannot be assumed to cover it.** The ARF kit's BLHeli_S 20 A ESCs
     ([`bom.md`](bom.md)) carry no telemetry line, so an RPM-referenced harmonic notch fed
     from the ESCs is not available; it would have to be throttle-referenced or driven by
