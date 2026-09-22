@@ -1,0 +1,21 @@
+# ArduCopter 4.7.1 (git dbe79216), board MicoAir743v2 (Bee35)
+# Changes from config/dump/2026-09-22-4.7.1-fresh.params; full result in
+# config/dump/2026-09-22-frame-motors.params. Setup checklist step 2, docs/setup-ardupilot.md.
+# Bench-verified by motor test, props off. Not flown.
+
+# Set by hand
+AHRS_ORIENTATION 8      # Roll180: FC mounted inverted, arrow forward
+FRAME_CLASS 1           # Quad (QGC Frame page)
+FRAME_TYPE 12           # BetaFlightX: outputs S1-S4 are wired rear right, front right, rear left, front left
+MOT_PWM_TYPE 6          # DShot600
+SERVO_DSHOT_ESC 1       # BLHeli32/Kiss/AM32: enables DShot commands
+SERVO_BLH_RVMASK 9      # reverse S1 (rear right) and S4 (front left) by DShot command
+
+# Changed by the firmware or GCS, not set by hand
+SERVO1_FUNCTION 33      # Motor1..4, assigned when FRAME_CLASS was set
+SERVO2_FUNCTION 34
+SERVO3_FUNCTION 35
+SERVO4_FUNCTION 36
+BRD_SAFETY_MASK 16368   # was 16383; outputs 1-4 cleared from the mask. What changed it: not established
+MAV1_RC_CHAN 2          # was 0. What changed it: not established
+# Also changed, omitted as calibration/statistics: BARO1_GND_PRESS, INS_GYR*OFFS_*, INS_GYR*_CALTEMP, STAT_*

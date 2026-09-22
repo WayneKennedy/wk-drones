@@ -7,8 +7,8 @@ hardware is in hand; the settings below are the target configuration. Port map:
 ## Firmware and tools
 
 - **ArduCopter, board `MicoAir743v2`.** Copter stable for this board is 4.7.1
-  (firmware.ardupilot.org, checked 2026-09-19). The board ships with ArduPilot; the
-  preloaded version is unknown, so update to current stable before configuring.
+  (firmware.ardupilot.org, checked 2026-09-19). The board shipped with ArduCopter 4.6.2
+  (git `1ebd4d99`, read over MAVLink 2026-09-22); updated to 4.7.1 the same day.
 - **A ground station is for setup only.** Mission Planner (Windows) or QGroundControl
   (Windows/macOS/Linux/Android/iOS) over USB on the bench; Linux install:
   [`fleet/ground-station.md`](../../../fleet/ground-station.md). The FC also has an on-board
@@ -16,10 +16,22 @@ hardware is in hand; the settings below are the target configuration. Port map:
   field changes without a cable; whether a phone GCS connects to it is unverified. In
   flight the aircraft needs only the radio and goggles. `FS_GCS_ENABLE` stays 0.
 - Board defaults worth knowing (hwdef): motor order is Betaflight X (`HAL_FRAME_TYPE`
-  12, "for BF migration"); battery monitor 4 with `BATT_VOLT_MULT` 21.12 and
+  12, "for BF migration"), though the fresh 4.7.1 flash read `FRAME_TYPE` 1, so set 12
+  explicitly; battery monitor 4 with `BATT_VOLT_MULT` 21.12 and
   `BATT_AMP_PERVLT` 40.2; OSD_TYPE 1 (on-board analog chip).
 
 ## Settings of note
+
+- **Mounting (owner, 2026-09-22): the frame inverts both the FC and the motors.** The FC
+  is upside down (rolled 180°) with its arrow forward: `AHRS_ORIENTATION` 8 (Roll180),
+  set before accelerometer calibration and checked by tilting the airframe against the
+  GCS attitude display. **Set and checked 2026-09-22** (MAVLink Inspector, `ATTITUDE`):
+  nose up gives positive pitch, right side down positive roll, nose right positive
+  `yawspeed`. The `yaw` heading is not a valid check before compass calibration. The
+  internal compass follows `AHRS_ORIENTATION`; the external (GPS) compass does not, and its orientation is found by compass calibration
+  (`COMPASS_AUTO_ROT`). The motors hang below the arms and push. Motor spin direction in
+  ArduPilot's frame diagrams is as seen from above the aircraft, so it is judged from
+  above, looking at the underside of each motor.
 
 - **Hands-off hold is the goal (DEC-08): fly in Loiter.** Sticks centred, it holds
   position and height. Flight-mode switch (`FLTMODE_CH`, 3 positions):
@@ -81,8 +93,19 @@ hardware is in hand; the settings below are the target configuration. Port map:
 
 Stub. Fill in as each step is done, in order.
 
-1. Update to ArduCopter stable, `MicoAir743v2`
-2. Frame class/type (quad, X); motor order and direction, props off
+1. Update to ArduCopter stable, `MicoAir743v2` — **done 2026-09-22:** 4.7.1, flashed from
+   QGroundControl v5.1.4 (ArduPilot / ChibiOS / Multi-Rotor / "MicoAir H743 v2.0 - 4.7.1"),
+   USB power only
+2. Frame, orientation, DShot, motor order and direction, props off — **done 2026-09-22.**
+   Quad (QGC Frame page), `AHRS_ORIENTATION` 8, `MOT_PWM_TYPE` 6 (DShot600). Motor test
+   showed outputs S1–S4 = rear right, front right, rear left, front left (Betaflight
+   order), all spinning the same way, so `FRAME_TYPE` 12 (BetaFlightX; set in Parameters,
+   QGC's Frame page does not list it) and `SERVO_DSHOT_ESC` 1 with `SERVO_BLH_RVMASK` 9
+   (reverse S1 and S4 by DShot command). Retest: A front right CCW, B rear right CW,
+   C rear left CCW, D front left CW, viewed from above, as ArduPilot's BetaFlightX
+   layout requires. B and D did not respond on the first attempt and did after the FC–ESC
+   harness plug was pressed home; cause not established. QGC's "All" button spun one
+   motor only; unexplained, not used
 3. Ports per [`wiring.md`](wiring.md)
 4. Receiver: CRSF, channel map, radio failsafe
 5. GPS and external compass; calibrate compass and accelerometer
