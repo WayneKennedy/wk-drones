@@ -10,7 +10,8 @@ hardware is in hand; the settings below are the target configuration. Port map:
   (firmware.ardupilot.org, checked 2026-09-19). The board ships with ArduPilot; the
   preloaded version is unknown, so update to current stable before configuring.
 - **A ground station is for setup only.** Mission Planner (Windows) or QGroundControl
-  (Windows/macOS/Linux/Android/iOS) over USB on the bench. The FC also has an on-board
+  (Windows/macOS/Linux/Android/iOS) over USB on the bench; Linux install:
+  [`fleet/ground-station.md`](../../../fleet/ground-station.md). The FC also has an on-board
   Bluetooth module on UART8 (MAVLink2, 115200; BOOT button toggles its power), for
   field changes without a cable; whether a phone GCS connects to it is unverified. In
   flight the aircraft needs only the radio and goggles. `FS_GCS_ENABLE` stays 0.
