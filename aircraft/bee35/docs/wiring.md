@@ -4,8 +4,8 @@ Port map, solder notes and jumper settings. **Planned, untested:** the map below
 taken from the board's published definitions (ArduPilot hwdef and README for
 `MicoAir743v2`, MicoAir's port diagram in the same hwdef folder, iNav target
 `MICOAIR743V2`; read 2026-09-19). Confirm each against the hardware as it is wired.
-**Verified so far:** the GPS row and its compass (2026-09-22, below); every other row is
-untested.
+**Verified so far:** the GPS row and its compass, the RP3 on UART6, and the MTF-01P on
+UART4 (all 2026-09-22; setup-ardupilot.md checklist); every other row is untested.
 Firmware is ArduPilot ([DEC-08](decisions.md)); parameters in
 [`setup-ardupilot.md`](setup-ardupilot.md).
 

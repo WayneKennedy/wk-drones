@@ -1,0 +1,28 @@
+# ArduCopter 4.7.1 (git dbe79216), board MicoAir743v2 (Bee35)
+# Changes from config/dump/2026-09-22-compass.params; full result in
+# config/dump/2026-09-22-flow.params (saved over MAVLink by pymavlink, not QGC).
+# Setup checklist steps 6 (compass choice) and 7 (MTF-01P), docs/setup-ardupilot.md.
+# Bench-verified: range and flow data live on the FC. Flow direction/orientation NOT yet
+# checked; flow not calibrated; not in any EKF source set yet. Not flown.
+
+# Set by hand
+COMPASS_USE2 0          # board's own compass off (owner, 2026-09-22): offsets ~920 and
+                        # "PreArm: Compasses inconsistent"; the GPS compass is the only one used
+SERIAL4_PROTOCOL 1      # MAVLink1, per MicoAir's ArduPilot page
+SERIAL4_BAUD 115
+SERIAL4_OPTIONS 1024    # don't forward MAVLink
+FLOW_TYPE 5             # MAVLink
+RNGFND1_TYPE 10         # MAVLink
+RNGFND1_ORIENT 25       # down
+RNGFND1_MIN 0.02        # sensor dead zone 2 cm (MicoAir spec; MicoAir's ArduPilot page uses 0.01)
+RNGFND1_MAX 8           # MTF-01P: 8 m in daylight (60 klux), 12 m at 600 lux
+# Tried and reverted the same session: SERIAL4_PROTOCOL 32 / FLOW_TYPE 7 / RNGFND1_TYPE 32
+# (MSP), when a passthrough capture showed the sensor sending MSPv2. See setup-ardupilot.md.
+
+# Set by the firmware
+COMPASS_DEC -0.0077     # rad; automatic declination (COMPASS_AUTODEC 1) from the GPS fix
+FLOW_*, RNGFND1_*       # other new parameters at defaults when the types were set.
+                        # RNGFND1_GNDCLR is the default 0.10 m; the sensor's real height
+                        # above ground when landed is not measured (TBC)
+# MAV1_* stream rates read 0 here: they are runtime values a GCS requests, not stored
+# settings (QGC was closed); earlier dumps caught QGC's requested rates.

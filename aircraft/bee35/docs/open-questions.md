@@ -75,3 +75,21 @@ Format: `OQ-nn — question (date raised)`.
   extension: repair or remake it with slack, or do without it and plug into the FC
   directly with the frame open.
   **Blocks the maiden.** Details: [`wiring.md`](wiring.md) solder notes.
+
+- **OQ-04 — Camera mount part mislaid** (2026-09-22, owner). Part of the frame's camera
+  mount is missing, so the Walksnail Nano Camera V3 cannot be mounted and the OSD step
+  (checklist step 9) waits. Which part is missing: TBC. Options: find it; or print it —
+  SpeedyBee publishes `19mmCamera-mount-bracket.stl` ([`../print/sources.md`](../print/sources.md)),
+  but whether that is the missing part is unchecked, and the Nano V3 is 14 mm, so a
+  14→19 mm adapter is needed either way ([`bom.md`](bom.md) camera row). **Blocks the
+  OSD step and the maiden.**
+
+- **OQ-05 — Flow sensor mount** (2026-09-22, owner). The MTF-01P is wired and working on
+  UART4 but not mounted: the frame's underside has no obvious flat surface for it. It
+  must face straight down with a clear view, and its mounting is 24.3 × 12 mm, Ø2.5 mm
+  holes (MicoAir; official case STL, [`../print/sources.md`](../print/sources.md)).
+  Likely a designed-and-printed bracket, parametric like the Holybro deck
+  ([`../../holybro-10/print/src/h743-deck.py`](../../holybro-10/print/src/h743-deck.py)).
+  Needed first: where on the underside it goes and the frame geometry there. The
+  mounting fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
+  check and calibration wait for it. **Blocks flow use; not the maiden in GPS modes.**

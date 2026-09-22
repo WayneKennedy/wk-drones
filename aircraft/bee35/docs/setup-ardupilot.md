@@ -67,8 +67,12 @@ hardware is in hand; the settings below are the target configuration. Port map:
   - `SERIAL4_PROTOCOL` 1 (MAVLink1), `SERIAL4_BAUD` 115, `SERIAL4_OPTIONS` 1024
     (don't forward MAVLink).
   - `FLOW_TYPE` 5 (MAVLink), `RNGFND1_TYPE` 10 (MAVLink), `RNGFND1_ORIENT` 25 (down),
-    `RNGFND1_MIN` 0.01. MicoAir gives `RNGFND1_MAX` 8 for the MTF-01; the -01P value
-    is TBC.
+    `RNGFND1_MIN` 0.01. MicoAir gives `RNGFND1_MAX` 8 for the MTF-01. The **MTF-01P**
+    spec (MicoAir product page, read 2026-09-22): ToF range 12 m at 90 % reflectance /
+    600 lux, 8 m at 60 klux (daylight); dead zone 2 cm; UART 115200, 3.3 V; protocols
+    Micolink, MAVLink (APM or PX4) and MSP, chosen with MicoAssistant (MicoAir's steps are written for Windows; via a
+    USB-TTL adapter or ArduPilot serial passthrough). So `RNGFND1_MAX` 8 for outdoor
+    flying.
   - Orientation: MicoAir's default is ArduPilot orientation; if mounted the iNav/FMT
     way, `FLOW_ORIENT_YAW` 18000. Wrong orientation causes a flyaway. Verify flow
     values move the right way before flight.
@@ -133,8 +137,22 @@ Stub. Fill in as each step is done, in order.
    motor-beep tones proved no use as feedback. (b) QGC with `COMPASS_ORIENT` 0 — "Mag(0)
    bad orientation 16/18 1.4", GPS compass below quality threshold. `RC7_OPTION` is back
    to 4 (RTL)
-6. CompassMot, then keep or disable the internal compass on its result
-7. MTF-01P: mav-apm mode, parameters above, verify live flow and range values
+6. CompassMot, then keep or disable the internal compass on its result — **internal
+   compass disabled 2026-09-22 without waiting for CompassMot** (owner): `COMPASS_USE2`
+   0, after its ~920 offsets and "PreArm: Compasses inconsistent". CompassMot on the GPS
+   compass still to do (props on, tied down)
+7. MTF-01P: mav-apm mode, parameters above, verify live flow and range values — **data
+   live 2026-09-22** with the MAVLink parameters above; the sensor's own settings were
+   never changed with MicoAssistant. A passthrough capture (`SERIAL_PASS1` 0, `SERIAL_PASS2` 4) first showed
+   **MSPv2** frames; after MAVLink bytes from the PC had reached the sensor through a
+   passthrough that did not time out (a PC script kept writing), a later capture showed
+   **MAVLink1** `OPTICAL_FLOW` and `DISTANCE_SENSOR` from system 1, component 88. Why it
+   changed is not established. It reports system 1, the ID MicoAir says to avoid on
+   ArduPilot 4.5+; the FC accepts its data anyway (range 0.10–1.07 m tracked a hand and
+   the floor; flow quality 103–136 indoors). Still to do: flow direction check
+   (`FLOW_ORIENT_YAW`), in-flight calibration, `RNGFND1_GNDCLR`. If the sensor ever
+   reverts to MSP, ArduPilot reads MSP too (`SERIAL4_PROTOCOL` 32, `FLOW_TYPE` 7,
+   `RNGFND1_TYPE` 32; drivers present in this build)
 8. EKF source sets and their switch
 9. Walksnail DisplayPort OSD
 10. Battery: Li-Ion thresholds and failsafes; geofence; RTL altitude — battery part
