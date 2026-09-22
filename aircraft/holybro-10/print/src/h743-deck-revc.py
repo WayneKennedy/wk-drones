@@ -9,7 +9,8 @@ coupon printed that day (3d-printing docs/open-questions.md, "TPU 95A"):
   - arms drawn 1.9 wide, because 2.0 printed 2.10 (edge spread ~+0.1 mm), and width^3
     sets stiffness - the drawing's intent is a 2.0 mm printed arm;
   - hex holes 4.85 AF, because 4.55 AF would not take the brass standoff and 4.65 needed
-    a press. 4.85 itself is UNTESTED; confirm when pressing the standoffs in.
+    a press. 4.85 VERIFIED on the printed deck 2026-09-22: a standoff pushes in by hand and
+    needs pliers to pull out (owner, one pillar tried).
 
 Frame, as rev A: origin at the centre of the upper plate, z = 0 at its top face, +z up,
 x fore-aft, y side to side. The M3 anchors (plate holes 3.4) are rev A's, at (+/-13.5,
@@ -37,7 +38,7 @@ PLAT_R = 3.0
 FC_HOLE_D = 2.4      # M2 through-bolt from below, locknut on top of the stack
 PILLAR_D = 11.0
 BAR_T = 6.0          # anchor top bar joining each pair of pillars
-HEX_AF = 4.85        # drawing 4.55; coupon correction, untested - see docstring
+HEX_AF = 4.85        # drawing 4.55; verified 2026-09-22 - hand press-in, pliers to remove
 ARM_W = 1.9          # drawing 2.0; coupon correction - prints ~2.0 - a tuning knob
 ARM_KNEE_Y = 29.0    # the arm's fore-aft leg runs at |y| = 29
 ARM_JOIN_X = 24.0    # the arm meets the platform side at |x| = 24
