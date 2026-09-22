@@ -1,0 +1,31 @@
+# ArduCopter 4.7.1 (git dbe79216), board MicoAir743v2 (Bee35)
+# Changes from config/dump/2026-09-22-battery.params; full result in
+# config/dump/2026-09-22-radio.params. Setup checklist step 4, docs/setup-ardupilot.md.
+# Switch layout and the all-switches-back rule: fleet/radio.md, fleet/decisions.md F-DEC-05.
+# Bench-verified, disarmed: switch positions, stick directions, RC-loss detection. Failsafe
+# action (RTL) not yet tested armed. Not flown.
+
+# Set by hand
+FLTMODE_CH 6            # SB; channel 5 is arm (SH)
+FLTMODE1 0              # Stabilize  - SB back (FLTMODE1/2 already 0 by default)
+FLTMODE3 2              # AltHold    - SB middle
+FLTMODE4 2
+FLTMODE5 5              # Loiter     - SB toward the pilot
+FLTMODE6 5
+RC5_OPTION 153          # ArmDisarm  - SH back = disarmed
+RC7_OPTION 4            # RTL        - SF back = off
+RC8_OPTION 30           # Lost Copter Sound - SI (push button) released = off
+NTF_BUZZ_TYPES 2        # DShot: motors sound the tones; no buzzer is fitted
+RSSI_TYPE 3             # link quality from the CRSF receiver (was 0: rssi reported 255)
+RC1_REVERSED 0          # QGC calibration set 1; roll stick right reads high, which ArduPilot
+                        # wants, so reset to 0 by hand
+
+# Set by QGC radio calibration
+RC1..RC16 _MIN 1000, _MAX 2000 (were 1100/1900), RC3_TRIM 1000
+RC2_REVERSED 1          # pitch forward reads high; ArduPilot wants low (radio calibration docs)
+
+# Changed by the firmware or GCS, not set by hand
+MAV1_EXTRA1 10, MAV1_EXTRA2 10, MAV1_EXTRA3 3, MAV1_POSITION 3   # telemetry stream rates stored by QGC
+SERVO1..4 _MIN 1000, _MAX 2000, _TRIM 1000 (were 1100/1900/1500). What changed them: not established
+RSSI_ANA_PIN, RSSI_CHANNEL, RSSI_CHAN_*, RSSI_PIN_*: appeared at their defaults when RSSI_TYPE was set
+MAV1_RC_CHAN 2          # varies by itself; see 2026-09-22-frame-motors.txt

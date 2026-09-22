@@ -14,6 +14,7 @@ Whether any part has been replaced since is not recorded.
 | Props | 2 sets Gemfan Hurricane 51499, clear red | 5.1"; HobbyRC confirmed the fit on a Source One. £2.86 a set | HobbyRC #253046 | £5.71 | 2024-02-12 |
 | Battery | 2× GNB 1300 mAh 4S 120C LiPo | £21.90 each. Whether these are the packs flown now, TBC | HobbyRC #261858 | £43.80 | 2024-05-17 |
 | VTX/cam | Walksnail Avatar HD Pro Micro Kit, 32 GB | Fitted (owner, 2026-09-17). Bought before this build; one of two kits, which one unknown. £159.00 either way | HobbyRC #231336 or #236190 | £159.00 | 2023-06-29 or 2023-08-16 |
+| Beeper | Separate, battery-backed, independent of the flight pack (owner, 2026-09-22) | Model and source TBC. The transmitter has a "Beep" mix on channel 8 (SI, [`fleet/radio.md`](../../../fleet/radio.md)); that it triggers this beeper is inferred | TBC | TBC | TBC |
 
 Order totals inc VAT: #252904 £200.47 including £3.50 shipping; #253046 was merged into
 it and its £5.90 shipping refunded (HobbyRC support, 2024-02-12); #261858 £47.52 after a

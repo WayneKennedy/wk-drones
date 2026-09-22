@@ -34,10 +34,14 @@ hardware is in hand; the settings below are the target configuration. Port map:
   above, looking at the underside of each motor.
 
 - **Hands-off hold is the goal (DEC-08): fly in Loiter.** Sticks centred, it holds
-  position and height. Flight-mode switch (`FLTMODE_CH`, 3 positions):
-  **Loiter → AltHold → Stabilize**. Loiter is the normal mode; AltHold holds height
-  only, for when GPS is poor; Stabilize is the manual last resort. **RTL on its own
-  switch** (`RCx_OPTION` 4). Loiter will not arm without a good position estimate.
+  position and height. Flight modes on **SB** (`FLTMODE_CH` 6): **back Stabilize, middle
+  AltHold, toward the pilot Loiter** — back is the safe pre-flight position on every
+  model ([F-DEC-05](../../../fleet/decisions.md)). Loiter is the normal flying mode;
+  AltHold holds height only, for when GPS is poor; Stabilize is the manual last resort.
+  **Arm on SH** (channel 5, `RC5_OPTION` 153), **RTL on SF** (`RC7_OPTION` 4),
+  lost-copter sound on SI (`RC8_OPTION` 30, played through the motors by DShot,
+  `NTF_BUZZ_TYPES` 2; no buzzer is fitted). Layout: [`fleet/radio.md`](../../../fleet/radio.md).
+  Loiter will not arm without a good position estimate.
 - **Compass: external primary; internal off unless CompassMot clears it.** The GPS
   unit's QMC5883L is on the GPS plug's I2C1 (probed as external); the board's own
   QMC5883L is on I2C2. ESC current on a 30.5 mm stack makes the onboard mag a liability
@@ -108,7 +112,13 @@ Stub. Fill in as each step is done, in order.
    harness plug was pressed home; cause not established. QGC's "All" button spun one
    motor only; unexplained, not used
 3. Ports per [`wiring.md`](wiring.md)
-4. Receiver: CRSF, channel map, radio failsafe
+4. Receiver: CRSF, channel map, radio failsafe — **done 2026-09-22** except the armed
+   failsafe test. RP3 bound (TX16S model "Bee35"); QGC radio calibration, then
+   `RC1_REVERSED` set back to 0 (calibration had reversed roll; `RC2_REVERSED` 1 is
+   correct for pitch); switch positions checked against F-DEC-05. Transmitter off,
+   disarmed: `SYS_STATUS` RC-receiver health bit went unhealthy (QGC shows no message
+   while disarmed; `RC_CHANNELS` keeps the last values). `FS_THR_ENABLE` 1 (RTL) acting
+   on it is to be tested armed, props off
 5. GPS and external compass; calibrate compass and accelerometer — accelerometer
    **done 2026-09-22** (QGC, after `AHRS_ORIENTATION` was set); compass pending, to be
    done away from the bench

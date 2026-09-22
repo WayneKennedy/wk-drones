@@ -20,6 +20,12 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   off-board topology (a ground machine commanding the flight controller over radio); that
   would be a new decision here, not an edit to this one.
 
+- **F-DEC-05 — Pre-flight, every switch is back** (2026-09-22, owner). On every model,
+  all switches pushed away from the pilot is the safe starting state: disarmed, no
+  failsafe or special function active, and the most manual flight mode (Stabilize on
+  ArduPilot multirotors). Each model's switch functions are mapped to fit, so a single
+  glance checks the radio. EdgeTX's switch warnings on the TX16S already expect every
+  switch "up" (back). Layout: [`radio.md`](radio.md).
 - **F-DEC-04 — The fleet is all-electric** (2026-09-17, owner). No internal-combustion
   aircraft. The Seagull 40 was glow-powered and was the owner's "last gasp" before
   converting to all-electric; it is written off (wk-inventory stock), and the fuelproofer
