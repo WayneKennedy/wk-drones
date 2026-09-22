@@ -18,8 +18,8 @@ the same wiring would serve either firmware.
 | Peripheral | Protocol | FC port (plug) | ArduPilot | Notes |
 |---|---|---|---|---|
 | RadioMaster RP3 V2 | CRSF | UART6 (SBUS/CRSF plug: GND 5V TX6 RX6) | SERIAL6, RCIN (default) | CRSF needs both TX6 and RX6 |
-| Flywoo GM10 Mini V3 (GPS) | UBX | UART3 (GPS plug: GND 5V TX3 RX3 SCL SDA) | SERIAL3, GPS (default) | |
-| Flywoo GM10 Mini V3 (compass) | I2C | I2C1, same GPS plug | Probed as external | QMC5883L. The FC's own QMC5883L is on I2C2 and is disabled, see [`setup-ardupilot.md`](setup-ardupilot.md). I2C1 is also on its own 4-pin plug on the board's underside (SDA1, SCL1, 5V, GND; MicoAir diagram) |
+| Matek M10Q-5883 (GPS), fitted in place of the mislaid GM10 ([`bom.md`](bom.md)) | UBX | UART3 (GPS plug: GND 5V TX3 RX3 SCL SDA) | SERIAL3, GPS (default) | |
+| Matek M10Q-5883 (compass) | I2C | I2C1, same GPS plug | Probed as external | QMC5883L. Mounted tilted, see [`setup-ardupilot.md`](setup-ardupilot.md). The FC's own QMC5883L is on I2C2 and is disabled, see [`setup-ardupilot.md`](setup-ardupilot.md). I2C1 is also on its own 4-pin plug on the board's underside (SDA1, SCL1, 5V, GND; MicoAir diagram) |
 | MicoAir MTF-01P | MAVLink ("mav-apm") | UART4 (UART4 plug: GND 5V TX4 RX4) | SERIAL4, set to MAVLink1 | Default there is MAVLink2; parameters in the setup doc. UART1 is kept free, below |
 | Walksnail Avatar VTX | MSP DisplayPort | UART2 (HD VTX plug) | SERIAL2, DisplayPort (default) | See the VTX plug notes below |
 | ESC telemetry | ESC serial | UART7, RX only (RX7 pin on the ESC plug) | SERIAL7, ESC telemetry (default) | Part of the stack harness |
@@ -65,6 +65,10 @@ MicoAir's diagram: **12V, GND, TX2, RX2, GND, RX6.**
   the same day: FC outputs S1–S4 drive rear right, front right, rear left, front left
   (Betaflight order), handled by `FRAME_TYPE` 12; see
   [`setup-ardupilot.md`](setup-ardupilot.md) checklist step 2.
+  **The harness works loose** — twice on 2026-09-22, the second after the frame was
+  screwed down, cutting battery power to the FC. Securing it is
+  [OQ-03](open-questions.md) and blocks the maiden. Until then, after any closing of the
+  frame, check `voltage_battery` (~16 V on a charged pack) and run the motor test.
 
 TBC. Record pad locations, wire gauges, and anything non-obvious about the physical
 build here as it is done.

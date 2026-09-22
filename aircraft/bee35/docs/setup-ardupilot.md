@@ -28,8 +28,11 @@ hardware is in hand; the settings below are the target configuration. Port map:
   GCS attitude display. **Set and checked 2026-09-22** (MAVLink Inspector, `ATTITUDE`):
   nose up gives positive pitch, right side down positive roll, nose right positive
   `yawspeed`. The `yaw` heading is not a valid check before compass calibration. The
-  internal compass follows `AHRS_ORIENTATION`; the external (GPS) compass does not, and its orientation is found by compass calibration
-  (`COMPASS_AUTO_ROT`). The motors hang below the arms and push. Motor spin direction in
+  internal compass follows `AHRS_ORIENTATION`; the external (GPS) compass does not. The
+  M10Q-5883 is pitched ~30° nose-up, arrow forward, which no standard rotation matches
+  and auto-detection could not resolve, so it is set by hand: `CUST_ROT_ENABLE` 1,
+  `CUST_ROT1_PITCH` 30, `COMPASS_ORIENT` 101 (Custom 1), `COMPASS_AUTO_ROT` 1 (check
+  only, so calibration cannot replace it). The motors hang below the arms and push. Motor spin direction in
   ArduPilot's frame diagrams is as seen from above the aircraft, so it is judged from
   above, looking at the underside of each motor.
 
@@ -119,9 +122,17 @@ Stub. Fill in as each step is done, in order.
    disarmed: `SYS_STATUS` RC-receiver health bit went unhealthy (QGC shows no message
    while disarmed; `RC_CHANNELS` keeps the last values). `FS_THR_ENABLE` 1 (RTL) acting
    on it is to be tested armed, props off
-5. GPS and external compass; calibrate compass and accelerometer — accelerometer
-   **done 2026-09-22** (QGC, after `AHRS_ORIENTATION` was set); compass pending, to be
-   done away from the bench
+5. GPS and external compass; calibrate compass and accelerometer — **done 2026-09-22.**
+   Accelerometer in QGC after `AHRS_ORIENTATION` was set. Compass in QGC over USB, indoors
+   a metre or two from the PC, after setting the GPS compass's custom rotation (above) and
+   passing the `COMPASS_ORIENT` sign checks; both compasses passed. Offsets: GPS ~274, the
+   board's own ~920 (large; a hint the onboard one sits near magnetic material, one more
+   reason for step 6). Earlier attempts the same day, for the record: (a) onboard
+   calibration from SF (`RC7_OPTION` temporarily 171), outdoors on battery — the
+   "collecting" tone ran over 4 minutes without completing, cancelled, nothing saved;
+   motor-beep tones proved no use as feedback. (b) QGC with `COMPASS_ORIENT` 0 — "Mag(0)
+   bad orientation 16/18 1.4", GPS compass below quality threshold. `RC7_OPTION` is back
+   to 4 (RTL)
 6. CompassMot, then keep or disable the internal compass on its result
 7. MTF-01P: mav-apm mode, parameters above, verify live flow and range values
 8. EKF source sets and their switch

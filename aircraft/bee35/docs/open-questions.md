@@ -57,3 +57,21 @@ Format: `OQ-nn — question (date raised)`.
   (MAVLink to a ROS 2 bridge there), not over an air link of its own, which keeps the
   aircraft flying when that tier is unreachable. Nothing to buy until that step
   is due. Sources: <https://www.expresslrs.org/software/mavlink/>.
+
+- **OQ-03 — Wiring strained by closing the frame: securing it before the maiden**
+  (2026-09-22). The plug-to-plug harness between the stack boards worked loose twice on
+  the first bench day: motors 3 and 4 did not respond until it was pressed home, and
+  later, after the frame was screwed down, battery power stopped reaching the FC
+  (`voltage_battery` 0) until it was reseated (owner). The frame is very tight
+  internally when closed, and the squeeze on the stack is the suspected cause. Loose in
+  flight, it drops FC power or motor signals. The same day the **MX-12 USB extension
+  lead** stopped carrying data after the frame was closed: FC powered over it but did
+  not enumerate on the PC, and did enumerate with the same cable plugged straight into
+  the FC's USB-C (owner). Cause found on strip-down: a yellow wire in the extension
+  harness pinched and broken when the frame was closed after reseating the harness;
+  repaired, extension working again (owner, 2026-09-22). The owner counts the frame's tight interior against it.
+  Options, none chosen: a retaining dab of hot glue or silicone over both plugs;
+  re-routing with slack so closing the frame cannot pull on it; both. For the USB
+  extension: repair or remake it with slack, or do without it and plug into the FC
+  directly with the frame open.
+  **Blocks the maiden.** Details: [`wiring.md`](wiring.md) solder notes.

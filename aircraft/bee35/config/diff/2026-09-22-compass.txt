@@ -1,0 +1,26 @@
+# ArduCopter 4.7.1 (git dbe79216), board MicoAir743v2 (Bee35)
+# Changes from config/dump/2026-09-22-radio.params; full result in
+# config/dump/2026-09-22-compass.params. Setup checklist step 5, docs/setup-ardupilot.md.
+# Bench-verified: orientation sign checks and a passed calibration, on USB power indoors,
+# a metre or two from the PC. CompassMot (motor interference) not yet run. Not flown.
+
+# Set by hand: the M10Q-5883 sits in a printed mount pitched ~30 deg nose-up, arrow forward
+CUST_ROT_ENABLE 1       # enables custom rotations (reboot)
+CUST_ROT1_PITCH 30      # Custom 1 = pitch +30 (nose up); roll and yaw 0
+COMPASS_ORIENT 101      # external (GPS) compass uses Custom 1
+COMPASS_AUTO_ROT 1      # CheckOnly: calibration reports orientation, never replaces the custom one
+# Check before calibrating (COMPASS_ORIENT parameter doc, northern hemisphere), RAW_IMU:
+# nose down raised xmag, right side down raised ymag, upside down lowered zmag. All passed.
+
+# Set by QGC compass calibration (after an earlier attempt failed: "Mag(0) bad orientation
+# 16/18 1.4", below quality threshold, with COMPASS_ORIENT 0 and COMPASS_AUTO_ROT 2)
+COMPASS_OFS_X 152.3     # compass 1 = GPS (external, priority 1)
+COMPASS_OFS_Y -50.5
+COMPASS_OFS_Z -222.7
+COMPASS_SCALE 1.037
+COMPASS_OFS2_X -249.4   # compass 2 = board's own; |offset| ~920, large, see setup-ardupilot.md
+COMPASS_OFS2_Y -858.9
+COMPASS_OFS2_Z -198.8
+COMPASS_SCALE2 1.107
+
+# Appeared at defaults when CUST_ROT_ENABLE was set: CUST_ROT1_ROLL/YAW, CUST_ROT2_*.

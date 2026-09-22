@@ -52,4 +52,10 @@ Pitch reads high with the stick forward, as EdgeTX sends it; ArduPilot reverses 
 Unassigned: SA, SC, SD, SE, SG. ExpressLRS treats channel 5 as the arm channel, so arm
 stays on SH/channel 5 on every model.
 
+**Bee35 model telemetry** (2026-09-22): sensors discovered from ArduPilot's CRSF
+telemetry; top-bar widgets show `RQly`, `Sats`, `FM` and `Yaw`. First readings, on USB
+power at the bench: RQly 100 %, Sats 20, FM STAB. From here on the Bee35 model differs
+from the 5"'s in its telemetry sensors and screen layout; channels and mixes are
+unchanged.
+
 The fixed-wing models (Tasman, Swordfish, Avanti, OTTER) have not been read.
