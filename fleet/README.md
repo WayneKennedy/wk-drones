@@ -65,8 +65,10 @@ item is now is unrecorded unless a row says so.
 Walksnail-branded GPS (WS-M181, not video): the 5"'s, and a second in [spares](#spares-and-written-off-aircraft).
 
 Placement (owner, 2026-09-17): **both Pro Micro Kits are accounted for** — one is on the 5",
-the other is **fitted to the ATOMRC Swordfish's canopy**, with its matching camera and antenna,
-found 2026-09-17 ([Swordfish `README.md`](../aircraft/swordfish/README.md)). **Which of the two
+the other was **fitted to the ATOMRC Swordfish's canopy**, with its matching camera and antenna,
+found 2026-09-17 ([Swordfish `README.md`](../aircraft/swordfish/README.md)); **the Swordfish's
+kit moves to the Holybro 10"** (owner, 2026-09-23; Holybro
+[DEC-04](../aircraft/holybro-10/docs/decisions.md)), leaving the Swordfish without video. **Which of the two
 orders is which remains unknown and does not matter**: same item, £159.00 either way. The
 Bee35's VTX was ordered without a camera or
 antenna by mistake; the Nano camera bought to fill the gap is not what the owner meant to

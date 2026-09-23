@@ -13,14 +13,39 @@ ArduPilot implied.
 | 4 × BLHeli_S 20 A ESC, signal | PWM or DShot, TBC | **S3–S6 planned** (signal + G only), needs `SERVO3_FUNCTION` 33 … `SERVO6_FUNCTION` 36 | Headers to solder, below |
 | ESC power | — | Not on the FC. Each ESC takes XT30 from the frame's distribution board ([`bom.md`](bom.md)) | As shipped, ARTF |
 | FC power | — | PD/ESC plate + and − pads, from the frame's distribution board | TBC |
-| Receiver | TBC | TBC | Not chosen ([F-OQ-01](../../../fleet/open-questions.md)) |
-| GPS/compass, Matek M10Q-5883 | UBX + I²C compass | TBC — a UART for the GPS, I2C1 or I2C2 for the compass | One unit fitted to the airframe (owner, 2026-09-19); wiring TBC, and whether a second unit joins it is open ([OQ-01](open-questions.md)) |
+| Receiver (ELRS, not chosen) | CRSF | **SERIAL6** = UART4, pads `Tx4`/`Rx4`; `SERIAL6_PROTOCOL` 23 | Planned. Receiver not chosen ([F-OQ-01](../../../fleet/open-questions.md)) |
+| GPS/compass, Matek M10Q-5883 | UBX + I²C compass | **SERIAL3** = USART2, pads `Tx2`/`Rx2` (GPS1 default, no change); compass on I2C1 or I2C2, TBC | One unit fitted to the airframe (owner, 2026-09-19); wiring TBC, and whether a second unit joins it is open ([OQ-01](open-questions.md)) |
 | Rangefinder, Benewake TFmini Plus (I²C) | I²C | TBC — I2C1 or I2C2, shared with the compass | In hand, not fitted. Downward-facing ([`bom.md`](bom.md)) |
-| Companion computer (Pi or Jetson) | MAVLink over a 3.3 V UART | Which H743 UART: open ([OQ-02](open-questions.md)) | Open |
-| Video | TBC | TBC | Not chosen |
+| Companion computer (Pi or Jetson) | MAVLink over a 3.3 V UART | **SERIAL1** proposed = UART7, pads `Tx7`/`Rx7` (+ `Cts7`/`Rts7` for flow control); Telem1 default | Proposal only; port, baud and UART-or-USB stay open ([OQ-02](open-questions.md)) |
+| Video, Walksnail Avatar HD Pro Micro Kit | MSP DisplayPort | **SERIAL2** = USART1, pads `Tx1`/`Rx1`; `SERIAL2_PROTOCOL` 42, `OSD_TYPE` 5. Power from the `9V` and `G` pads | Kit to be moved from the Swordfish ([DEC-04](decisions.md)) |
 
 The H743's own ESC power pads are unused: one ESC per motor, each powered from the
 distribution board ([`bom.md`](bom.md)).
+
+### UART allocation follows the Bee35 (owner, 2026-09-23)
+
+Same role, same SERIAL number on both aircraft, so one map serves the fleet. ArduPilot's
+SERIAL numbers are **not** the board's silkscreen numbers: hwdef `MatekH743` gives
+`SERIAL_ORDER OTG1 UART7 USART1 USART2 USART3 UART8 UART4 USART6` (read 2026-09-23), so
+SERIAL1 = `Tx7/Rx7`, SERIAL2 = `Tx1/Rx1`, SERIAL3 = `Tx2/Rx2`, SERIAL4 = `Tx3/Rx3`,
+SERIAL5 = `Tx8/Rx8`, SERIAL6 = `Tx4/Rx4`, SERIAL7 = `Tx6/Rx6`.
+
+| Role | Bee35 | Here |
+|---|---|---|
+| GPS | SERIAL3 | SERIAL3, unchanged |
+| Video, DisplayPort | SERIAL2 | SERIAL2 |
+| RC | SERIAL6 | SERIAL6 |
+| Off-board link | SERIAL1, kept spare | SERIAL1, companion computer |
+| Flow sensor | SERIAL4 | n/a — the TFmini Plus is I²C |
+| ESC telemetry | SERIAL7 | n/a — the ESC leads are ground and signal only |
+| Bluetooth | SERIAL8 | n/a — this board has no SERIAL8 |
+
+- **Do not use the `Rx6` pad for an ELRS receiver.** It is timer-mapped for PPM/SBUS and
+  cannot carry CRSF or SRXL2 unless `BRD_ALT_CONFIG` 1 remaps it as SERIAL7's RX, which
+  costs PPM. SERIAL7 is TX-only in the default config for the same reason. CRSF on
+  SERIAL6 avoids all of it and keeps the Bee35's number.
+- **Spare:** SERIAL4 (`Tx3`/`Rx3`), which is the GPS2 default and so suits a second GPS
+  ([OQ-01](open-questions.md)) with no parameter change, and SERIAL5 (`Tx8`/`Rx8`).
 
 ## Solder notes
 

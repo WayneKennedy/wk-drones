@@ -21,7 +21,7 @@ the row says otherwise; the reasoning is in [`decisions.md`](decisions.md) and
 | CAN adapters | 2× Matek AP_Periph CAN Node L431 | £16.00 each. [OQ-01](open-questions.md) | 3DXR #32918 | £32.00 | 2025-09-01 |
 | Companion computer | TBC | Raspberry Pi or Jetson Orin Nano; [OQ-03](open-questions.md) | TBC | TBC | TBC |
 | RX | TBC | No receiver found on a 2025 Holybro-period order. A Radiomaster RP3 V2 ELRS Diversity (HobbyRC #303808, 2025-08-11, £22.99) was bought with the Phoenix glider and is likely its receiver | TBC | TBC | TBC |
-| Video | TBC — a Walksnail Avatar HD Pro Micro Kit is intended ([OQ-08](open-questions.md)) | None found in the mail, June–October 2025, and **neither of the two kits bought in 2023 is free** — both are fitted to other aircraft | TBC | TBC | TBC |
+| Video | Walksnail Avatar HD Pro Micro Kit, 32 GB — **moved from the Swordfish** ([DEC-04](decisions.md), 2026-09-23) | Nothing bought: neither kit was free, so the Swordfish's is redeployed. **Condition unassessed** after that aircraft's two crashes; bench-test before mounting. Originally HobbyRC #231336 or #236190, 2023, £159.00 — which is unknown and immaterial ([fleet](../../../fleet/README.md#walksnail-kit-bought)) | — | — | — |
 | Battery | TBC | Holybro recommends "4S 3000-5000mAh 20C+ with XT60 Lipo" and quotes ~18 min hover with no payload on 5000 mAh ([product page](https://holybro.com/products/x500-v2-kits), read 2026-09-17). Candidates already owned, none tested on this airframe: 2 × GNB 5500 mAh 4S 70C (XT90, HobbyRC 2023-07; aircraft unrecorded) and the fleet's 4S1P P45B Li-ion packs ([fleet](../../../fleet/README.md)) | TBC | TBC | TBC |
 
 Order totals inc VAT and shipping: Flying Tech #83693 £273.60; HobbyRC #301738 £34.30,

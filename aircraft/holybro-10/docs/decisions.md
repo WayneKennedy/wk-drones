@@ -48,6 +48,21 @@ Unresolved items live in [`open-questions.md`](open-questions.md). Format:
     therefore the board's orientation and ArduPilot's `AHRS_ORIENTATION`.
 
 <a id="dec-03"></a>
+- **DEC-04 — Video: the Swordfish's Walksnail Pro Micro Kit moves here** (2026-09-23,
+  owner). Resolves OQ-08. Exactly two Pro Micro Kits were ever bought and both were
+  fitted: one to the 5", one to the [Swordfish](../../swordfish/README.md) canopy. The
+  Swordfish's is redeployed — that aircraft is repaired but not commissioned, while this
+  one is being built — so the 5" keeps its video and nothing is bought.
+  - **Condition unassessed.** The kit took two hard crashes on the Swordfish and has never
+    been tested since ([Swordfish `README.md`](../../swordfish/README.md)). Bench-test it
+    before it is mounted.
+  - **Wiring:** MSP DisplayPort on SERIAL2, power from the board's `9V` pads
+    ([`wiring.md`](wiring.md)). The board's analog `VTx`, `C1`/`C2` pads and its AT7456E
+    OSD go unused.
+  - **Mounting is still open.** Not on the flight-controller deck — see the airframe notes
+    under [OQ-06](open-questions.md) for the anchors that suit a bracket, and the camera
+    waits on which edge is forward.
+
 - **DEC-03 — The deck is rev C: the board on a floating TPU platform hung on four Z-flexure
   arms** (2026-09-21, owner; printed and checked 2026-09-22). Answers most of
   [OQ-07](open-questions.md). The part is

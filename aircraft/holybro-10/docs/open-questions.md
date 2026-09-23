@@ -90,30 +90,18 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
     from the ESCs is not available; it would have to be throttle-referenced or driven by
     in-flight FFT. Not assessed against ArduPilot's current options.
 
-- **OQ-08 — Which Walksnail kit, given both are fitted elsewhere?** (2026-09-17, owner).
-  The owner intends to fit a **Walksnail Avatar HD Pro Micro Kit** to this aircraft for FPV
-  and flight observation, alongside ArduPilot and the autonomy that is the point of the
-  airframe. **Exactly two were ever bought** (2023-06-29 and 2023-08-16, £159.00 each,
-  [fleet Walksnail kit](../../../fleet/README.md#walksnail-kit-bought)) and **both are
-  fitted**: one on the [5"](../../fpv-5/docs/bom.md), which is flight ready, and one on the
-  [Swordfish](../../swordfish/README.md) canopy, repaired but not commissioned and
-  **unassessed after two crashes**. There is no spare. So this needs the owner to choose
-  between moving the Swordfish's kit (that aircraft is not flying, but the kit's condition
-  is unknown), moving the 5"'s (which grounds the acro aircraft's video), or buying a
-  third. **Nothing is decided and nothing should be assumed bought.**
-  - **What it means for the airframe, all to be confirmed against the kit in hand.**
-    Retailer and review pages for the Pro kit give a VTX of **33.5 × 33.5 × 10.5 mm** with
-    **25.5 × 25.5 mm through-holes** and 20 × 20 mm tapped into the heatsink
-    ([Oscar Liang](https://oscarliang.com/walksnail-avatar-hd-pro-v2-kit/),
-    [Caddx](https://www.caddxfpv.com/products/walksnail-avatar-hd-pro-kit), read
-    2026-09-17); these are 2026 listings, not the 2023 kit, and the kit is on another
-    aircraft where it can be measured.
-  - **It will not live on the flight-controller deck.** The deck's central bay is 27 mm
-    between ribs ([`../print/sources.md`](../print/sources.md)), narrower than the VTX, and
-    the VTX runs hot and wants clean airflow away from the board. The upper plate has four
-    unused Ø3.4 anchors per side at (±50, ±23) and (±50, ±37) that suit a separate bracket.
-  - **The camera makes [OQ-06](#) blocking.** A nose camera cannot be positioned until
-    which edge of the plate faces forward is settled.
+- **OQ-08 — Which Walksnail kit? — RESOLVED 2026-09-23** by [DEC-04](decisions.md): the Swordfish's Pro Micro Kit moves here. Its condition after
+  two crashes is unassessed, so bench-test before mounting. Mounting is still open:
+  **it will not live on the flight-controller deck** — the deck's central bay is 27 mm
+  between ribs ([`../print/sources.md`](../print/sources.md)), narrower than the VTX, and
+  the VTX runs hot and wants clean airflow away from the board. The upper plate has four
+  unused Ø3.4 anchors per side at (±50, ±23) and (±50, ±37) that suit a separate bracket.
+  Retailer figures for the Pro kit VTX, unconfirmed against the kit in hand: **33.5 × 33.5
+  × 10.5 mm**, **25.5 × 25.5 mm through-holes**, 20 × 20 mm tapped into the heatsink
+  ([Oscar Liang](https://oscarliang.com/walksnail-avatar-hd-pro-v2-kit/),
+  [Caddx](https://www.caddxfpv.com/products/walksnail-avatar-hd-pro-kit), read 2026-09-17);
+  these are 2026 listings, not the 2023 kit. **The camera makes [OQ-06](#) blocking:** a
+  nose camera cannot be positioned until which edge of the plate faces forward is settled.
 
 - **OQ-09 — Which vision camera for the Jetson, and from where?** (2026-09-17, owner).
   The companion computer ([OQ-03](#)) needs a camera for AI vision, separate from the FPV
