@@ -32,6 +32,8 @@ Follows the shape of [`../bee35/`](../bee35/README.md). Files are created when t
 content for them, not before.
 
 - [`docs/bom.md`](docs/bom.md) — bill of materials, suppliers, prices, order dates
+- [`docs/wiring.md`](docs/wiring.md) — port map, solder notes, jumpers, power. Nothing
+  wired yet
 - [`docs/decisions.md`](docs/decisions.md) — decisions (`DEC-nn`)
 - [`docs/open-questions.md`](docs/open-questions.md) — pending decisions (`OQ-nn`)
 - [`print/sources.md`](print/sources.md) — vendor CAD for the frame and the flight
