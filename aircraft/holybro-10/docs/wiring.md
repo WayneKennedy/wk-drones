@@ -55,9 +55,16 @@ distribution board ([`bom.md`](bom.md)).
 
 ## Jumper settings
 
-TBC. `Vx` voltage (5 V default, 6 V or 7.2 V) is set by a jumper on the PD/ESC plate;
-irrelevant while nothing uses Vx. The `9V→12V` jumper on the main board is for
-camera/VTX, TBC with the video system.
+Three separate rails, often confused (Matek manual, read 2026-09-23): **5V** 2 A fixed;
+**9V** 2 A for camera/VTX, raised to 12 V by the `9V→12V` solder jumper **on the main
+board**; **Vx** 8 A for servos, 5 V default with 6 V and 7.2 V options, set by its own
+jumper **on the PD/ESC base plate**. The main board's `9V→12V` jumper does not affect Vx.
+
+- **Vx on this board is unverified** — 5 V is Matek's stated default, not a measurement.
+  The `Vx` row is populated across the whole S2–S10 header, so **check it before anything
+  is plugged into that row**: read which pads are bridged on the base plate, or measure Vx
+  to ground with a battery connected (the BECs are dead on USB power alone).
+- `9V→12V`: TBC with the video system.
 
 ## Power
 
