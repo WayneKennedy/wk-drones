@@ -125,6 +125,16 @@ axes and nothing in it marks the nose.
   PD plate's only holes, all labelled GND. **So every grommet is consumed inside the
   stack — none is spare for mounting the board to an airframe**, which is why this deck
   fixes the board by driving longer M2 screws up into the same standoffs.
+- **How the stack is wired — no board-to-board headers** (Matek manual layout page,
+  read 2026-09-23; owner confirms it matches the board in hand). The PD/ESC plate joins
+  the main PCB by **four short silicone wires soldered pad to pad**, each board carrying
+  the same four-pad group on the same edge: **Vbat** (battery voltage up from the plate's
+  + pads), **Curr** (the plate's 0.3 mΩ shunt), **G**, **Vx** (servo BEC rail; its
+  5/6/7.2 V jumper is on the plate). Ground is carried by the brass standoffs as well. The
+  **top plate is the USB-C/DFU/buzzer extender**, joined by a plug-in **JST-SH 6-pin**
+  cable: D+, D−, G, 4V5, Boot, Buz−. Heavy wiring therefore lands on the PD plate: battery
+  and ESC power solder to its + and − pads. Whether Matek fits the four wires at the
+  factory is unrecorded.
 - The vendor STEP also shows a Ø4.0 pattern at (±16, ±25), 32 × 50 mm. **There are no such
   holes on the hardware** (owner, 2026-09-17) — it is a CAD artefact; ignore it.
 - Underside components stand up to **4.0 mm** proud of the bare PCB; topside up to 4.4 mm
