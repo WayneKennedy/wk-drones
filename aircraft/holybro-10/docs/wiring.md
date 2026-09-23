@@ -10,7 +10,7 @@ ArduPilot implied.
 
 | Peripheral | Protocol | FC pads/port | Status |
 |---|---|---|---|
-| 4 × BLHeli_S 20 A ESC, signal | PWM or DShot, TBC | S1–S4 (signal + G only) | Headers to solder, below |
+| 4 × BLHeli_S 20 A ESC, signal | PWM or DShot, TBC | **S3–S6 planned** (signal + G only), needs `SERVO3_FUNCTION` 33 … `SERVO6_FUNCTION` 36 | Headers to solder, below |
 | ESC power | — | Not on the FC. Each ESC takes XT30 from the frame's distribution board ([`bom.md`](bom.md)) | As shipped, ARTF |
 | FC power | — | PD/ESC plate + and − pads, from the frame's distribution board | TBC |
 | Receiver | TBC | TBC | Not chosen ([F-OQ-01](../../../fleet/open-questions.md)) |
@@ -26,11 +26,22 @@ distribution board ([`bom.md`](bom.md)).
 
 - **ESC signal leads carry ground and signal only, no +ve** (owner, 2026-09-23). So the
   FC feeds four signal lines and a common ground, and nothing back-feeds the servo rail.
-- **Pin headers are to be soldered by the owner.** The board ships with bare pads. On the
-  H743-WING the outputs are grouped in threes — each `Sn` pad sits in a row with its own
-  `G` and `Vx` (Matek layout page). Two-wire ESC leads need the `Sn` and `G` of each row
-  only; **leave `Vx` unconnected**, it is the board's 5/6/7.2 V servo BEC. Which header
-  type and how many rows: TBC as fitted.
+- **Pin headers are to be soldered by the owner.** The board ships with bare pads. Pad
+  layout (owner photo, 2026-09-23): **S2–S10 form one bank** of three rows — `Sn` on top,
+  `Vx` in the middle, `G` at the bottom, nine columns. **S1 is separate**, on its own tab
+  at the left edge with its own `Vx` and `G`. S11, S12, LED and 5V are on the right edge
+  beside the UART pad field. Two-wire ESC leads need the `Sn` and `G` of a column only;
+  **leave `Vx` unconnected**, it is the board's 5/6/7.2 V servo BEC. Which header type and
+  how many columns: TBC as fitted.
+- **Motors on S3–S6, planned, not soldered.** ArduPilot's output groups on this board are
+  `1/2`, `3/4/5/6`, `7/8/9/10`, `11/12`, `13`; every output in a group must run the same
+  protocol, so DShot on one means DShot on all
+  ([MatekH743 page](https://ardupilot.org/copter/docs/common-matekh743-wing.html), read
+  2026-09-23). **S3–S6 puts all four motors in one group**, contiguous in the S2–S10 bank,
+  and the bidirectional-DShot pairs (`3-4`, `5-6`; only outputs 1–8 are capable) fall
+  inside it. Cost: ArduPilot expects motors on outputs 1–4, so set `SERVO3_FUNCTION` 33
+  (Motor1) … `SERVO6_FUNCTION` 36 (Motor4) and leave `SERVO1/2_FUNCTION` 0. S1, S2 and
+  S7–S12 stay free.
 - **Vx is unused on this aircraft** unless something else needs it: the X500 V2 has no
   servos.
 
