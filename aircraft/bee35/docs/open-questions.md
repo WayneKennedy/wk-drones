@@ -78,7 +78,10 @@ Format: `OQ-nn — question (date raised)`.
 
 - **OQ-04 — Camera mount part mislaid** (2026-09-22, owner). Part of the frame's camera
   mount is missing, so the Walksnail Nano Camera V3 cannot be mounted and the OSD step
-  (checklist step 9) waits. Which part is missing: TBC. Options: find it; or print it —
+  (checklist step 9) waits. **Which part is missing: the aluminium standoff for the camera
+  mount and the camera grommets** (owner, 2026-09-23). Both are frame hardware, not
+  printable: sourcing or substituting them is the fix, alongside the mount itself.
+  Options: find them; or print it —
   SpeedyBee publishes `19mmCamera-mount-bracket.stl` ([`../print/sources.md`](../print/sources.md)),
   but whether that is the missing part is unchecked, and the Nano V3 is 14 mm, so a
   14→19 mm adapter is needed either way ([`bom.md`](bom.md) camera row). **Blocks the
