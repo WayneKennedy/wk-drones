@@ -130,11 +130,13 @@ axes and nothing in it marks the nose.
   the main PCB by **four short silicone wires soldered pad to pad**, each board carrying
   the same four-pad group on the same edge: **Vbat** (battery voltage up from the plate's
   + pads), **Curr** (the plate's 0.3 mΩ shunt), **G**, **Vx** (servo BEC rail; its
-  5/6/7.2 V jumper is on the plate). Ground is carried by the brass standoffs as well. The
-  **top plate is the USB-C/DFU/buzzer extender**, joined by a plug-in **JST-SH 6-pin**
-  cable: D+, D−, G, 4V5, Boot, Buz−. Heavy wiring therefore lands on the PD plate: battery
-  and ESC power solder to its + and − pads. Whether Matek fits the four wires at the
-  factory is unrecorded.
+  5/6/7.2 V jumper is on the plate). Ground is carried by the brass standoffs as well.
+  The **top plate carries nothing electrical** — it is a protective cover, silkscreened
+  with the pin IDs of the main board's pad rows below it (owner, from the board in hand,
+  2026-09-23). The **USB-C/DFU/buzzer extender is a separate small board**, not the top
+  plate, joined by a plug-in **JST-SH 6-pin** cable: D+, D−, G, 4V5, Boot, Buz−. Heavy
+  wiring therefore lands on the PD plate: battery and ESC power solder to its + and −
+  pads. Whether Matek fits the four silicone wires at the factory is unrecorded.
 - The vendor STEP also shows a Ø4.0 pattern at (±16, ±25), 32 × 50 mm. **There are no such
   holes on the hardware** (owner, 2026-09-17) — it is a CAD artefact; ignore it.
 - Underside components stand up to **4.0 mm** proud of the bare PCB; topside up to 4.4 mm
