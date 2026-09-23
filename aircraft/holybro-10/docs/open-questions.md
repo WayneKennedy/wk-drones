@@ -257,6 +257,26 @@ Pending decisions for the Holybro 10". Decisions, once taken, go in
   `AHRS_ORIENTATION`. Settle it against the assembled airframe, or against the battery
   mount and GPS mast positions.
 
+- **OQ-10 — Peripherals: headers and plugs, or soldered direct? And how are plugs
+  retained?** (2026-09-23, owner). Settled already: motor signals take right-angle headers
+  on S2–S10, all three rows ([`wiring.md`](wiring.md)). Open for the receiver, GPS,
+  rangefinder and companion link, which land on the right-edge UART pad field. **The owner
+  favours pins and plugs** for convenience; nothing is decided.
+  - **For plugs:** those peripherals are swapped repeatedly during bring-up, and
+    desoldering from a populated board risks lifting pads.
+  - **Against:** every plug is a joint that can vibrate apart. The Bee35's FC–ESC harness
+    worked loose twice on 2026-09-22, the second time cutting battery power to the FC with
+    the frame closed (Bee35 [OQ-03](../../bee35/docs/open-questions.md)) — the same failure
+    on a 10" carrying a companion computer is more expensive.
+  - **Latching beats friction.** A friction plug on a bare pin header is the joint that
+    comes off. Where a peripheral ships a JST-GH pigtail, soldering that pigtail's far end
+    to the pads keeps the latch and costs no serviceability.
+  - **A printed retention cover is the owner's proposal.** It has to clamp the plugs down
+    onto the pins to do anything; a shroud around them does not retain. Could also carry a
+    column-1 mark, since `Vx` is populated across the whole S2–S10 block and is live
+    whenever a battery is connected.
+  - Decide before the receiver is fitted; it sets what gets soldered.
+
 - **OQ-04 — Build state and the remaining parts** (2026-09-17). Whether the frame is
   assembled, and the receiver, video system and battery, are unrecorded
   ([`bom.md`](bom.md), [F-OQ-01](../../../fleet/open-questions.md)).

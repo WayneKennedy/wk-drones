@@ -34,10 +34,11 @@ distribution board ([`bom.md`](bom.md)).
   **leave `Vx` unconnected** at the ESC end — it is the board's 5/6/7.2 V servo BEC.
 - **Headers: right-angle, all three rows across S2–S10** (owner, 2026-09-23, in hand, not
   yet soldered). 27 pins. `Vx` is populated **for flexibility of what can plug in later**,
-  not because the ESCs use it. **Check the exit direction against the rev C TPU platform
-  before soldering:** that platform covers the whole underside of the board
-  ([DEC-02](decisions.md)), so pins and plugs must lie out over it, not down into it.
-  S1's tab and the right-edge pads are unpopulated so far.
+  not because the ESCs use it. **Clearance confirmed** (owner photo, 2026-09-23, board on
+  the rev C deck on the frame plate): the pins exit sideways, clear of the TPU platform
+  that covers the board's underside ([DEC-02](decisions.md)). S1's tab and the right-edge
+  pads are unpopulated; how the receiver, GPS, rangefinder and companion link connect is
+  [OQ-10](open-questions.md).
 - **Two JST-GH harnesses on the top edge, as supplied** (owner photo, 2026-09-23): one to
   the USB-C/DFU/buzzer extender board, one CAN (`G`, `CAN-L`, `CAN-H`, `4V5`).
 - **Motors on S3–S6, planned, not soldered.** ArduPilot's output groups on this board are
