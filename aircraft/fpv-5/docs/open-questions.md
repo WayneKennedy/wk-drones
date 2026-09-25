@@ -14,6 +14,18 @@ Pending decisions for the 5". Decisions, once taken, go in `decisions.md` as a D
   - **Firmware support:** iNav has a `SPEEDYBEEF405V3` target, in the iNav repo since
     2022-09 (checked 2026-09-15; latest release 9.1.0). Not flashed or tested on this
     board.
+  - **The F405 all but settles "which of the two": iNav** (2026-09-25). ArduPilot does have
+    a `speedybeef4v3` target, but the STM32F405's **1 MB flash** forces features out of the
+    build, and its hwdef includes `minimize_fpv_osd.inc`, which sets
+    **`AP_OPTICALFLOW_ENABLED 0`** — optical flow is **not compiled in** (ArduPilot master,
+    read 2026-09-25). The MTF-01P bought for this aircraft under
+    [F-DEC-07](../../../fleet/decisions.md) would therefore do nothing on stock ArduPilot.
+    Also cut there: `HAL_GYROFFT_ENABLED 0` (no in-flight FFT for the harmonic notch),
+    gimbal mount, camera backends, most GPS, battery and rangefinder backends. iNav on F405
+    supports MSP flow natively and the MTF-01P speaks MSP. **Untested alternative:** a
+    custom ArduPilot build with flow enabled (custom firmware server) — whether it fits in
+    1 MB is unverified. The H743 boards the fleet uses elsewhere (480 MHz, 2 MB flash) have
+    none of this constraint.
   - **Hardware gap:** no optical flow or lidar is fitted (owner, 2026-09-15), and the
     owner judges that additions are needed to get the best from iNav. A downward
     **MicoAir MTF-01P** is now the fleet standard for every multirotor
