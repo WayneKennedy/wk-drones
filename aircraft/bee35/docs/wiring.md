@@ -67,8 +67,10 @@ MicoAir's diagram: **12V, GND, TX2, RX2, GND, RX6.**
   [`setup-ardupilot.md`](setup-ardupilot.md) checklist step 2.
   **The harness works loose** — twice on 2026-09-22, the second after the frame was
   screwed down, cutting battery power to the FC. Securing it is
-  [OQ-03](open-questions.md) and blocks the maiden. Until then, after any closing of the
-  frame, check `voltage_battery` (~16 V on a charged pack) and run the motor test.
+  [OQ-03](open-questions.md). **Inspected and sound, 2026-09-25 (owner); it no longer
+  blocks the maiden**, being covered by the pre-flight visual check every aircraft gets.
+  After any closing of the frame, check `voltage_battery` (~16 V on a charged pack) and
+  run the motor test.
 
 TBC. Record pad locations, wire gauges, and anything non-obvious about the physical
 build here as it is done.

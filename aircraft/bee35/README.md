@@ -10,11 +10,18 @@ hardware.
 
 ## Status
 
-**Build started.** As of 2026-09-15 the four T-Motor F2004 3000KV motors
-([DEC-03](docs/decisions.md)) are in hand and mounted on the frame. **Next step:
-soldering** — record pads, wire gauges and jumpers in [`docs/wiring.md`](docs/wiring.md)
-as it is done. Not yet flashed or flown. Which of the other ordered parts are in hand is
-not recorded; every value marked TBC stays unconfirmed until checked against hardware.
+**Built and configured on the bench; not flown.** ArduCopter 4.7.1 flashed 2026-09-22
+([`docs/setup-ardupilot.md`](docs/setup-ardupilot.md) checklist), with accelerometer and
+compass calibrated, receiver bound, flight modes set, and GPS, compass and the MTF-01P
+reading over MAVLink. Wiring and the ports are in [`docs/wiring.md`](docs/wiring.md).
+
+**Two things block the maiden** (owner, 2026-09-25), both mounting, neither electrical:
+the **camera mount** ([OQ-04](docs/open-questions.md)) and the **MTF-01P mount**
+([OQ-05](docs/open-questions.md)). The stack harness that worked loose on the first bench
+day ([OQ-03](docs/open-questions.md)) has been inspected and is sound; it is covered by the
+pre-flight visual check.
+
+Every value marked TBC stays unconfirmed until checked against hardware.
 
 Role: an FPV aircraft in the wk-drones fleet, **not** a robot in the
 [wk-robotics](https://github.com/WayneKennedy/wk-robotics) family. The frame has no

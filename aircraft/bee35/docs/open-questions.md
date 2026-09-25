@@ -74,7 +74,11 @@ Format: `OQ-nn — question (date raised)`.
   re-routing with slack so closing the frame cannot pull on it; both. For the USB
   extension: repair or remake it with slack, or do without it and plug into the FC
   directly with the frame open.
-  **Blocks the maiden.** Details: [`wiring.md`](wiring.md) solder notes.
+  **No longer blocks the maiden** (owner, 2026-09-25): the wiring has been inspected and
+  is sound, and **a visual check is part of every pre-flight on every aircraft**, which is
+  where a disturbed plug gets caught. Still worth doing one of the options above, since the
+  cause — a tight interior squeezing the stack — is unchanged. Details:
+  [`wiring.md`](wiring.md) solder notes.
 
 - **OQ-04 — Camera mount part mislaid** (2026-09-22, owner). Part of the frame's camera
   mount is missing, so the Walksnail Nano Camera V3 cannot be mounted and the OSD step
@@ -85,7 +89,8 @@ Format: `OQ-nn — question (date raised)`.
   SpeedyBee publishes `19mmCamera-mount-bracket.stl` ([`../print/sources.md`](../print/sources.md)),
   but whether that is the missing part is unchecked, and the Nano V3 is 14 mm, so a
   14→19 mm adapter is needed either way ([`bom.md`](bom.md) camera row). **Blocks the
-  OSD step and the maiden.**
+  OSD step and the maiden** — with [OQ-05](#), one of the two remaining blockers (owner,
+  2026-09-25).
 
 - **OQ-05 — Flow sensor mount** (2026-09-22, owner). The MTF-01P is wired and working on
   UART4 but not mounted: the frame's underside has no obvious flat surface for it. It
@@ -95,4 +100,6 @@ Format: `OQ-nn — question (date raised)`.
   ([`../../holybro-10/print/src/h743-deck.py`](../../holybro-10/print/src/h743-deck.py)).
   Needed first: where on the underside it goes and the frame geometry there. The
   mounting fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
-  check and calibration wait for it. **Blocks flow use; not the maiden in GPS modes.**
+  check and calibration wait for it. **Blocks the maiden** (owner, 2026-09-25) — with
+  [OQ-04](#) it is one of the two things now standing between this aircraft and its first
+  flight.
