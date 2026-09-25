@@ -20,6 +20,20 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   off-board topology (a ground machine commanding the flight controller over radio); that
   would be a new decision here, not an edit to this one.
 
+- **F-DEC-08 — No DJI: the fleet stays on open/hobbyist video** (2026-09-25, owner).
+  "O4 is DJI, and I have zero DJI kit in my ecosystem, I prefer to stay hobbyist not
+  corporate." Video stays **Walksnail Avatar HD**, which every aircraft's goggles already
+  are (Fat Shark Dominator Avatar HD). Same reasoning as
+  [F-DEC-02](#f-dec-02)'s rejection of closed radio ecosystems.
+  - **Nothing DJI has ever been bought** (invoice ledgers and mailbox searched
+    2026-09-25): the only DJI-named lines are a goggle power adapter and an antenna pack
+    that lists DJI among several compatibilities.
+  - **The Bee35's aluminium head module is not a DJI purchase.** The frame variant bought
+    was "Bee35 Pro (with CNC VTX heatsink)" (Unmanned Tech #18595), whose head is the
+    O4-Pro-style aluminium assembly; SpeedyBee's O4 tutorial therefore documents that
+    hardware. The aircraft flies a Walksnail Nano V3 in it
+    ([OQ-04](../aircraft/bee35/docs/open-questions.md)).
+
 - **F-DEC-07 — Every multirotor carries a downward MicoAir MTF-01P** (2026-09-25, owner).
   Optical flow plus ToF range, facing down, for position hold and height near the ground.
   Multirotors only: the planes hover nothing and gain nothing.

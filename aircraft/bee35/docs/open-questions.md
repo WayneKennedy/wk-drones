@@ -96,10 +96,22 @@ Format: `OQ-nn — question (date raised)`.
     **To confirm: that this aircraft has that same aluminium head module** — the tutorial
     is written for the O4 Air Unit Pro and this aircraft carries a Walksnail Nano V3. If it
     does, those are the parts to source.
-  Options: find them; or print it —
-  SpeedyBee publishes `19mmCamera-mount-bracket.stl` ([`../print/sources.md`](../print/sources.md)),
-  but whether that is the missing part is unchecked, and the Nano V3 is 14 mm, so a
-  14→19 mm adapter is needed either way ([`bom.md`](bom.md) camera row). **Blocks the
+  - **The camera itself is no longer a problem** (owner, 2026-09-25): the Nano V3 came with
+    a TPU adapter that brings it to standard 19/20 mm camera width, and it is sitting in
+    the head's side plates now. The 14 → 19 mm gap this entry used to carry is closed.
+  - **Nothing off the shelf replaces the head.** Measured from the official STLs
+    (bounding boxes, 2026-09-25): `19mmCamera-mount-bracket.stl` is **13.2 × 13.2 ×
+    4.25 mm**, a retainer, not a head; SpeedyBee's O4P camera support print is **23.6 ×
+    24.3 × 30.9 mm** and still needs the aluminium side plates. Community full-TPU mounts
+    ([Printables 1242717](https://www.printables.com/model/1242717-speedybee-bee35-dji-04-air-unit-pro-camera-mount),
+    [Cults3D](https://cults3d.com/en/3d-model/gadget/speedybee-bee35-dji-o4-pro-tpu-camera-mount))
+    are modelled around the O4 Pro camera, not a 19 mm standard one.
+  - **Two paths, not exclusive** (owner is weighing them, 2026-09-25):
+    **(a)** source the 25.5 mm standoff and four damping balls and keep the fitted CNC
+    head — cheap, unblocks the maiden;
+    **(b)** design a **TPU head** replacing both side plates and the standoff, taking the
+    Nano at its adapted width — crash-friendlier and needs no vendor hardware, but it is a
+    design job on the critical path. **Blocks the
   OSD step and the maiden** — with [OQ-05](#), one of the two remaining blockers (owner,
   2026-09-25).
 
