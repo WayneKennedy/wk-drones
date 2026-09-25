@@ -56,8 +56,19 @@ from Matek's STEP and the frame interface in `220.stl`.
 
 ## MTF-01P case
 
-Official STL on MicoAir's MTF-01P product page. Mounting is 24.3 × 12 mm with
-Ø2.5 mm holes.
+**Sensor, from [MicoAir's product page](https://micoair.com/optical_range_sensor_mtf-01p/)
+(read 2026-09-25, not measured on the unit):** 33.2 × 20.8 × 16.8 mm, 8 g. Mounting
+**24.3 × 12 mm, Ø2.5 mm** holes. Optical flow lens **42° FOV**; ToF 808 nm, 1.5° emission.
+UART 115200, LVTTL 3.3 V.
+
+**Clearance the 42° cone needs:** half-angle 21°, so the flow footprint is 0.38 × height —
+77 mm across at 100 mm off the ground. No part of a bracket may enter it.
+
+**No STL or CAD is published by MicoAir** (their page links neither, checked 2026-09-25).
+Community cases: [Printables](https://www.printables.com/model/1060101-mtf-01-mtf-01p-optical-flow-lidar-sensor-cover/user-gcodes),
+[Thingiverse 6319409](https://www.thingiverse.com/thing:6319409),
+[Robofusion](https://docs.robofusion.net/projects/sensor-cases-and-mounts). Licences
+unchecked; none is committed here.
 
 Community alternatives exist on Printables and Cults. The design worth copying
 splits it into a TPU body with a rigid cup, so the sensor is vibration-isolated
