@@ -93,13 +93,25 @@ Format: `OQ-nn — question (date raised)`.
   2026-09-25).
 
 - **OQ-05 — Flow sensor mount** (2026-09-22, owner). The MTF-01P is wired and working on
-  UART4 but not mounted: the frame's underside has no obvious flat surface for it. It
-  must face straight down with a clear view, and its mounting is 24.3 × 12 mm, Ø2.5 mm
-  holes (MicoAir; official case STL, [`../print/sources.md`](../print/sources.md)).
-  Likely a designed-and-printed bracket, parametric like the Holybro deck
-  ([`../../holybro-10/print/src/h743-deck.py`](../../holybro-10/print/src/h743-deck.py)).
-  Needed first: where on the underside it goes and the frame geometry there. The
-  mounting fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
-  check and calibration wait for it. **Blocks the maiden** (owner, 2026-09-25) — with
+  UART4 but not mounted. Its mounting is 24.3 × 12 mm, Ø2.5 mm holes (MicoAir; official
+  case STL, [`../print/sources.md`](../print/sources.md)).
+  - **Location settled (owner, 2026-09-25): the VTX heatsink, dead centre underneath.**
+    It presents **4 × M2 at 20 × 20 mm**, so a printed bracket adapts 20 × 20 M2 to the
+    sensor's 24.3 × 12 Ø2.5. Centre puts `FLOW_POS_X/Y` at ~0 and gives a clear downward
+    view between the ducts. The alternative — moulding a part to the frame's curved
+    underside further aft — is rejected as harder for no gain.
+  - **Heat, judged a non-issue by the owner (2026-09-25):** prop wash cools the underside
+    in flight. Noted against it: the uncooled case is ground time with the VTX up, where
+    TPU under constant load creeps rather than breaks, which would show as the sensor
+    slowly drifting off vertical. **Four M2 standoffs giving an air gap** remove the
+    concern at no cost and keep the fins in the airflow; not yet decided.
+  - **To check on the airframe:** that the sensor's underside does not end up below the
+    landing feet, or it becomes the landing gear.
+  - Open: the bracket itself — a designed-and-printed part, parametric like the Holybro
+    deck ([`../../holybro-10/print/src/h743-deck.py`](../../holybro-10/print/src/h743-deck.py)).
+  - The mount fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
+    check and calibration wait for it.
+
+  **Blocks the maiden** (owner, 2026-09-25) — with
   [OQ-04](#) it is one of the two things now standing between this aircraft and its first
   flight.
