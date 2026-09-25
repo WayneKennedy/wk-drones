@@ -5,6 +5,18 @@ printed go in [`stl/`](stl/). Licences are TBC until checked at each source. Thi
 only commit an upstream STL to `stl/` if its licence permits redistribution, and
 record that licence here.
 
+## SpeedyBee documents
+
+- [Bee35 Quick Start Manual](https://spcdn.speedybee.cn/cdn/117883962633752576.pdf)
+  (2024-04) — binding, modes, motor directions, pre-flight checks. **No camera-mount or
+  assembly detail.**
+- [O4 Air Unit Pro aluminium head module installation tutorial](https://support.speedybee.cn/pdf?f=hg2h&l=en)
+  (2025-08-06) — the head's full fastener schedule, including the 25.5 mm aluminium
+  standoff and the four camera vibration damping balls of
+  [OQ-04](../docs/open-questions.md).
+
+Neither is committed here: SpeedyBee's copyright, and this repo is public.
+
 ## SpeedyBee official Bee35 files
 
 <https://docs.speedybee.cn/en/fpv/fpv-drones/bee35-drone/bee35-3d-print-files.html>

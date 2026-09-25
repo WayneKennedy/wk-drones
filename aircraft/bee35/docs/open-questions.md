@@ -85,6 +85,17 @@ Format: `OQ-nn — question (date raised)`.
   (checklist step 9) waits. **Which part is missing: the aluminium standoff for the camera
   mount and the camera grommets** (owner, 2026-09-23). Both are frame hardware, not
   printable: sourcing or substituting them is the fix, alongside the mount itself.
+  - **Both parts are named in SpeedyBee's
+    [O4 Air Unit Pro aluminium head module tutorial](https://support.speedybee.cn/pdf?f=hg2h&l=en)**
+    (dated 2025-08-06, read 2026-09-25): a **25.5 mm aluminium standoff** across the top of
+    the two aluminium head side plates, held by **two M2.5 × 8 mm button-head socket
+    screws**, and **four vibration damping balls** seated in the camera support mount.
+    Rest of that head's schedule: camera to support mount 4 × M2 × 3; VTX to the CNC
+    cooling bottom plate 4 × M2 × 6; ring to cooling plate 4 × M3 × 14; head module to ring
+    and carbon plate 2 × M3 × 14 + 2 × M3 × 10; antenna mounts M2 × 8.
+    **To confirm: that this aircraft has that same aluminium head module** — the tutorial
+    is written for the O4 Air Unit Pro and this aircraft carries a Walksnail Nano V3. If it
+    does, those are the parts to source.
   Options: find them; or print it —
   SpeedyBee publishes `19mmCamera-mount-bracket.stl` ([`../print/sources.md`](../print/sources.md)),
   but whether that is the missing part is unchecked, and the Nano V3 is 14 mm, so a
