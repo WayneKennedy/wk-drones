@@ -20,6 +20,33 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   off-board topology (a ground machine commanding the flight controller over radio); that
   would be a new decision here, not an edit to this one.
 
+- **F-DEC-07 — Every multirotor carries a downward MicoAir MTF-01P** (2026-09-25, owner).
+  Optical flow plus ToF range, facing down, for position hold and height near the ground.
+  Multirotors only: the planes hover nothing and gain nothing.
+  - **State:** Bee35 fitted and working on UART4 ([its `wiring.md`](../aircraft/bee35/docs/wiring.md));
+    the 5" and the Holybro 10" have none. **Two to buy**, £22.99 each on the last invoice
+    (Flying Tech #18595, 2026-09-07). Nothing else in stock serves: the one other flow
+    sensor owned, a Matek 3901-L0X, was rejected on 2026-09-25 — 2 m range and a VL53L0X
+    that sunlight swamps (wk-inventory `docs/stock.md`).
+  - **The Holybro carries both it and the TFmini Plus**, whose ToF it duplicates. The
+    TFmini stays: 12 m, IP65, bought for accurate height on landing. Which one ArduPilot
+    reads as `RNGFND1` there is unsettled.
+  - **The 5" needs [F-DEC-06](#f-dec-06) done first** — flow is no use to it on Betaflight.
+  - Mounting is per aircraft and unsolved on both: Bee35 [OQ-05](../aircraft/bee35/docs/open-questions.md).
+
+- **F-DEC-06 — ArduPilot or iNav on every aircraft; no Betaflight** (2026-09-25, owner).
+  Anything new, and anything reflashed, runs ArduPilot or iNav. Betaflight is not used:
+  the fleet is built around position hold, autonomy and flow or GPS aiding, which is what
+  those two firmwares are for.
+  - **The 5" is the only aircraft affected**, and it converts — its
+    [OQ-01](../aircraft/fpv-5/docs/open-questions.md) is now *when* and *to which*, not
+    *whether*. It is flight ready today, so converting means reflashing, retuning and
+    re-testing a working aircraft; save its Betaflight `diff all` and `dump all` to
+    `aircraft/fpv-5/config/` first.
+  - Current state: Bee35 ArduPilot ([DEC-08](../aircraft/bee35/docs/decisions.md)),
+    Holybro none flashed with ArduPilot implied ([DEC-01](../aircraft/holybro-10/docs/decisions.md)),
+    5" Betaflight.
+
 - **F-DEC-05 — Pre-flight, every switch is back** (2026-09-22, owner). On every model,
   all switches pushed away from the pilot is the safe starting state: disarmed, no
   failsafe or special function active, and the most manual flight mode (Stabilize on
