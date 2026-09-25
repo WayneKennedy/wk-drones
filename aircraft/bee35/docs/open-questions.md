@@ -125,24 +125,28 @@ Format: `OQ-nn — question (date raised)`.
 - **OQ-05 — Flow sensor mount** (2026-09-22, owner). The MTF-01P is wired and working on
   UART4 but not mounted. Its mounting is 24.3 × 12 mm, Ø2.5 mm holes (MicoAir; official
   case STL, [`../print/sources.md`](../print/sources.md)).
-  - **Location settled (owner, 2026-09-25): the VTX heatsink, dead centre underneath.**
-    It presents **4 × M2 at 20 × 20 mm**, so a printed bracket adapts 20 × 20 M2 to the
-    sensor's 24.3 × 12 Ø2.5. Centre puts `FLOW_POS_X/Y` at ~0 and gives a clear downward
-    view between the ducts. The alternative — moulding a part to the frame's curved
-    underside further aft — is rejected as harder for no gain.
+  - **Location, second decision (owner, 2026-09-25, evening): up front, under the nose,
+    on a three-point fastening** — two of the camera bracket's screws plus the heatsink's
+    **forward** M2. Supersedes the same day's first choice, the heatsink itself (4 × M2 on a
+    20 × 20 square sitting as a diamond to the airframe): a bracket for it was modelled
+    ([`../print/sources.md`](../print/sources.md), commit `f4b3763`) and dropped because
+    **it put the sensor too low** — with no landing gear the sink is the belly, and the
+    sensor would have hung 21 mm below it. Up front it sits higher; `FLOW_POS_X` is then
+    non-zero and must be measured and set.
   - **Heat, judged a non-issue by the owner (2026-09-25):** prop wash cools the underside
     in flight. Noted against it: the uncooled case is ground time with the VTX up, where
     TPU under constant load creeps rather than breaks, which would show as the sensor
     slowly drifting off vertical. **Four M2 standoffs giving an air gap** remove the
     concern at no cost and keep the fins in the airflow; not yet decided.
-  - **There is no landing gear** (owner, 2026-09-25): the heatsink is the belly, and the
-    sensor under it becomes the lowest point. The bracket therefore carries four corner
-    legs standing 3 mm proud of the sensor's face — vestigial feet, outside the flow cone.
-    The sink's holes are **tapped M2 with 2 mm free behind them** (owner).
-  - **Bracket designed 2026-09-25, not printed:** [`../print/sources.md`](../print/sources.md)
-    `flow-mount`, source [`../print/src/flow-mount.py`](../print/src/flow-mount.py). Flush on
-    the sink; the air-gap standoffs are dropped (the owner judges heat a non-issue; brass M2
-    standoffs could be added between sink and plate later without a redesign).
+  - **There is no landing gear** (owner, 2026-09-25): the heatsink is the belly. Whatever
+    hangs lowest is what the aircraft lands on, so the bracket needs feet or the sensor
+    needs to sit above the sink's face. The sink's holes are **tapped M2 with 2 mm free
+    behind them** (owner).
+  - **Needed before the three-point bracket can be drawn:** which two camera-bracket
+    screws (the posts' M3 self-tappers, or the side plates' M3s); the fore-aft and
+    sideways distances from those two to the sink's forward M2; whether the surfaces the
+    three screws bear on are one plane, and if not the step between them; and the
+    sensor's long-axis orientation there.
   - The mount fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
     check and calibration wait for it.
 

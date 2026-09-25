@@ -31,24 +31,12 @@ the 25.5 mm standoff and the four damping balls. Parts are added as geometry is 
 - **PETG or similar rigid filament, not TPU.** This part holds a spacing under screw
   preload and TPU creeps. Damping belongs in the camera-holding part, still to be designed.
 
-### `flow-mount` — the MTF-01P under the VTX heatsink ([OQ-05](../docs/open-questions.md))
+### `flow-mount` — the MTF-01P up front, three-point ([OQ-05](../docs/open-questions.md))
 
-Source [`src/flow-mount.py`](src/flow-mount.py) (CadQuery ≥ 2.4); `stl/` holds
-`bee35-flow-mount.stl`/`.step` and `bee35-flow-mount-print.stl` (top face down, legs up:
-every hole vertical, no supports). **Designed 2026-09-25, not printed.**
-
-| | |
-|---|---|
-| Plate | 42.4 × 30 × 3 mm, flat on the heatsink's face. 4 × M2 clearance at the sink's **20 × 20** tapped pattern (owner, 2026-09-25), heads counterbored Ø4 × 2 from below. With 2 mm free behind the sink's holes (owner), screw length = 1 mm of plate + sink thickness + ≤ 2 |
-| Sensor | Hangs under the plate on four Ø5 × 1 mm bosses at its **24.3 × 12** pattern, M2.5 self-tapping (Ø2.1 pilots) up through its own Ø2.5 holes. Face 20.8 mm below the sink; 1 mm gap above it for cable and anything proud of its top |
-| Legs | 4 × 4 mm at the plate's corners, 0.6 mm clear of the sensor body, standing **3 mm below the sensor's face** with 1 mm chamfers. The aircraft has no landing gear and the sink is the belly (owner), so these are what it lands on. At the feet the 42° flow cone is 1.15 mm across; the nearest leg is 11 mm from the sensor's centre |
-| Orientation | The 20 × 20 pattern is square, so the plate goes on either way round — that sets the sensor's long axis fore-aft or across, and `FLOW_ORIENT_YAW` with it |
-| Assembly | Plate to sink first (its heads end up under the sensor), then sensor to plate |
-| Material | PETG: alignment is what the flow reads, and it sits on the heatsink. ~6 g |
-
-Sensor dimensions are MicoAir's page figures, not measured on the unit; whether its
-connector or anything else stands proud of its top face, and on which face the mounting
-holes are countersunk, is unchecked. Total drop below the sink: 23.8 mm.
+Not yet designed. A heatsink-mounted bracket was modelled on 2026-09-25 (commit
+`f4b3763`: 42 × 34 plate on the sink's diamond M2 pattern, corner legs as feet) and
+**abandoned the same day — it put the sensor too low** (owner). The replacement mounts
+under the nose on two of the camera bracket's screws plus the heatsink's forward M2.
 
 ## SpeedyBee documents
 

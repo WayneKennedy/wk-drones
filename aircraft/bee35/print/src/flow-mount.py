@@ -7,9 +7,11 @@ under a plate screwed to those holes, facing straight down, and four corner legs
 little proud of its face so the sensor is not what the aircraft lands on.
 
 Frame: z = 0 is the heatsink's face, +z up (into the aircraft), so the whole part is at
-z <= 0. x and y are the plate's own axes; the 20 x 20 pattern is square, so the plate can
-go on the sink either way round - that is how the sensor's long axis is set fore-aft or
-across, and with it FLOW_ORIENT_YAW.
+z <= 0. x and y are the plate's own axes, and the sensor's long axis is x. The sink's
+20 x 20 square sits as a diamond to the airframe, so in the plate it is rotated 45 deg:
+one hole on each plate axis, 14.14 mm out. The rotated pattern is still square, so the
+plate goes on the sink either way round - that is how the sensor's long axis is set
+fore-aft or across, and with it FLOW_ORIENT_YAW.
 
 Assembly: plate to sink first (M2 up into the sink, heads recessed in the plate's
 underside), then the sensor up into the plate (M2.5 self-tapping through the sensor's
@@ -27,6 +29,10 @@ import cadquery as cq
 
 # ---------------------------------------------------------------- measured / stated
 SINK_PITCH = 20.0     # MEASURED (owner, 2026-09-25): 4 x M2 tapped, 20 x 20 mm square
+SINK_ROT_DEG = 45.0   # the square sits as a DIAMOND to the airframe (owner, 2026-09-25,
+                      # and the underside photo): one hole forward, one aft, one each
+                      # side, 14.14 mm out along each axis. The sensor's long axis is
+                      # taken along a plate axis, so the pattern is rotated in the plate
 SINK_BEHIND = 2.0     # owner: 2 mm free behind the tapped holes - caps screw protrusion
 # MTF-01P, MicoAir's product page (read 2026-09-25), not measured on the unit:
 SENSOR_L = 33.2
@@ -49,8 +55,16 @@ LEG = 4.0             # square legs at the plate's corners
 FOOT_PROUD = 3.0      # legs stand this far below the sensor's face
 FOOT_CHAMFER = 1.0
 
-PX = SENSOR_L / 2.0 + SENSOR_CLEAR + LEG     # plate half-size, x
-PY = SENSOR_W / 2.0 + SENSOR_CLEAR + LEG     # plate half-size, y
+import math
+SINK_HOLES = [(SINK_PITCH / 2.0 * (math.cos(math.radians(SINK_ROT_DEG + 90 * i))
+                                  - math.sin(math.radians(SINK_ROT_DEG + 90 * i))),
+               SINK_PITCH / 2.0 * (math.sin(math.radians(SINK_ROT_DEG + 90 * i))
+                                  + math.cos(math.radians(SINK_ROT_DEG + 90 * i))))
+              for i in range(4)]            # the 20 x 20 square's corners, rotated
+HOLE_WALL = 1.0       # plate material outside a counterbore
+_reach = max(max(abs(x), abs(y)) for x, y in SINK_HOLES) + M2_HEAD_D / 2.0 + HOLE_WALL
+PX = max(SENSOR_L / 2.0 + SENSOR_CLEAR + LEG, _reach)   # plate half-size, x
+PY = max(SENSOR_W / 2.0 + SENSOR_CLEAR + LEG, _reach)   # plate half-size, y
 Z_PLATE_BOT = -PLATE_T
 Z_SENSOR_TOP = Z_PLATE_BOT - SENSOR_GAP
 Z_SENSOR_FACE = Z_SENSOR_TOP - SENSOR_H
@@ -80,13 +94,11 @@ def mount():
     if FOOT_CHAMFER:
         body = body.faces("<Z").chamfer(FOOT_CHAMFER)
     # M2 through the plate into the sink, heads recessed from below
-    p = SINK_PITCH / 2.0
-    for sx in (-1, 1):
-        for sy in (-1, 1):
-            body = body.cut(cq.Workplane("XY").circle(M2_CLEAR / 2.0).extrude(PLATE_T + 1)
-                            .translate((sx * p, sy * p, Z_PLATE_BOT - 0.5)))
-            body = body.cut(cq.Workplane("XY").circle(M2_HEAD_D / 2.0).extrude(M2_HEAD_DEPTH)
-                            .translate((sx * p, sy * p, Z_PLATE_BOT)))
+    for x, y in SINK_HOLES:
+        body = body.cut(cq.Workplane("XY").circle(M2_CLEAR / 2.0).extrude(PLATE_T + 1)
+                        .translate((x, y, Z_PLATE_BOT - 0.5)))
+        body = body.cut(cq.Workplane("XY").circle(M2_HEAD_D / 2.0).extrude(M2_HEAD_DEPTH)
+                        .translate((x, y, Z_PLATE_BOT)))
     # M2.5 pilots for the sensor, up through the bosses into the plate
     for sx in (-1, 1):
         for sy in (-1, 1):
@@ -103,7 +115,7 @@ def main(outdir="."):
     bb = m.val().BoundingBox()
     print(f"flow-mount: {bb.xlen:.2f} x {bb.ylen:.2f} x {bb.zlen:.2f} mm, z {bb.zmin:.2f}..{bb.zmax:.2f};"
           f" sensor face at z {Z_SENSOR_FACE:.1f}, feet at {Z_FOOT:.1f}")
-    import math
+    print("sink holes:", [(round(x, 2), round(y, 2)) for x, y in SINK_HOLES])
     cone_r = FOOT_PROUD * math.tan(math.radians(FLOW_FOV_DEG / 2.0))
     print(f"flow cone radius at the feet: {cone_r:.2f} mm; nearest leg face "
           f"{min(SENSOR_L / 2.0, SENSOR_W / 2.0) + SENSOR_CLEAR:.1f} mm from the sensor centre")
