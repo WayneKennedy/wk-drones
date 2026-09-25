@@ -25,8 +25,9 @@ inner faces are therefore at x = +/-PLATE_GAP/2.
 
 Print: the bare crossbar on its side, so the screw threads run ACROSS the layers rather
 than pulling them apart - a screw driven along the layer axis splits a printed part. The
-one-piece mount face-down, front face on the bed: bar and posts then lie horizontal and
-nothing overhangs. No supports either way.
+one-piece mount face-down, front face on the bed (bee35-cam-mount-print.stl): bar and
+posts then lie horizontal, but the arch's front half overhangs for its first ~5.5 mm and
+needs supports from the bed there.
 Material: PETG or similar rigid filament keeps the plate spacing under screw preload; TPU
 gives a damped camera but makes the embedded crossbar the soft link. Owner's call.
 
@@ -201,6 +202,17 @@ def main(outdir="."):
     # over which way is "up", so the assembly is rotated into the default (+z) view
     # instead: front = viewer ahead of the nose looking aft, z up, +x to the viewer's
     # left; side = viewer on the +x side looking inboard, z up, nose to the right.
+    # print-oriented STL: front face on the bed (owner, 2026-09-25). Rotating -90 about x
+    # puts +y (the nose) at -z; shifted so the bed is z = 0. NOTE the arch's front half
+    # then overhangs - it springs from the front edge tangentially, so its surface starts
+    # nearly parallel to the bed and only steepens to 45 deg about 5.5 mm up. Slice with
+    # supports from the bed on that slope, or spring the arch at an angle (widen it).
+    printed = mount().rotate((0, 0, 0), (1, 0, 0), -90)
+    printed = printed.translate((0, 0, -printed.val().BoundingBox().zmin))
+    cq.exporters.export(printed, f"{outdir}/bee35-cam-mount-print.stl")
+    bb = printed.val().BoundingBox()
+    print(f"mount-print (front face down): {bb.xlen:.2f} x {bb.ylen:.2f} x {bb.zlen:.2f} mm,"
+          f" z {bb.zmin:.2f}..{bb.zmax:.2f}")
     for name in ("assembly", "mount"):
         a = PARTS[name]()
         views = {
