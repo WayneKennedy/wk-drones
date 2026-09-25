@@ -135,10 +135,14 @@ Format: `OQ-nn — question (date raised)`.
     TPU under constant load creeps rather than breaks, which would show as the sensor
     slowly drifting off vertical. **Four M2 standoffs giving an air gap** remove the
     concern at no cost and keep the fins in the airflow; not yet decided.
-  - **To check on the airframe:** that the sensor's underside does not end up below the
-    landing feet, or it becomes the landing gear.
-  - Open: the bracket itself — a designed-and-printed part, parametric like the Holybro
-    deck ([`../../holybro-10/print/src/h743-deck.py`](../../holybro-10/print/src/h743-deck.py)).
+  - **There is no landing gear** (owner, 2026-09-25): the heatsink is the belly, and the
+    sensor under it becomes the lowest point. The bracket therefore carries four corner
+    legs standing 3 mm proud of the sensor's face — vestigial feet, outside the flow cone.
+    The sink's holes are **tapped M2 with 2 mm free behind them** (owner).
+  - **Bracket designed 2026-09-25, not printed:** [`../print/sources.md`](../print/sources.md)
+    `flow-mount`, source [`../print/src/flow-mount.py`](../print/src/flow-mount.py). Flush on
+    the sink; the air-gap standoffs are dropped (the owner judges heat a non-issue; brass M2
+    standoffs could be added between sink and plate later without a redesign).
   - The mount fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
     check and calibration wait for it.
 
