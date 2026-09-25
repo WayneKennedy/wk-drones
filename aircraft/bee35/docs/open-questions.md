@@ -106,6 +106,13 @@ Format: `OQ-nn — question (date raised)`.
     ([Printables 1242717](https://www.printables.com/model/1242717-speedybee-bee35-dji-04-air-unit-pro-camera-mount),
     [Cults3D](https://cults3d.com/en/3d-model/gadget/speedybee-bee35-dji-o4-pro-tpu-camera-mount))
     are modelled around the O4 Pro camera, not a 19 mm standard one.
+  - **Owner's approach, 2026-09-25: a printed insert between the CNC side plates**,
+    screwed through the holes the damping balls use, holding the camera. It replaces the
+    balls and the standoff's spacing job while keeping the aluminium plates that are
+    already on the aircraft. **No vendor CAD is needed for it** — the plates are the fixed
+    boundary. Four measurements off the airframe define the part: the inner gap between the
+    plates, the ball-hole pattern and diameter on the plate faces, the camera's width and
+    side-screw spacing, and the fore-and-aft depth available.
   - **Two paths, not exclusive** (owner is weighing them, 2026-09-25):
     **(a)** source the 25.5 mm standoff and four damping balls and keep the fitted CNC
     head — cheap, unblocks the maiden;

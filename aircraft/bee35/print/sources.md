@@ -21,6 +21,28 @@ Neither is committed here: SpeedyBee's copyright, and this repo is public.
 
 <https://docs.speedybee.cn/en/fpv/fpv-drones/bee35-drone/bee35-3d-print-files.html>
 
+**Measured by bounding box from the downloaded STLs, 2026-09-25** (not printed):
+
+| File | Size (mm) | What it actually is |
+|---|---|---|
+| `19mmCamera-mount-bracket.stl` | 13.2 × 13.2 × 4.25 | **Not a bracket — a lens damping insert.** Byte-identical geometry to `20mm.stl` in the Lens Damping archive. For a standard-body camera's lens, nothing to do with the O4 CNC head (owner, 2026-09-25) |
+| `35-1.stl` | 31.0 × 29.0 × 17.9 | Four-hole plate with three curved flexure arms — a soft mount. The only damping-part prior art on this frame |
+| `35-2.stl` | 23.0 × 44.0 × 35.8 | Antenna mount with tube clips |
+| `35-3.stl` | 10.0 × 10.0 × 4.0 | Small spacer |
+| `35-4.stl` | 17.1 × 55.2 × 9.0 | Strip |
+| `35-5.stl` | 18.0 × 6.0 × 14.5 | Small block |
+| `35-6.stl` | 13.2 × 13.2 × 4.25 | Same as the "19 mm bracket" above |
+| `35-7（14mm）.stl` | 7.3 × 13.4 × 13.4 | Same as `14mm.stl` below |
+
+**Lens Damping archive** (`Lens Damping.7z`, frame download page) holds `14mm.stl`
+(7.3 × 13.4 × 13.4), `19mm.stl` (13.2 × 13.2 × 4.4) and `20mm.stl` (13.2 × 13.2 × 4.25) —
+inserts by camera body size. The Nano V3 on this aircraft is adapted to 19/20 mm, so the
+matching insert exists.
+
+**No CAD is published.** Both SpeedyBee download pages carry STL and PDF only — no STEP or
+DXF for the CNC head parts (checked 2026-09-25). GrabCAD's SpeedyBee tag has stacks and
+ESCs, no Bee35 frame.
+
 Relevant files:
 
 - `19mmCamera-mount-bracket.stl`
