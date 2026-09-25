@@ -60,14 +60,13 @@ POST_PILOT_DEPTH = 8.0   # blind, up from the bottom face; leaves 2 mm at POST_L
 # Camera pocket (part 3), 2026-09-25. Holds a standard 19 mm camera - the Walksnail Nano V3
 # in its TPU adapter - facing forward, hung on its two side screws between two cheeks.
 # UNMEASURED, all of it: these are the assumptions to check against the camera in hand.
-CAM_W = 19.0        # body width across the adapter. Owner: "standard 19 mm"; an earlier
-                    # note said the adapter makes it 20. The cheeks' OUTER faces are fixed
-                    # by the plates, so at 20 the cheeks thin from 2.55 to 1.55 mm.
+POCKET_W = 19.0     # gap between the cheeks (owner, 2026-09-25). The camera sits in it
+                    # with no side clearance; the cheeks' OUTER faces are fixed by the
+                    # plates, so the cheeks are what is left: 2.85 mm
 CAM_H = 19.0        # body height (standard micro-camera face)
 CAM_PIVOT_D = 2.2   # clearance for the M2 screws into the camera's threaded side holes
 CAM_PIVOT_BACK = 5.0  # pivot axis behind the camera's front face - the number most likely
                       # to be wrong; measure it on the adapter
-CAM_CLEAR = 0.3     # side clearance, camera to cheek
 POCKET_V_CLEAR = 1.0  # extra above and below the body, so it can tilt on its pivots
 CAM_Z = -14.75      # pivot axis height. "About half way" down the 31.5 mm mounting area
                     # (-15.75), raised 1 mm so the body top clears the crossbar by 1.5
@@ -76,10 +75,16 @@ POCKET_DEPTH = 20.0  # cheeks and floor run this far aft of the face; the body p
                      # under the crossbar and the back is open for the cable
 PLATE_CLEAR = 0.4   # each cheek's outer face to the plate's inner face
 FLOOR_T = 2.0       # floor under the pocket, joining the cheeks and carrying the posts
-ROOF_TOP = BAR_OD / 2.0   # cheeks and roof rise to the crossbar's top, so the bar is
-                          # embedded and the top is one flush surface (owner, 2026-09-25)
-ROOF_T = 3.5        # roof between the cheeks, from the bar axis up to its top
-TOP_R = 3.0         # round on the front and back top edges, seen from the side
+# The top, owner's sketch 2026-09-25: in side view each cheek is an ARCH over the crossbar,
+# springing from part-way down the cheek at the front and back edges and cresting just
+# above the bar. Modelled as a semi-ellipse centred mid-depth: half-width half the pocket
+# depth, so it lands on both edges, and tall enough to clear the bar's top by ARCH_MARGIN
+# at the bar's own y (the bar is not quite mid-depth). Between the cheeks the same arch
+# forms a roof over the bar, solid down to the pocket ceiling, and is open where the arch
+# drops below the ceiling toward the front and back.
+ARCH_BASE = -16.0   # where the arch springs from, on the front and back edges (sketch:
+                    # about -14 at the back, -18 at the front; taken symmetric)
+ARCH_MARGIN = 0.3   # arch above the bar's top, at the bar
 
 
 def _box(x0, x1, y0, y1, z0, z1):
@@ -129,30 +134,39 @@ def assembly(post_length=POST_LEN):
 def mount():
     """The whole thing as one printed part: crossbar, camera pocket, floor and posts.
 
-    The pocket is two cheeks joined by a floor below and a roof above; the crossbar is
-    embedded in the roof, flush with its top, and the roof's front and back top edges are
-    rounded. The camera hangs on M2 screws through the cheeks. The posts are shortened to
-    sit under the floor - at their original 10 mm their tops would be inside the camera
-    body.
+    Two arched cheeks joined by a floor, with the crossbar embedded in the arch's crown
+    and a roof between the cheeks where the arch stands above the pocket ceiling. The
+    camera hangs on M2 screws through the cheeks. The posts are shortened to sit under the
+    floor - at their original 10 mm their tops would be inside the camera body.
     """
     cheek_out = PLATE_GAP / 2.0 - PLATE_CLEAR
-    cheek_in = CAM_W / 2.0 + CAM_CLEAR
+    cheek_in = POCKET_W / 2.0
     if cheek_out - cheek_in < 1.5:
         print(f"WARNING: cheeks only {cheek_out - cheek_in:.2f} mm thick", file=sys.stderr)
     y_face = CAM_FACE_Y
     y_back = y_face - POCKET_DEPTH
     z_floor_top = CAM_Z - CAM_H / 2.0 - POCKET_V_CLEAR
     z_floor_bot = z_floor_top - FLOOR_T
+    z_ceil = CAM_Z + CAM_H / 2.0 + POCKET_V_CLEAR   # pocket ceiling, the roof's underside
     post_len = z_floor_bot + POST_DROP           # from the mounting face up to the floor
     pilot_depth = min(POST_PILOT_DEPTH, post_len + FLOOR_T - 2.0)
 
-    # the box first - cheeks, floor, roof - so its top edges can be rounded before the
-    # crossbar and posts are added (a fillet across the bar's end would fail)
-    body = _box(-cheek_out, cheek_out, y_back, y_face, z_floor_bot, ROOF_TOP)
-    body = body.cut(_box(-cheek_in, cheek_in, y_back - 1, y_face + 1,
-                         z_floor_top, ROOF_TOP - ROOF_T))
-    if TOP_R:
-        body = body.edges("|X").edges(">Z").fillet(TOP_R)
+    # side profile: a rectangle up to the arch base, with a semi-ellipse on top. The
+    # ellipse is sized so that at the bar's y (0) it clears the bar's top by ARCH_MARGIN.
+    y_c = (y_back + y_face) / 2.0
+    a = POCKET_DEPTH / 2.0
+    top_at_bar = BAR_OD / 2.0 + ARCH_MARGIN
+    b = (top_at_bar - ARCH_BASE) / (1.0 - (y_c / a) ** 2) ** 0.5
+    width = 2 * cheek_out
+    rect = (cq.Workplane("YZ").center(y_c, (z_floor_bot + ARCH_BASE) / 2.0)
+            .rect(POCKET_DEPTH, ARCH_BASE - z_floor_bot).extrude(width / 2.0, both=True))
+    arch = (cq.Workplane("YZ").center(y_c, ARCH_BASE).ellipse(a, b)
+            .extrude(width / 2.0, both=True))
+    body = rect.union(arch).intersect(
+        _box(-cheek_out, cheek_out, y_back, y_face, z_floor_bot, ARCH_BASE + b + 1))
+    # the pocket: open front and back, ceiling at z_ceil - so the roof exists only where
+    # the arch stands above the ceiling, over the bar
+    body = body.cut(_box(-cheek_in, cheek_in, y_back - 1, y_face + 1, z_floor_top, z_ceil))
     body = body.union(crossbar())
     x_post = PLATE_GAP / 2.0 - POST_INSET
     for sx in (-1, 1):

@@ -16,15 +16,14 @@ the 25.5 mm standoff and the four damping balls. Parts are added as geometry is 
 
 | Part | Size | What it does |
 |---|---|---|
-| `bee35-cam-mount` | 25.5 × 20.0 × 35.0 mm | **The whole head as one print** — a box between the plates: two cheeks, a 2 mm floor, and a roof with the crossbar embedded flush in its top and a 3 mm round on its front and back top edges (owner, 2026-09-25). The camera hangs on M2 screws through the cheeks; the two posts are shortened to 5 mm under the floor (at 10 mm their tops would sit inside the camera body). Front and back open. **Designed 2026-09-25 on unmeasured camera assumptions, listed in the source: 19 × 19 body, pivots 5 mm behind the face on the mid-height line, face flush with the posts' front, axis at z = −14.75.** Not printed. |
+| `bee35-cam-mount` | 25.5 × 20.1 × 35.5 mm | **The whole head as one print** — two **arched** cheeks (owner's sketch, 2026-09-25: a semi-ellipse springing from z = −16 at the front and back edges, cresting over the crossbar), a 2 mm floor, and a roof between the cheeks where the arch stands above the pocket ceiling; the crossbar is embedded in the crown. **Pocket 19.0 mm wide** (owner). The camera hangs on M2 screws through the 2.85 mm cheeks; the two posts are shortened to 5 mm under the floor (at 10 mm their tops would sit inside the camera body). Front and back open. **Designed 2026-09-25 on unmeasured camera assumptions, listed in the source: 19 × 19 body, pivots 5 mm behind the face on the mid-height line, face flush with the posts' front, axis at z = −14.75.** Not printed. |
 | `bee35-cam-crossbar` | Ø7.0 × 25.5 mm, 2.5 mm hole through | Spans the two side plates and sets their spacing — the standoff's job. An **M3 self-tapping** screw at each end passes through the plate's own M3-clearance hole (one of the four the damping balls would have used) into the bar. **Designed 2026-09-25, not printed, not offered up to the hardware.** |
 
 - **Measured, 2026-09-25 (owner, callipers):** 25.5 mm plate face to plate face; the posts'
   bottoms 31.5 mm below the crossbar axis, 7.5 mm ahead of it and 4.5 mm inboard of each
-  plate face, taken as axis positions. **Everything about the camera is assumed** and is
-  the first thing to check: width (19 said, 20 said earlier — the cheeks' outer faces are
-  fixed by the plates, so at 20 they thin to 1.55 mm), height, and where the side pivots
-  sit behind the front face.
+  plate face, taken as axis positions; the pocket 19.0 mm between the cheeks. **The rest
+  of the camera is assumed** and is the first thing to check: height, and where the side
+  pivots sit behind the front face.
 - **The mounting points are the crossbar's two ends and the two posts' bottoms:** M3
   self-tapping through the plates into the bar, and M3 self-tapping up into the posts.
 - **Print on its side, no supports.** The screw then threads *across* the layers; driven
