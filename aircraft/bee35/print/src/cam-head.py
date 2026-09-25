@@ -12,16 +12,23 @@ self-tapping screw into each end through the plates' own M3-clearance holes (the
 damping balls would have used). It sets the plate spacing, which is the standoff's job.
 
 Part 2 - `posts`: two vertical bars hanging below and ahead of the crossbar, pilot-holed
-from the bottom for M3 self-tapping. They carry the camera-holding part, still to come.
+from the bottom for M3 self-tapping. They carry the camera-holding part.
+
+Part 3 - `mount`: the whole head as one print. A box between the plates - two cheeks, a
+floor, a roof - with the crossbar embedded flush in the roof, the camera hung on M2
+screws through the cheeks, and the posts shortened under the floor. The crossbar's two
+ends and the two post bottoms are the only mounting points.
 
 Frame: x is across the aircraft, plate to plate, and the crossbar lies along it, centred
 on the origin with its axis on z = 0. +y is forward (the nose), +z is up. The side plates'
 inner faces are therefore at x = +/-PLATE_GAP/2.
 
-Print: on its side, so the screw threads run ACROSS the layers rather than pulling them
-apart - a screw driven along the layer axis splits a printed part. No supports.
-Material: PETG or similar rigid filament, NOT TPU: this part sets a spacing under screw
-preload, and TPU creeps. The damping belongs in the camera-holding part, not here.
+Print: the bare crossbar on its side, so the screw threads run ACROSS the layers rather
+than pulling them apart - a screw driven along the layer axis splits a printed part. The
+one-piece mount face-down, front face on the bed: bar and posts then lie horizontal and
+nothing overhangs. No supports either way.
+Material: PETG or similar rigid filament keeps the plate spacing under screw preload; TPU
+gives a damped camera but makes the embedded crossbar the soft link. Owner's call.
 
 Build:  uv run --python 3.12 --with "cadquery>=2.4" python cam-head.py [outdir]
 Needs:  cadquery >= 2.4
@@ -69,6 +76,10 @@ POCKET_DEPTH = 20.0  # cheeks and floor run this far aft of the face; the body p
                      # under the crossbar and the back is open for the cable
 PLATE_CLEAR = 0.4   # each cheek's outer face to the plate's inner face
 FLOOR_T = 2.0       # floor under the pocket, joining the cheeks and carrying the posts
+ROOF_TOP = BAR_OD / 2.0   # cheeks and roof rise to the crossbar's top, so the bar is
+                          # embedded and the top is one flush surface (owner, 2026-09-25)
+ROOF_T = 3.5        # roof between the cheeks, from the bar axis up to its top
+TOP_R = 3.0         # round on the front and back top edges, seen from the side
 
 
 def _box(x0, x1, y0, y1, z0, z1):
@@ -118,9 +129,11 @@ def assembly(post_length=POST_LEN):
 def mount():
     """The whole thing as one printed part: crossbar, camera pocket, floor and posts.
 
-    The pocket is two cheeks hanging from the crossbar, joined by a floor; the camera hangs
-    on M2 screws through the cheeks. The posts are shortened to sit under the floor - at
-    their original 10 mm their tops would be inside the camera body.
+    The pocket is two cheeks joined by a floor below and a roof above; the crossbar is
+    embedded in the roof, flush with its top, and the roof's front and back top edges are
+    rounded. The camera hangs on M2 screws through the cheeks. The posts are shortened to
+    sit under the floor - at their original 10 mm their tops would be inside the camera
+    body.
     """
     cheek_out = PLATE_GAP / 2.0 - PLATE_CLEAR
     cheek_in = CAM_W / 2.0 + CAM_CLEAR
@@ -133,12 +146,14 @@ def mount():
     post_len = z_floor_bot + POST_DROP           # from the mounting face up to the floor
     pilot_depth = min(POST_PILOT_DEPTH, post_len + FLOOR_T - 2.0)
 
-    body = crossbar()
-    for sx in (-1, 1):
-        body = body.union(_box(min(sx * cheek_in, sx * cheek_out),
-                               max(sx * cheek_in, sx * cheek_out),
-                               y_back, y_face, z_floor_bot, 0.0))
-    body = body.union(_box(-cheek_out, cheek_out, y_back, y_face, z_floor_bot, z_floor_top))
+    # the box first - cheeks, floor, roof - so its top edges can be rounded before the
+    # crossbar and posts are added (a fillet across the bar's end would fail)
+    body = _box(-cheek_out, cheek_out, y_back, y_face, z_floor_bot, ROOF_TOP)
+    body = body.cut(_box(-cheek_in, cheek_in, y_back - 1, y_face + 1,
+                         z_floor_top, ROOF_TOP - ROOF_T))
+    if TOP_R:
+        body = body.edges("|X").edges(">Z").fillet(TOP_R)
+    body = body.union(crossbar())
     x_post = PLATE_GAP / 2.0 - POST_INSET
     for sx in (-1, 1):
         body = body.union(post(post_len, depth=0, chamfer=0)
