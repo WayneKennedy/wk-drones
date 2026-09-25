@@ -3,11 +3,11 @@
 Pending decisions for the 5". Decisions, once taken, go in `decisions.md` as a DEC
 (none yet). Format: `OQ-nn — question (date raised)`.
 
-- **OQ-01 — Switch from Betaflight to iNav — when, and to iNav or ArduPilot?**
-  (2026-09-15, owner; narrowed 2026-09-25). **Whether is settled:**
-  [F-DEC-06](../../../fleet/decisions.md) puts every aircraft on ArduPilot or iNav and
-  rules Betaflight out, so this aircraft converts. Open: **when**, and **which of the
-  two**. The owner is open to it. On Betaflight the aircraft is very fast and position hold is poor ("a feather in a
+- **OQ-01 — When does this aircraft convert to iNav?** (2026-09-15, owner; narrowed twice
+  on 2026-09-25). **Whether and which are both settled:**
+  [F-DEC-06](../../../fleet/decisions.md) rules Betaflight out and names this aircraft
+  **the fleet's reference iNav**. Open: **when** — it is flight ready today, and converting
+  means reflashing, retuning and re-testing a working aircraft. The owner is open to it. On Betaflight the aircraft is very fast and position hold is poor ("a feather in a
   storm"); the owner puts much of that down to pilot skill and plans more simulator
   time. The firmware-commonality argument Bee35 DEC-01 made no longer applies: the Bee35 runs
   ArduPilot ([Bee35 DEC-08](../../bee35/docs/decisions.md), 2026-09-19).

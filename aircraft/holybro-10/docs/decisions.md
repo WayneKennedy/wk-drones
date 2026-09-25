@@ -16,7 +16,8 @@ Unresolved items live in [`open-questions.md`](open-questions.md). Format:
     [MatekH743 page](https://ardupilot.org/copter/docs/common-matekh743-wing.html) lists 13
     outputs, all PWM and DShot capable, and a CAN port. The board's two ESC positions are
     power pads for a twin-motor plane, not a limit on motor outputs.
-  - **Firmware:** not flashed. The family rule needs two-way MAVLink, so ArduPilot rather
+  - **Firmware:** not flashed. Settled as ArduPilot by [F-DEC-06](../../../fleet/decisions.md) (amended 2026-09-25), which follows the Bee35 as the
+    fleet's ArduPilot reference. The family rule needs two-way MAVLink, so ArduPilot rather
     than iNav ([wk-robotics `docs/common.md`](https://github.com/WayneKennedy/wk-robotics/blob/main/docs/common.md#aircraft-and-the-tiers)).
 
 - **DEC-02 — The flight controller mounts on a printed deck above the upper plate**

@@ -13,7 +13,7 @@ lists as a project.
 ([DEC-01](docs/decisions.md)). Parts as ordered are in [`docs/bom.md`](docs/bom.md).
 A deck to carry the flight controller on the frame's upper plate is designed and ready to
 print ([DEC-02](docs/decisions.md)), dimensioned from Holybro's and Matek's own CAD; it has
-not been printed. Nothing is flashed; the family rule implies ArduPilot. Open: the two-GPS plan, the
+not been printed. Nothing is flashed; it takes **ArduPilot**, following the Bee35, which is the fleet's reference for it ([F-DEC-06](../../fleet/decisions.md), amended 2026-09-25). Open: the two-GPS plan, the
 companion link wiring, Pi or Jetson, and everything about build state, receiver, video
 and battery ([`docs/open-questions.md`](docs/open-questions.md)). Nothing has been
 checked against the hardware.

@@ -47,6 +47,19 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   - Current state: Bee35 ArduPilot ([DEC-08](../aircraft/bee35/docs/decisions.md)),
     Holybro none flashed with ArduPilot implied ([DEC-01](../aircraft/holybro-10/docs/decisions.md)),
     5" Betaflight.
+  - **Amended 2026-09-25, owner — one reference aircraft per firmware:**
+    - **5" — the fleet's reference iNav.** Settles *which* in its
+      [OQ-01](../aircraft/fpv-5/docs/open-questions.md); only *when* is left. Its
+      SpeedyBee F405 V3 makes the choice for it: ArduPilot's `speedybeef4v3` build
+      compiles optical flow out, so the MTF-01P of
+      [F-DEC-07](#f-dec-07) would be dead on it.
+    - **Bee35 — the fleet's reference ArduPilot**, already flying it
+      ([DEC-08](../aircraft/bee35/docs/decisions.md)).
+    - **Holybro 10" follows the Bee35 onto ArduPilot**, making DEC-01's implication
+      explicit. Its H743 carries the full build, so nothing the Bee35 proves is out of
+      reach there.
+    - What a reference aircraft is for: settings, wiring conventions and procedures are
+      worked out once on it and carried across, rather than re-derived per airframe.
 
 - **F-DEC-05 — Pre-flight, every switch is back** (2026-09-22, owner). On every model,
   all switches pushed away from the pilot is the safe starting state: disarmed, no
