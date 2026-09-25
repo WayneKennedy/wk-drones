@@ -33,10 +33,18 @@ the 25.5 mm standoff and the four damping balls. Parts are added as geometry is 
 
 ### `flow-mount` — the MTF-01P up front, three-point ([OQ-05](../docs/open-questions.md))
 
-Not yet designed. A heatsink-mounted bracket was modelled on 2026-09-25 (commit
-`f4b3763`: 42 × 34 plate on the sink's diamond M2 pattern, corner legs as feet) and
-**abandoned the same day — it put the sensor too low** (owner). The replacement mounts
-under the nose on two of the camera bracket's screws plus the heatsink's forward M2.
+Source [`src/flow-mount.py`](src/flow-mount.py) (CadQuery ≥ 2.4); `stl/` holds the STL,
+STEP and a print STL (the same part — it is modelled mounting-face-down, bosses up: every
+hole vertical, no supports). **First pass, designed 2026-09-25, not printed.**
+
+| | |
+|---|---|
+| Datum (owner) | Origin midway between the two front M3 clearance holes, **24 mm apart**; x through them; z = 0 their bearing surface, +z away from the airframe. The third hole — the heatsink's forward M2 — is on x = 0, **41 mm from each front hole**, so at y = 39.2 (aft), taken coplanar for now |
+| Plate | 38.2 × 48 × 3 mm: full width over the sensor, front holes in its corners, a tab aft to the M2. 2.5 mm edge round every hole, 3 mm corner rounds |
+| Sensor | Long axis across, centred at y = 18.5 so the M3 heads clear its front edge; on four Ø5 × 1 mm bosses at its 24.3 × 12 pattern, M2.5 self-tapping (Ø2.1 pilots). **Face 20.8 mm off the mounting surface** — how that relates to the belly is the check |
+| Superseded | A heatsink-mounted bracket, modelled the same day (commit `f4b3763`; diamond pattern `223e6c5`), was **abandoned as too low** (owner) |
+
+Sensor dimensions are MicoAir's page figures, not measured on the unit.
 
 ## SpeedyBee documents
 

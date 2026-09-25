@@ -142,11 +142,13 @@ Format: `OQ-nn — question (date raised)`.
     hangs lowest is what the aircraft lands on, so the bracket needs feet or the sensor
     needs to sit above the sink's face. The sink's holes are **tapped M2 with 2 mm free
     behind them** (owner).
-  - **Needed before the three-point bracket can be drawn:** which two camera-bracket
-    screws (the posts' M3 self-tappers, or the side plates' M3s); the fore-aft and
-    sideways distances from those two to the sink's forward M2; whether the surfaces the
-    three screws bear on are one plane, and if not the step between them; and the
-    sensor's long-axis orientation there.
+  - **Geometry given (owner, 2026-09-25):** the two front holes are **M3 clearance, 24 mm
+    apart**, and define the datum; the third is on the centreline, **41 mm from each**, so
+    39.2 mm aft; all three taken coplanar for now. **First-pass bracket drawn**
+    ([`../print/sources.md`](../print/sources.md) `flow-mount`, not printed): 38 × 48 × 3
+    plate, sensor long-axis across behind the front holes, face 20.8 mm off the mounting
+    surface. Still to settle: where that surface sits relative to the belly, the sensor's
+    orientation, and `FLOW_POS_X/Y` once the position is fixed.
   - The mount fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
     check and calibration wait for it.
 
