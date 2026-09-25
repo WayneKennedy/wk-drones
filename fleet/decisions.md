@@ -24,8 +24,9 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   Optical flow plus ToF range, facing down, for position hold and height near the ground.
   Multirotors only: the planes hover nothing and gain nothing.
   - **State:** Bee35 fitted and working on UART4 ([its `wiring.md`](../aircraft/bee35/docs/wiring.md));
-    the 5" and the Holybro 10" have none. **Two to buy**, £22.99 each on the last invoice
-    (Flying Tech #18595, 2026-09-07). Nothing else in stock serves: the one other flow
+    the 5" and the Holybro 10" have none. **Two ordered 2026-09-25** — Unmanned Tech
+    #19494, £45.98 the pair, £49.57 with shipping and tax, due 2026-09-28. Nothing else in
+    stock serves: the one other flow
     sensor owned, a Matek 3901-L0X, was rejected on 2026-09-25 — 2 m range and a VL53L0X
     that sunlight swamps (wk-inventory `docs/stock.md`).
   - **The Holybro carries both it and the TFmini Plus**, whose ToF it duplicates. The
