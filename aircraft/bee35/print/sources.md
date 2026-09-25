@@ -5,6 +5,26 @@ printed go in [`stl/`](stl/). Licences are TBC until checked at each source. Thi
 only commit an upstream STL to `stl/` if its licence permits redistribution, and
 record that licence here.
 
+## Parts designed here
+
+### `cam-head` — printed replacements for the mislaid CNC head hardware ([OQ-04](../docs/open-questions.md))
+
+Source of truth is the parametric model [`src/cam-head.py`](src/cam-head.py)
+(CadQuery ≥ 2.4); `stl/` holds what it emits, alongside a STEP of each part. MIT, like the
+rest of this repo. The aircraft keeps its two aluminium side plates; these parts replace
+the 25.5 mm standoff and the four damping balls. Parts are added as geometry is measured.
+
+| Part | Size | What it does |
+|---|---|---|
+| `bee35-cam-crossbar` | Ø7.0 × 25.5 mm, 2.5 mm hole through | Spans the two side plates and sets their spacing — the standoff's job. An **M3 self-tapping** screw at each end passes through the plate's own M3-clearance hole (one of the four the damping balls would have used) into the bar. **Designed 2026-09-25, not printed, not offered up to the hardware.** |
+
+- **25.5 mm is measured** (owner, callipers, 2026-09-25): inner face to inner face, and the
+  length of the missing standoff. Everything else is a choice, in the source's parameters.
+- **Print on its side, no supports.** The screw then threads *across* the layers; driven
+  along the layer axis a printed part splits.
+- **PETG or similar rigid filament, not TPU.** This part holds a spacing under screw
+  preload and TPU creeps. Damping belongs in the camera-holding part, still to be designed.
+
 ## SpeedyBee documents
 
 - [Bee35 Quick Start Manual](https://spcdn.speedybee.cn/cdn/117883962633752576.pdf)
