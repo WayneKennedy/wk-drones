@@ -147,8 +147,15 @@ Format: `OQ-nn — question (date raised)`.
     39.2 mm aft; all three taken coplanar for now. **First-pass bracket drawn**
     ([`../print/sources.md`](../print/sources.md) `flow-mount`, not printed): 38 × 48 × 3
     plate, sensor long-axis across behind the front holes, face 20.8 mm off the mounting
-    surface. Still to settle: where that surface sits relative to the belly, the sensor's
-    orientation, and `FLOW_POS_X/Y` once the position is fixed.
+    surface. **Then rejected by the owner the same evening, on seeing the drawing: at the
+    nose the sensor hangs in the front ducts' downwash** — not by much, but the owner will
+    not put the ducted airflow at risk, and a 17 mm bluff body at a duct exit is a
+    vibration source. **Constraint from here: nothing in the ducts' outflow.** The
+    airframe also has a moulded foot just aft of the front hole line, centred, which any
+    nose plate would have to window round. Location is open again; three positions have
+    now been tried on paper, and the choice is between the centre (clear of the ducts,
+    but 17 mm + plate below the belly) and somewhere the sensor can recess up into the
+    frame with its face flush.
   - The mount fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
     check and calibration wait for it.
 
