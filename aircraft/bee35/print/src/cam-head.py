@@ -50,6 +50,32 @@ POST_AHEAD = 7.5    # forward of the crossbar's axis
 POST_INSET = 4.5    # inboard of each plate's inner face
 POST_PILOT_DEPTH = 8.0   # blind, up from the bottom face; leaves 2 mm at POST_LEN = 10
 
+# Camera pocket (part 3), 2026-09-25. Holds a standard 19 mm camera - the Walksnail Nano V3
+# in its TPU adapter - facing forward, hung on its two side screws between two cheeks.
+# UNMEASURED, all of it: these are the assumptions to check against the camera in hand.
+CAM_W = 19.0        # body width across the adapter. Owner: "standard 19 mm"; an earlier
+                    # note said the adapter makes it 20. The cheeks' OUTER faces are fixed
+                    # by the plates, so at 20 the cheeks thin from 2.55 to 1.55 mm.
+CAM_H = 19.0        # body height (standard micro-camera face)
+CAM_PIVOT_D = 2.2   # clearance for the M2 screws into the camera's threaded side holes
+CAM_PIVOT_BACK = 5.0  # pivot axis behind the camera's front face - the number most likely
+                      # to be wrong; measure it on the adapter
+CAM_CLEAR = 0.3     # side clearance, camera to cheek
+POCKET_V_CLEAR = 1.0  # extra above and below the body, so it can tilt on its pivots
+CAM_Z = -14.75      # pivot axis height. "About half way" down the 31.5 mm mounting area
+                    # (-15.75), raised 1 mm so the body top clears the crossbar by 1.5
+CAM_FACE_Y = POST_AHEAD + BAR_OD / 2.0   # front face flush with the posts' front (y = 11)
+POCKET_DEPTH = 20.0  # cheeks and floor run this far aft of the face; the body passes
+                     # under the crossbar and the back is open for the cable
+PLATE_CLEAR = 0.4   # each cheek's outer face to the plate's inner face
+FLOOR_T = 2.0       # floor under the pocket, joining the cheeks and carrying the posts
+
+
+def _box(x0, x1, y0, y1, z0, z1):
+    return (cq.Workplane("XY")
+            .box(x1 - x0, y1 - y0, z1 - z0, centered=False)
+            .translate((x0, y0, z0)))
+
 
 def crossbar(length=PLATE_GAP, od=BAR_OD, pilot=PILOT_D, chamfer=END_CHAMFER):
     """Round bar, axis along x, centred on the origin."""
@@ -69,6 +95,8 @@ def post(length=POST_LEN, od=BAR_OD, pilot=PILOT_D, depth=POST_PILOT_DEPTH,
     bar = cq.Workplane("XY").circle(od / 2.0).extrude(length)
     if chamfer:
         bar = bar.faces(">Z or <Z").chamfer(chamfer)
+    if depth <= 0:
+        return bar
     return bar.faces("<Z").workplane().circle(pilot / 2.0).cutBlind(-min(depth, length))
 
 
@@ -87,7 +115,48 @@ def assembly(post_length=POST_LEN):
     return crossbar().union(posts(post_length))
 
 
-PARTS = {"crossbar": crossbar, "post": post, "posts": posts, "assembly": assembly}
+def mount():
+    """The whole thing as one printed part: crossbar, camera pocket, floor and posts.
+
+    The pocket is two cheeks hanging from the crossbar, joined by a floor; the camera hangs
+    on M2 screws through the cheeks. The posts are shortened to sit under the floor - at
+    their original 10 mm their tops would be inside the camera body.
+    """
+    cheek_out = PLATE_GAP / 2.0 - PLATE_CLEAR
+    cheek_in = CAM_W / 2.0 + CAM_CLEAR
+    if cheek_out - cheek_in < 1.5:
+        print(f"WARNING: cheeks only {cheek_out - cheek_in:.2f} mm thick", file=sys.stderr)
+    y_face = CAM_FACE_Y
+    y_back = y_face - POCKET_DEPTH
+    z_floor_top = CAM_Z - CAM_H / 2.0 - POCKET_V_CLEAR
+    z_floor_bot = z_floor_top - FLOOR_T
+    post_len = z_floor_bot + POST_DROP           # from the mounting face up to the floor
+    pilot_depth = min(POST_PILOT_DEPTH, post_len + FLOOR_T - 2.0)
+
+    body = crossbar()
+    for sx in (-1, 1):
+        body = body.union(_box(min(sx * cheek_in, sx * cheek_out),
+                               max(sx * cheek_in, sx * cheek_out),
+                               y_back, y_face, z_floor_bot, 0.0))
+    body = body.union(_box(-cheek_out, cheek_out, y_back, y_face, z_floor_bot, z_floor_top))
+    x_post = PLATE_GAP / 2.0 - POST_INSET
+    for sx in (-1, 1):
+        body = body.union(post(post_len, depth=0, chamfer=0)
+                          .translate((sx * x_post, POST_AHEAD, -POST_DROP)))
+        # post pilots, blind from the mounting face, cut after the union so they are
+        # not filled in by the floor
+        body = body.cut(cq.Workplane("XY").circle(PILOT_D / 2.0).extrude(pilot_depth)
+                        .translate((sx * x_post, POST_AHEAD, -POST_DROP)))
+    # camera pivots: one M2 clearance hole through each cheek, on the camera's axis
+    body = body.cut(cq.Workplane("YZ").center(y_face - CAM_PIVOT_BACK, CAM_Z)
+                    .circle(CAM_PIVOT_D / 2.0).extrude(PLATE_GAP, both=True))
+    # the crossbar's own pilot, re-cut through the cheeks it now passes through
+    body = body.cut(cq.Workplane("YZ").circle(PILOT_D / 2.0).extrude(PLATE_GAP, both=True))
+    return body
+
+
+PARTS = {"crossbar": crossbar, "post": post, "posts": posts, "assembly": assembly,
+         "mount": mount}
 
 
 def main(outdir="."):
@@ -103,17 +172,20 @@ def main(outdir="."):
     # over which way is "up", so the assembly is rotated into the default (+z) view
     # instead: front = viewer ahead of the nose looking aft, z up, +x to the viewer's
     # left; side = viewer on the +x side looking inboard, z up, nose to the right.
-    a = assembly()
-    views = {
-        "front": a.rotate((0, 0, 0), (1, 0, 0), -90).rotate((0, 0, 0), (0, 1, 0), 180),
-        "side": a.rotate((0, 0, 0), (0, 0, 1), -90).rotate((0, 0, 0), (1, 0, 0), -90),
-    }
-    for view, solid in views.items():
-        cq.exporters.export(
-            solid, f"{outdir}/bee35-cam-assembly-{view}.svg",
-            opt={"projectionDir": (0, 0, 1), "showAxes": False, "strokeWidth": 0.25,
-                 "width": 500, "height": 500, "marginLeft": 20, "marginTop": 20},
-        )
+    for name in ("assembly", "mount"):
+        a = PARTS[name]()
+        views = {
+            "front": a.rotate((0, 0, 0), (1, 0, 0), -90).rotate((0, 0, 0), (0, 1, 0), 180),
+            "side": a.rotate((0, 0, 0), (0, 0, 1), -90).rotate((0, 0, 0), (1, 0, 0), -90),
+            "iso": a.rotate((0, 0, 0), (1, 0, 0), -90).rotate((0, 0, 0), (0, 1, 0), 180)
+                    .rotate((0, 0, 0), (0, 1, 0), -30).rotate((0, 0, 0), (1, 0, 0), 25),
+        }
+        for view, solid in views.items():
+            cq.exporters.export(
+                solid, f"{outdir}/bee35-cam-{name}-{view}.svg",
+                opt={"projectionDir": (0, 0, 1), "showAxes": False, "strokeWidth": 0.25,
+                     "width": 500, "height": 500, "marginLeft": 20, "marginTop": 20},
+            )
 
 
 if __name__ == "__main__":

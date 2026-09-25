@@ -16,10 +16,17 @@ the 25.5 mm standoff and the four damping balls. Parts are added as geometry is 
 
 | Part | Size | What it does |
 |---|---|---|
+| `bee35-cam-mount` | 25.5 × 20.0 × 35.0 mm | **The whole head as one print** — crossbar, two cheeks hanging from it to a 2 mm floor, the camera hung on M2 screws through the cheeks, and the two posts shortened to 5 mm under the floor (at 10 mm their tops would sit inside the camera body). Front and back open. **Designed 2026-09-25 on unmeasured camera assumptions, listed in the source: 19 × 19 body, pivots 5 mm behind the face on the mid-height line, face flush with the posts' front, axis at z = −14.75.** Not printed. |
 | `bee35-cam-crossbar` | Ø7.0 × 25.5 mm, 2.5 mm hole through | Spans the two side plates and sets their spacing — the standoff's job. An **M3 self-tapping** screw at each end passes through the plate's own M3-clearance hole (one of the four the damping balls would have used) into the bar. **Designed 2026-09-25, not printed, not offered up to the hardware.** |
 
-- **25.5 mm is measured** (owner, callipers, 2026-09-25): inner face to inner face, and the
-  length of the missing standoff. Everything else is a choice, in the source's parameters.
+- **Measured, 2026-09-25 (owner, callipers):** 25.5 mm plate face to plate face; the posts'
+  bottoms 31.5 mm below the crossbar axis, 7.5 mm ahead of it and 4.5 mm inboard of each
+  plate face, taken as axis positions. **Everything about the camera is assumed** and is
+  the first thing to check: width (19 said, 20 said earlier — the cheeks' outer faces are
+  fixed by the plates, so at 20 they thin to 1.55 mm), height, and where the side pivots
+  sit behind the front face.
+- **The mounting points are the crossbar's two ends and the two posts' bottoms:** M3
+  self-tapping through the plates into the bar, and M3 self-tapping up into the posts.
 - **Print on its side, no supports.** The screw then threads *across* the layers; driven
   along the layer axis a printed part splits.
 - **PETG or similar rigid filament, not TPU.** This part holds a spacing under screw
