@@ -13,7 +13,6 @@ the row says otherwise; the reasoning is in [`decisions.md`](decisions.md) and
 | Camera mount | Holybro Depth Camera Mount for Intel RealSense | | Flying Tech #83693 | £12.90 | 2025-07-24 |
 | Landing gear | Holybro X500 V2 Landing Gear Reinforcement Brace | | Flying Tech #83693 | £6.90 | 2025-07-24 |
 | Flight controller | Matek H743 Wing V3 | [DEC-01](decisions.md). In hand, unused (owner, 2026-09-17) | HobbyRC #302285 | £96.30 | 2025-07-27 |
-| Flow/lidar | Matek Optical Flow & Lidar Sensor | Exact model not on the invoice; same order as the flight controller | HobbyRC #302285 | £23.26 | 2025-07-27 |
 | GPS/compass 1 | Matek M10Q-5883 | [OQ-01](open-questions.md). **One M10Q-5883 is fitted to the airframe** (owner, 2026-09-19); which of the two invoiced units it is cannot be told apart | HobbyRC #301738 | £31.80 | 2025-07-22 |
 | GPS/compass 2 | Matek M10Q-5883 | [OQ-01](open-questions.md). Ordered with the F405 Wing V2 now assigned to the [Phoenix](../../phoenix/docs/decisions.md) | HobbyRC #303459 | £31.80 | 2025-08-07 |
 | Rangefinder | Benewake TFmini Plus lidar, I²C version, 12 m, IP65 | **Confirmed by the owner 2026-09-19: bought for this aircraft, downward-facing, for accurate height on landing.** In hand: found 2026-09-19 (owner); the only Benewake purchase on invoice (ArduPilot `RNGFND1_TYPE` 25, TFminiPlus-I2C; `RNGFND1_ORIENT` 25 down). Not an obstacle sensor in that role — see OQ-09 | 3DXR #32525 | £50.00 | 2025-08-15 |
@@ -24,6 +23,14 @@ the row says otherwise; the reasoning is in [`decisions.md`](decisions.md) and
 | RX | TBC | No receiver found on a 2025 Holybro-period order. A Radiomaster RP3 V2 ELRS Diversity (HobbyRC #303808, 2025-08-11, £22.99) was bought with the Phoenix glider and is likely its receiver | TBC | TBC | TBC |
 | Video | Walksnail Avatar HD Pro Micro Kit, 32 GB — **moved from the Swordfish** ([DEC-04](decisions.md), 2026-09-23) | Nothing bought: neither kit was free, so the Swordfish's is redeployed. **Condition unassessed** after that aircraft's two crashes; bench-test before mounting. Originally HobbyRC #231336 or #236190, 2023, £159.00 — which is unknown and immaterial ([fleet](../../../fleet/README.md#walksnail-kit-bought)) | — | — | — |
 | Battery | TBC | Holybro recommends "4S 3000-5000mAh 20C+ with XT60 Lipo" and quotes ~18 min hover with no payload on 5000 mAh ([product page](https://holybro.com/products/x500-v2-kits), read 2026-09-17). Candidates already owned, none tested on this airframe: 2 × GNB 5500 mAh 4S 70C (XT90, HobbyRC 2023-07; aircraft unrecorded) and the fleet's 4S1P P45B Li-ion packs ([fleet](../../../fleet/README.md)) | TBC | TBC | TBC |
+
+**Not this aircraft's, though bought with its flight controller:** the **Matek 3901-L0X**
+optical flow and lidar on HobbyRC #302285 (2025-07-27, £23.26) was listed here until
+2026-09-25, on the invoice's company alone. The owner, finding it in hand that day, recalls
+buying it for the 5" and has allocated it to nothing; it is now in
+[wk-inventory `docs/stock.md`](https://github.com/WayneKennedy/wk-inventory/blob/main/docs/stock.md).
+This aircraft takes an MTF-01P instead ([F-DEC-07](../../../fleet/decisions.md)), whose ToF
+beats the 3901-L0X's 2 m VL53L0X.
 
 Order totals inc VAT and shipping: Flying Tech #83693 £273.60; HobbyRC #301738 £34.30,
 #302285 £116.53, #303459 £218.06 (also holds fleet items, see
