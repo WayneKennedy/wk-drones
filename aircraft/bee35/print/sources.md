@@ -31,20 +31,34 @@ the 25.5 mm standoff and the four damping balls. Parts are added as geometry is 
 - **PETG or similar rigid filament, not TPU.** This part holds a spacing under screw
   preload and TPU creeps. Damping belongs in the camera-holding part, still to be designed.
 
-### `flow-mount` — the MTF-01P up front, three-point ([OQ-05](../docs/open-questions.md))
+### `flow-cage` — TPU strap over the MTF-01P, taped to the VTX heatsink ([OQ-05](../docs/open-questions.md))
 
-Source [`src/flow-mount.py`](src/flow-mount.py) (CadQuery ≥ 2.4); `stl/` holds the STL,
-STEP and a print STL (the same part — it is modelled mounting-face-down, bosses up: every
-hole vertical, no supports). **First pass, designed 2026-09-25, not printed.**
+Source [`src/flow-cage.py`](src/flow-cage.py) (CadQuery ≥ 2.4); `stl/` holds
+`bee35-flow-cage.stl`/`.step` and `bee35-flow-cage-print.stl` (the same part; it is
+modelled sink-side-down, so the tabs lie on the bed, the ring rises and the lip prints
+last on a 45° underside — no supports). **Designed 2026-09-26, not printed.**
+
+Owner's scheme (2026-09-26): the sensor is stuck to the heatsink's face with strong gel
+tape, dead centre, long axis across the aircraft; this cage goes over it and screws to the
+sink's **fore and aft M2 holes only** — the sensor's 33 mm covers the other two. The tape
+locates and carries flight loads; the cage carries landing and peel loads.
 
 | | |
 |---|---|
-| Datum (owner) | Origin midway between the two front M3 clearance holes, **24 mm apart**; x through them; z = 0 their bearing surface, +z away from the airframe. The third hole — the heatsink's forward M2 — is on x = 0, **41 mm from each front hole**, so at y = 39.2 (aft), taken coplanar for now |
-| Plate | 38.2 × 48 × 3 mm: full width over the sensor, front holes in its corners, a tab aft to the M2. 2.5 mm edge round every hole, 3 mm corner rounds |
-| Sensor | Long axis across, centred at y = 18.5 so the M3 heads clear its front edge; on four Ø5 × 1 mm bosses at its 24.3 × 12 pattern, M2.5 self-tapping (Ø2.1 pilots). **Face 20.8 mm off the mounting surface** — how that relates to the belly is the check |
-| Superseded | A heatsink-mounted bracket, modelled the same day (commit `f4b3763`; diamond pattern `223e6c5`), was **abandoned as too low** (owner) |
+| Ring | 36.8 × 24.4 mm outside, 1.5 mm wall, 0.3 mm fit each side round the sensor, 19.3 mm tall; corners R2 |
+| Lip | 2 mm in over the face's edges, 1.5 thick, leaving a **29.8 × 17.4 mm window** for the optics; 45° underneath |
+| Tabs | 8 mm wide, 1.5 thick, on the sink fore and aft with Ø2.2 holes at **y = ±14.14** (the diamond's points); the ring's outer face is recessed 0.6 mm at each tab so a Ø3.8 M2 head seats — without it the head would clear the ring by 0.04 mm |
+| Tape | 1.0 mm assumed (`TAPE_T`); measure the tape and set it, it moves the lip |
+| Material | TPU 95A on the fleet's `tpu` profile |
 
-Sensor dimensions are MicoAir's page figures, not measured on the unit.
+Sensor dimensions are MicoAir's page figures. **Unchecked on the hardware:** whether the
+side M2 hardware under the sensor's footprint stands proud of the sink (it would stop the
+sensor sitting flat on the tape), and whether the lip clears the sensor's corner screw
+bosses and its cable exit.
+
+Earlier passes, both dropped the day before: a plate on the sink's own M2s with corner
+legs as feet (`f4b3763`, `223e6c5`; too low) and a three-point plate under the nose
+(`fb1ca05`; in the front ducts' downwash).
 
 ## SpeedyBee documents
 

@@ -156,6 +156,14 @@ Format: `OQ-nn — question (date raised)`.
     now been tried on paper, and the choice is between the centre (clear of the ducts,
     but 17 mm + plate below the belly) and somewhere the sensor can recess up into the
     frame with its face flush.
+  - **Fourth pass, owner, 2026-09-26: back to the centre, no plate — the sensor is stuck
+    to the sink with strong gel tape and a TPU cage over it screws to the sink's fore and
+    aft M2s only.** The sensor hangs its own 16.8 mm plus tape; the cage adds 1.5. Drawn:
+    [`../print/sources.md`](../print/sources.md) `flow-cage`, not printed. Tape as the
+    locating and flight-load joint, the cage for landing and peel. **Before sticking:**
+    the side M2 hardware under the sensor must not stand proud of the sink; align the
+    sensor's edge to the sink's before pressing down (a skew is a permanent flow scaling
+    error); note which way its arrow points for `FLOW_ORIENT_YAW`.
   - The mount fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
     check and calibration wait for it.
 
