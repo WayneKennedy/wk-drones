@@ -7,9 +7,10 @@ because the sensor's 33 mm length covers the other two. The tape locates the sen
 carries flight loads; the cage carries landing and peel loads, which tape is bad at,
 and stops a failed bond costing the sensor.
 
-Shape: a ring around the sensor's four sides, a narrow lip turned in over the edges of
-its face (the optics stay open), and a tab fore and aft lying on the sink with an M2
-clearance hole. The lip's underside is a 45 deg slope so it prints without support.
+Shape: a ring around the sensor's 9.25 mm rectangular body, a narrow lip turned in over
+the edges of its face - the two lens cylinders stand through the window - a notch in the
+ring on the connector side for the cable, and a tab fore and aft lying on the sink with
+an M2 clearance hole. The lip's underside is a 45 deg slope so it prints without support.
 
 Frame: sensor centre on the sink at the origin; x across the aircraft (the sensor's
 long axis), y fore-aft, z = 0 the sink's face, +z away from the sink - down in flight.
@@ -30,10 +31,24 @@ import cadquery as cq
 SINK_PITCH = 20.0        # MEASURED (owner): 4 x M2 tapped on a 20 x 20 square
 SINK_ROT_DEG = 45.0      # set as a diamond to the airframe (owner, underside photo)
 M2_HOLE = 2.2            # clearance
-# MTF-01P, MicoAir's product page (read 2026-09-25), not measured on the unit:
+# MTF-01P, MicoAir's product page (read 2026-09-25) and product photos (2026-09-27):
 SENSOR_L = 33.2          # across the aircraft
 SENSOR_W = 20.8          # fore-aft
-SENSOR_H = 16.8          # sink side to face
+BODY_T = 9.25            # MEASURED (owner, 2026-09-27): the rectangular body, sink side to
+                         # face; the two lens cylinders rise above it to the 16.8 overall
+# From MicoAir's TOP photo, scaled by the 33.2 x 20.8 body (+/-0.5 mm): lens and ToF
+# cylinders ~dia 8, centres at x -5.8 and +4.2, both offset +3.4 toward one long edge;
+# a third dia ~4 window at (-0.8, -4.4). Their extent decides the lip: y from -0.6 up to
+# +7.7 against a body half-width of 10.4. The corner screws are countersunk in the face.
+CYL_Y_MAX = 7.7          # cylinders' far edge from the body's centreline
+CYL_SIDE = +1            # which long edge they crowd; the connector is on the other
+# From the SIDE and BOTTOM photos: the 4-pin JST is on a long SIDE face, near the middle.
+CONN_SIDE = -CYL_SIDE
+CONN_X = 3.0             # connector centre along the long axis, +/-0.5 (photo)
+CONN_W = 7.0             # notch width in the ring for connector and cable
+TAB_W_CONN = 14.0        # the tab on the connector side is wider, so it bridges the ring
+                         # either side of the notch; the cable exits over it, dressed
+                         # sideways past the M2 head
 
 # ---------------------------------------------------------------- chosen
 TAPE_T = 1.0             # gel tape between sink and sensor - measure the tape
@@ -54,7 +69,7 @@ CORNER_R = 2.0           # ring's outer vertical corners
 M2_Y = SINK_PITCH / 2.0 * math.sqrt(2.0)          # 14.14: fore and aft holes on x = 0
 IX, IY = SENSOR_L / 2.0 + FIT, SENSOR_W / 2.0 + FIT   # inside of the ring
 OX, OY = IX + WALL, IY + WALL                          # outside of the ring
-Z_FACE = TAPE_T + SENSOR_H                             # sensor's face
+Z_FACE = TAPE_T + BODY_T                               # the body's face; cylinders rise past it
 Z_TOP = Z_FACE + LIP_T
 
 
@@ -81,12 +96,20 @@ def cage():
              .workplane(offset=LIP).rect(2 * (IX - LIP), 2 * (IY - LIP))
              .loft(combine=True))
     body = body.cut(slope)
+    # lip clearance of the cylinders (they pass through the window; the lip must miss them)
+    clear = (IY - LIP) - CYL_Y_MAX
+    if clear < 0.5:
+        print(f"WARNING: lip window edge only {clear:.2f} mm from the cylinders", file=sys.stderr)
+    # notch in the ring for the connector and cable, full height, on the connector side
+    ny0, ny1 = sorted((CONN_SIDE * (IY - 1.0), CONN_SIDE * (OY + 1.0)))
+    body = body.cut(_box(CONN_X - CONN_W / 2.0, CONN_X + CONN_W / 2.0, ny0, ny1, -1.0, Z_TOP + 1.0))
     # tabs fore and aft, on the sink, with the M2 holes
     for sy in (-1, 1):
         y_in, y_out = sy * OY, sy * (M2_Y + TAB_END)
-        tab = _box(-TAB_W / 2.0, TAB_W / 2.0, min(y_in, y_out), max(y_in, y_out), 0.0, TAB_T)
+        tw = TAB_W_CONN if sy == CONN_SIDE else TAB_W
+        tab = _box(-tw / 2.0, tw / 2.0, min(y_in, y_out), max(y_in, y_out), 0.0, TAB_T)
         if CORNER_R:
-            tab = tab.edges("|Z").fillet(min(CORNER_R, TAB_W / 2.0 - 0.1))
+            tab = tab.edges("|Z").fillet(min(CORNER_R, tw / 2.0 - 0.1))
         body = body.union(tab)
         body = body.cut(cq.Workplane("XY").circle(M2_HOLE / 2.0).extrude(TAB_T + 2)
                         .translate((0.0, sy * M2_Y, -1.0)))
@@ -108,7 +131,8 @@ def main(outdir="."):
           f"{2*OX:.1f} x {2*OY:.1f}, window {2*(IX-LIP):.1f} x {2*(IY-LIP):.1f}, "
           f"face at z {Z_FACE:.1f}, top {Z_TOP:.1f}; M2 at y +/-{M2_Y:.2f}, "
           f"{M2_Y - M2_HOLE/2 - OY:.2f} mm clear of the ring; head edge at "
-          f"{M2_Y - M2_HEAD_D/2:.2f} vs recessed face at {OY - HEAD_ROOM:.2f}")
+          f"{M2_Y - M2_HEAD_D/2:.2f} vs recessed face at {OY - HEAD_ROOM:.2f}; "
+          f"lip window edge {(IY - LIP) - CYL_Y_MAX:.2f} mm from the cylinders")
     views = {
         "plan": m,                                                         # from +z: the face side
         "front": m.rotate((0, 0, 0), (1, 0, 0), -90).rotate((0, 0, 0), (0, 1, 0), 180),

@@ -45,16 +45,24 @@ locates and carries flight loads; the cage carries landing and peel loads.
 
 | | |
 |---|---|
-| Ring | 36.8 × 24.4 mm outside, 1.5 mm wall, 0.3 mm fit each side round the sensor, 19.3 mm tall; corners R2 |
-| Lip | 2 mm in over the face's edges, 1.5 thick, leaving a **29.8 × 17.4 mm window** for the optics; 45° underneath |
-| Tabs | 8 mm wide, 1.5 thick, on the sink fore and aft with Ø2.2 holes at **y = ±14.14** (the diamond's points); the ring's outer face is recessed 0.6 mm at each tab so a Ø3.8 M2 head seats — without it the head would clear the ring by 0.04 mm |
+| Ring | 36.8 × 24.4 mm outside, 1.5 mm wall, 0.3 mm fit each side round the sensor's **9.25 mm rectangular body** (owner, callipers, 2026-09-27), **11.75 mm tall** with the tape; corners R2 |
+| Lip | 2 mm in over the body's face margin, 1.5 thick, leaving a **29.8 × 17.4 mm window**; the two lens cylinders stand up through it, the window's edge 1.0 mm from them on their side; 45° underneath |
+| Notch | 7 mm wide, full height, in the connector-side wall at x = +3 for the JST and cable, which exit at sink level |
+| Tabs | On the sink fore and aft, 1.5 thick, Ø2.2 holes at **y = ±14.14** (the diamond's points): 8 mm wide on the cylinder side, **14 mm on the connector side so it bridges the ring either side of the notch**; the cable exits over that tab, dressed sideways past the M2 head. The ring's outer face is recessed 0.6 mm at each tab so a Ø3.8 M2 head seats — without it the head would clear the ring by 0.04 mm |
 | Tape | 1.0 mm assumed (`TAPE_T`); measure the tape and set it, it moves the lip |
 | Material | TPU 95A on the fleet's `tpu` profile |
 
-Sensor dimensions are MicoAir's page figures. **Unchecked on the hardware:** whether the
-side M2 hardware under the sensor's footprint stands proud of the sink (it would stop the
-sensor sitting flat on the tape), and whether the lip clears the sensor's corner screw
-bosses and its cable exit.
+**No STEP or other CAD of the MTF-01P exists to be had** (searched 2026-09-27): MicoAir
+publish none — the "drawing" on their product page is the wiring diagram — and GrabCAD's
+community remodels need a login. Beyond the 33.2 × 20.8 × 16.8 spec and the owner's 9.25
+body, the geometry is **scaled off MicoAir's product photos, ±0.5 mm**: lens and ToF
+cylinders ~Ø8 at x −5.8 and +4.2, both offset 3.4 mm toward one long edge; a Ø~4 third
+window near the centreline; corner screws countersunk in the face; the 4-pin JST on the
+opposite long side face near the middle, at sink level. **Check with callipers before
+printing:** cylinder diameters and their offset from the centreline (they set the lip),
+the connector's position along the edge (it sets the notch), and the tape thickness.
+Also unchecked: whether the side M2 hardware under the sensor's footprint stands proud of
+the sink, which would stop the sensor sitting flat on the tape.
 
 Earlier passes, both dropped the day before: a plate on the sink's own M2s with corner
 legs as feet (`f4b3763`, `223e6c5`; too low) and a three-point plate under the nose
