@@ -55,6 +55,51 @@ for. New aircraft copy that shape; empty folders are not created ahead of conten
   identifiers. Prices and suppliers are fine.
 - Blackbox logs, firmware binaries and large STL archives are gitignored.
 
+## CAD in FreeCAD
+
+CAD is done in FreeCAD, in the GUI where the owner can watch
+([F-DEC-09](fleet/decisions.md)); a part's source is a Python script with the `.FCStd`
+it emits checked in beside it ([F-DEC-10](fleet/decisions.md)). Worked example:
+[`aircraft/bee35/print/src/flow-cage.py`](aircraft/bee35/print/src/flow-cage.py). Every
+rule below was learned from an error in FreeCAD 1.1.3 (2026-09-29); errors in the owner's
+Report view are noise they have to read, so get it right before it runs in the GUI.
+
+- **Spreadsheet values are written as expressions: `sheet.set(cell, "=-0.5 mm")`.**
+  Without the `=`, a negative value with a unit is stored as text, and everything bound
+  to it fails with `Failed to convert to Quantity in property binding`. Give every value
+  its unit. Find a cell with `sheet.getCellFromAlias(alias)`, not by scanning column A.
+- **One constraint per degree of freedom.** A `Symmetric` about an axis on the ends of a
+  line that is already `Horizontal`/`Vertical` is redundant; so is `Symmetric` on arc
+  centres whose radii are already `Equal`. A redundant constraint invalidates the sketch
+  and every feature after it, and the body ends with no solid. Centre a profile with
+  `Symmetric` about the origin **point** on two diagonal points, or with a signed
+  `DistanceX` (`"-Params.W / 2"`); negative `DistanceX`/`DistanceY` values are accepted.
+- **Check before saving:** every object `isValid()`, every sketch `DoF == 0` with empty
+  `RedundantConstraints`, `ConflictingConstraints` and `MalformedConstraints`, and the
+  body exactly one valid solid. The script refuses to save or export otherwise.
+- **A `Pocket` cuts against the sketch normal.** From a sketch on the XY plane, cutting
+  up into the part needs `Reversed = True`.
+- **Bind, do not bake:** dimensions are `setExpression(...)` onto the `Params`
+  spreadsheet, with `evalExpression` for the number the geometry is first drawn at, so
+  the document stays editable from the spreadsheet.
+- **Wrap anything sent through the FreeCAD MCP in `try/except` and print the
+  traceback.** An uncaught exception discards all printed output and raises an error in
+  the Report view. Prototype in a scratch document and close it afterwards.
+- **Run the script as `__main__` with `__file__` set** — the `exec(compile(...))` line in
+  the script's header, the same in the GUI and headless (`FreeCADCmd -c "..."`).
+  `FreeCADCmd script.py` *imports* the file instead: `__name__` is not `__main__`,
+  nothing runs, nothing is printed, and a `__pycache__` appears.
+- **FreeCAD here is a flatpak and cannot see `/tmp`.** Scripts and outputs live under the
+  home directory; a path it cannot see fails silently.
+- **Delete the old `.FCStd` before `saveAs`,** or FreeCAD leaves a dated `.FCBak` beside
+  it (gitignored, with `.FCStd1`).
+- **`TechDraw.projectToSVG` takes one `type` string** (`"ShowHiddenLines"`; combining two
+  is ignored) and its default hidden-line style is malformed SVG — pass all six style
+  dicts.
+- **A remodel is proved against the solid it replaces:** `a.cut(b).Volume +
+  b.cut(a).Volume` is 0. Measure claims in the notes off the solid too; two in the
+  `flow-cage` notes were false.
+
 ## History
 
 Until 2026-09-13 this repository was `wk-drone-bee35` and held the Bee35 alone; that

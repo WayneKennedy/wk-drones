@@ -33,10 +33,18 @@ the 25.5 mm standoff and the four damping balls. Parts are added as geometry is 
 
 ### `flow-cage` — TPU strap over the MTF-01P, taped to the VTX heatsink ([OQ-05](../docs/open-questions.md))
 
-Source [`src/flow-cage.py`](src/flow-cage.py) (CadQuery ≥ 2.4); `stl/` holds
-`bee35-flow-cage.stl`/`.step` and `bee35-flow-cage-print.stl` (the same part; it is
-modelled sink-side-down, so the tabs lie on the bed, the ring rises and the lip prints
-last on a 45° underside — no supports). **Designed 2026-09-26, not printed.**
+Source [`src/flow-cage.py`](src/flow-cage.py), a FreeCAD script (FreeCAD 1.1; how to run
+it is in its header, the rules in [`AGENTS.md`](../../../AGENTS.md#cad-in-freecad)). It
+emits [`src/flow-cage.FCStd`](src/flow-cage.FCStd) — a `Params` spreadsheet driving a
+PartDesign body, for opening directly — and into `stl/`: `bee35-flow-cage.stl`/`.step`,
+`bee35-flow-cage-print.stl` (the same part; it is modelled sink-side-down, so the tabs
+lie on the bed, the ring rises and the lip prints last) and four drawings,
+`bee35-flow-cage-{plan,front,side,iso}.svg`, hidden edges dashed.
+**Designed 2026-09-26, not printed.**
+
+**Remodelled in FreeCAD 2026-09-29** ([F-DEC-09](../../../fleet/decisions.md)) from the
+CadQuery model (last at `5fbd1ac`), geometry unchanged: the boolean difference between
+the two solids is 0.000000 mm³, both 2316.8 mm³, 50 faces.
 
 Owner's scheme (2026-09-26): the sensor is stuck to the heatsink's face with strong gel
 tape, dead centre, long axis across the aircraft; this cage goes over it and screws to the
@@ -46,9 +54,9 @@ locates and carries flight loads; the cage carries landing and peel loads.
 | | |
 |---|---|
 | Ring | 36.8 × 24.4 mm outside, 1.5 mm wall, 0.3 mm fit each side round the sensor's **9.25 mm rectangular body** (owner, callipers, 2026-09-27), **11.75 mm tall** with the tape; corners R2 |
-| Lip | 2 mm in over the body's face margin, 1.5 thick, leaving a **29.8 × 17.4 mm window**; the two lens cylinders stand up through it, the window's edge 1.0 mm from them on their side; 45° underneath |
+| Lip | 2 mm in over the body's face margin, 1.5 thick, leaving a **29.8 × 17.4 mm window**; the two lens cylinders stand up through it, the window's edge 1.0 mm from them on their side; **flat underneath** (defect 1 below) |
 | Notch | 7 mm wide, full height, in the connector-side wall at x = +3 for the JST and cable, which exit at sink level |
-| Tabs | On the sink fore and aft, 1.5 thick, Ø2.2 holes at **y = ±14.14** (the diamond's points): 8 mm wide on the cylinder side, **14 mm on the connector side so it bridges the ring either side of the notch**; the cable exits over that tab, dressed sideways past the M2 head. The ring's outer face is recessed 0.6 mm at each tab so a Ø3.8 M2 head seats — without it the head would clear the ring by 0.04 mm |
+| Tabs | On the sink fore and aft, 1.5 thick, Ø2.2 holes at **y = ±14.14** (the diamond's points): 8 mm wide on the cylinder side, 14 mm on the connector side, R2 on all four corners (defect 2 below); the cable exits over the connector-side tab, dressed sideways past the M2 head. The ring's outer face is recessed 0.6 mm at each tab so a Ø3.8 M2 head seats — without it the head would clear the ring by 0.04 mm |
 | Tape | 1.0 mm assumed (`TAPE_T`); measure the tape and set it, it moves the lip |
 | Material | TPU 95A on the fleet's `tpu` profile |
 
@@ -63,6 +71,23 @@ printing:** cylinder diameters and their offset from the centreline (they set th
 the connector's position along the edge (it sets the notch), and the tape thickness.
 Also unchecked: whether the side M2 hardware under the sensor's footprint stands proud of
 the sink, which would stop the sensor sitting flat on the tape.
+
+**Known defects, found 2026-09-29 by measuring the solid in FreeCAD; not fixed, the
+fixes are the owner's choice** ([OQ-05](../docs/open-questions.md)):
+
+1. **The lip's underside is flat, not 45°.** The CadQuery model cut its 45° slope from
+   inside the sensor cavity, where there was nothing left to cut, so the solid has no
+   sloped face: the lip is a 2 mm overhang at z = 10.25, printed over air. This file
+   said "45° underneath" and "no supports" until 2026-09-29; neither was true of the
+   STL. A real 45° slope has to sit above the sensor's face, which makes the lip
+   thicker than its 1.5 mm and the part taller.
+2. **The tabs are necked where they join the ring, and the connector-side tab does not
+   bridge the notch.** The corner radius was applied to all four corners of each tab,
+   including the two at the ring. The 8 mm tab is **4 mm wide** at the ring's face
+   (6 mm² of joint). The 14 mm tab is 10 mm wide there, x −5 to +5, but the notch takes
+   x −0.5 to +6.5, so it joins the ring on **one side of the notch only, over 4.5 mm**
+   (6.75 mm² of joint); right of the notch the tab and ring do not touch. These joints
+   carry the landing and peel loads the cage exists for.
 
 Earlier passes, both dropped the day before: a plate on the sink's own M2s with corner
 legs as feet (`f4b3763`, `223e6c5`; too low) and a three-point plate under the nose

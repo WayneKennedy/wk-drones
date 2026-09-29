@@ -164,6 +164,11 @@ Format: `OQ-nn — question (date raised)`.
     the side M2 hardware under the sensor must not stand proud of the sink; align the
     sensor's edge to the sink's before pressing down (a skew is a permanent flow scaling
     error); note which way its arrow points for `FLOW_ORIENT_YAW`.
+  - **Two defects in the drawn cage, found 2026-09-29, fixes not chosen:** the lip's
+    underside is flat, not the 45° the notes claimed, and the tabs are necked at the
+    ring with the connector-side tab joined on one side of the notch only. Figures:
+    [`../print/sources.md`](../print/sources.md) `flow-cage`, "Known defects". Not to be
+    printed as drawn without the owner's say.
   - The mount fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
     check and calibration wait for it.
 

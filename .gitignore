@@ -12,6 +12,11 @@ aircraft/*/logs/*
 *.7z
 *.rar
 
+# FreeCAD backups, Python bytecode
+*.FCBak
+*.FCStd1
+__pycache__/
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db

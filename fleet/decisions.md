@@ -20,6 +20,28 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   off-board topology (a ground machine commanding the flight controller over radio); that
   would be a new decision here, not an edit to this one.
 
+- **F-DEC-10 — A FreeCAD part's source is its script, with the `.FCStd` checked in
+  beside it** (2026-09-29, owner: "Agreed, both"). The Python script holds the measured
+  constants, diffs, and rebuilds everything; the `.FCStd` it emits is binary and does not
+  diff, and is there so the part opens directly. **The script is canonical:** a value
+  tried in the document's spreadsheet goes back into the script, and the `.FCStd` is
+  only ever written by running it. Scripting rules:
+  [`AGENTS.md`](../AGENTS.md#cad-in-freecad).
+  - **Layout, as first used for the Bee35's `flow-cage`:** `print/src/<part>.py` and
+    `print/src/<part>.FCStd`; exports (STL, STEP, SVG drawings) in `print/stl/`.
+  - **Not decided:** whether the Bee35's `cam-head`, still a CadQuery script, is
+    remodelled in FreeCAD before it next changes.
+
+- **F-DEC-09 — CAD work is done in FreeCAD** (2026-09-29, owner). "I want all CAD work
+  done there now, as it's easier for me to visualise the parts as they are being
+  designed." Parts are designed in the FreeCAD GUI, where the owner watches them take
+  shape, not generated unseen from a script. FreeCAD 1.1.3 on the GPU workstation, driven
+  by the assistant through the FreeCAD MCP addon. What is checked in:
+  [F-DEC-10](#f-dec-10).
+  - **State, 2026-09-29:** the Bee35's `flow-cage` is remodelled in FreeCAD, geometry
+    unchanged; its `cam-head` is still CadQuery
+    ([`print/sources.md`](../aircraft/bee35/print/sources.md)).
+
 - **F-DEC-08 — No DJI: the fleet stays on open/hobbyist video** (2026-09-25, owner).
   "O4 is DJI, and I have zero DJI kit in my ecosystem, I prefer to stay hobbyist not
   corporate." Video stays **Walksnail Avatar HD**, which every aircraft's goggles already
