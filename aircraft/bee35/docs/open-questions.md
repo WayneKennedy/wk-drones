@@ -80,7 +80,11 @@ Format: `OQ-nn — question (date raised)`.
   cause — a tight interior squeezing the stack — is unchanged. Details:
   [`wiring.md`](wiring.md) solder notes.
 
-- **OQ-04 — Camera mount part mislaid** (2026-09-22, owner). Part of the frame's camera
+- **OQ-04 — Camera mount part mislaid** (2026-09-22, owner). **Resolved 2026-09-29 by
+  [DEC-09](decisions.md): a printed TPU insert between the side plates, fitted with the
+  camera in it.** The OSD step no longer waits on it. The record is kept below.
+
+  Original question: part of the frame's camera
   mount is missing, so the Walksnail Nano Camera V3 cannot be mounted and the OSD step
   (checklist step 9) waits. **Which part is missing: the aluminium standoff for the camera
   mount and the camera grommets** (owner, 2026-09-23). Both are frame hardware, not
@@ -164,14 +168,16 @@ Format: `OQ-nn — question (date raised)`.
     the side M2 hardware under the sensor must not stand proud of the sink; align the
     sensor's edge to the sink's before pressing down (a skew is a permanent flow scaling
     error); note which way its arrow points for `FLOW_ORIENT_YAW`.
-  - **Two defects in the drawn cage, found 2026-09-29, fixes not chosen:** the lip's
-    underside is flat, not the 45° the notes claimed, and the tabs are necked at the
-    ring with the connector-side tab joined on one side of the notch only. Figures:
-    [`../print/sources.md`](../print/sources.md) `flow-cage`, "Known defects". Not to be
-    printed as drawn without the owner's say.
+  - **Revised 2026-09-29 in FreeCAD, owner's changes:** notch 5 mm high instead of full
+    height, tabs square at the ring, connector-side tab run past the notch, no recess
+    for the M2 heads, the window's top edge rounded R1; lip narrowed to clear the lens
+    cylinders as measured. **First printed and tried on the
+    aircraft 2026-09-29:** 2.5 mm too tall, a loose-ish fit, and it sat on the screws
+    that fasten the VTX to the sink; the cable notch was right. **Revised the same day;
+    its print started that evening.** Still to confirm: the size of the new notches over those screws. Figures: [`../print/sources.md`](../print/sources.md)
+    `flow-cage`.
   - The mount fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
     check and calibration wait for it.
 
-  **Blocks the maiden** (owner, 2026-09-25) — with
-  [OQ-04](#) it is one of the two things now standing between this aircraft and its first
-  flight.
+  **Blocks the maiden** (owner, 2026-09-25). Since [OQ-04](#) was resolved on
+  2026-09-29 it is the one thing standing between this aircraft and its first flight.

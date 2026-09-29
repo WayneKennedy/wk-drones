@@ -15,6 +15,7 @@ aircraft/*/logs/*
 # FreeCAD backups, Python bytecode
 *.FCBak
 *.FCStd1
+*.replaced.FCStd
 __pycache__/
 
 # OS / editor cruft

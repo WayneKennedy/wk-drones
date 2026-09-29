@@ -28,9 +28,12 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   only ever written by running it. Scripting rules:
   [`AGENTS.md`](../AGENTS.md#cad-in-freecad).
   - **Layout, as first used for the Bee35's `flow-cage`:** `print/src/<part>.py` and
-    `print/src/<part>.FCStd`; exports (STL, STEP, SVG drawings) in `print/stl/`.
-  - **Not decided:** whether the Bee35's `cam-head`, still a CadQuery script, is
-    remodelled in FreeCAD before it next changes.
+    `print/src/<part>.FCStd`; exports (STL, STEP, SVG drawings) in `print/stl/`. What
+    every part script shares is in [`cad/fcpart.py`](cad/fcpart.py).
+  - **Precedent, not yet a rule:** the Bee35's camera mount was remodelled in FreeCAD
+    on 2026-09-29, when it first had to change, and proved against the solid it
+    replaced. **Not decided:** whether every CadQuery part is remodelled when it next
+    changes, or sooner.
 
 - **F-DEC-09 — CAD work is done in FreeCAD** (2026-09-29, owner). "I want all CAD work
   done there now, as it's easier for me to visualise the parts as they are being
@@ -38,9 +41,10 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
   shape, not generated unseen from a script. FreeCAD 1.1.3 on the GPU workstation, driven
   by the assistant through the FreeCAD MCP addon. What is checked in:
   [F-DEC-10](#f-dec-10).
-  - **State, 2026-09-29:** the Bee35's `flow-cage` is remodelled in FreeCAD, geometry
-    unchanged; its `cam-head` is still CadQuery
-    ([`print/sources.md`](../aircraft/bee35/print/sources.md)).
+  - **State, 2026-09-29:** the Bee35's `flow-cage` and `cam-mount` are FreeCAD models.
+    Still CadQuery: the Bee35's loose crossbar and posts (`cam-head.py`) and the Holybro
+    10"'s parts ([Bee35](../aircraft/bee35/print/sources.md),
+    [Holybro](../aircraft/holybro-10/print/)).
 
 - **F-DEC-08 — No DJI: the fleet stays on open/hobbyist video** (2026-09-25, owner).
   "O4 is DJI, and I have zero DJI kit in my ecosystem, I prefer to stay hobbyist not

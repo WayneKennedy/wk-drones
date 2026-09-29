@@ -59,8 +59,12 @@ for. New aircraft copy that shape; empty folders are not created ahead of conten
 
 CAD is done in FreeCAD, in the GUI where the owner can watch
 ([F-DEC-09](fleet/decisions.md)); a part's source is a Python script with the `.FCStd`
-it emits checked in beside it ([F-DEC-10](fleet/decisions.md)). Worked example:
-[`aircraft/bee35/print/src/flow-cage.py`](aircraft/bee35/print/src/flow-cage.py). Every
+it emits checked in beside it ([F-DEC-10](fleet/decisions.md)). A part script holds
+only the part; what all of them share — the spreadsheet, bound sketches, the checks, the
+exports, the run — is [`fleet/cad/fcpart.py`](fleet/cad/fcpart.py): use it, do not copy
+it. Worked examples: the Bee35's
+[`flow-cage.py`](aircraft/bee35/print/src/flow-cage.py) and
+[`cam-mount.py`](aircraft/bee35/print/src/cam-mount.py). Every
 rule below was learned from an error in FreeCAD 1.1.3 (2026-09-29); errors in the owner's
 Report view are noise they have to read, so get it right before it runs in the GUI.
 
@@ -92,13 +96,30 @@ Report view are noise they have to read, so get it right before it runs in the G
 - **FreeCAD here is a flatpak and cannot see `/tmp`.** Scripts and outputs live under the
   home directory; a path it cannot see fails silently.
 - **Delete the old `.FCStd` before `saveAs`,** or FreeCAD leaves a dated `.FCBak` beside
-  it (gitignored, with `.FCStd1`).
+  it (gitignored, with `.FCStd1`). `doc.save()` over an existing file does the same.
+- **Running the script replaces the open document, and the owner edits that document
+  by hand.** Before every run, read what they changed — features added, removed or
+  invalid, feature properties, spreadsheet cells against `PARAMS` — and carry it into the
+  script; a run on 2026-09-29 replaced a round the owner had just added. The script
+  keeps the document it replaces as `<part>.replaced.FCStd` (gitignored).
+- **A fillet names its edges (`Edge65`); find them by position at build time,** never by
+  number, make the fillet the last feature, and fail if the count is not what is
+  expected.
 - **`TechDraw.projectToSVG` takes one `type` string** (`"ShowHiddenLines"`; combining two
   is ignored) and its default hidden-line style is malformed SVG — pass all six style
   dicts.
 - **A remodel is proved against the solid it replaces:** `a.cut(b).Volume +
-  b.cut(a).Volume` is 0. Measure claims in the notes off the solid too; two in the
-  `flow-cage` notes were false.
+  b.cut(a).Volume` is 0. On curved faces also sample each skin and measure to the
+  other, because `.Volume` itself differs in the fourth figure between two descriptions
+  of one ellipse. Measure claims in the notes off the solid too; two in the `flow-cage`
+  notes were false.
+- **An ellipse in a sketch is dimensioned through its internal lines:**
+  `exposeInternalGeometry`, then constrain the major and minor axis lines. Which line
+  is which is only in the constraint's printed name (`InternalAlignment:EllipseMajorDiameter`).
+  End an arc of it with `PointOnObject` on an axis line; the major radius must stay the
+  larger.
+- **Develop headless, show finished.** Run a new or changed script with `FreeCADCmd`
+  until it passes, then run it in the GUI: the owner's Report view sees no trial errors.
 
 ## History
 

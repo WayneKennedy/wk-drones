@@ -81,3 +81,21 @@ reasoning, not just the outcome. Format: `DEC-nn — decision (date)`.
   the radio and goggles alone, and the GCS failsafe is off by default. Mission Planner
   in flight remains the later, optional step (OQ-02, dormant per DEC-07). Nothing here
   is measured on this airframe yet. Setup: [`setup-ardupilot.md`](setup-ardupilot.md).
+
+- **DEC-09 — Camera mount: one printed TPU insert between the CNC side plates**
+  (2026-09-29, owner). Closes [OQ-04](open-questions.md). The mislaid 25.5 mm standoff
+  and four damping balls are not replaced like for like: one printed part sits between
+  the two aluminium side plates the aircraft already has, sets their spacing, and holds
+  the Walksnail Nano V3 in its TPU adapter on M2 screws through its cheeks. It is held
+  by M3 self-tapping screws through the plates into its crossbar and up into its two
+  posts. Geometry, source and print record:
+  [`../print/sources.md`](../print/sources.md) `cam-head`.
+  - **Fitted 2026-09-29, second revision: "This latest camera mount is perfect"**
+    (owner, with a photo of it on the aircraft, camera in). The first print, the same
+    day, was 3.5 mm too deep at the front.
+  - **TPU 95A, not the rigid filament the design notes argued for** — the owner's
+    choice at the printer. Against: TPU creeps under screw preload and the part sets
+    the plate spacing. For: it damps the camera, which is what the damping balls did.
+    Not flown, so neither has been seen.
+  - **Alternatives not taken:** sourcing the standoff and balls, and a full TPU head
+    replacing the side plates too (OQ-04, paths a and b).

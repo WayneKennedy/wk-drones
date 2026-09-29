@@ -15,9 +15,10 @@ hardware.
 compass calibrated, receiver bound, flight modes set, and GPS, compass and the MTF-01P
 reading over MAVLink. Wiring and the ports are in [`docs/wiring.md`](docs/wiring.md).
 
-**Two things block the maiden** (owner, 2026-09-25), both mounting, neither electrical:
-the **camera mount** ([OQ-04](docs/open-questions.md)) and the **MTF-01P mount**
-([OQ-05](docs/open-questions.md)). The stack harness that worked loose on the first bench
+**One thing blocks the maiden: the MTF-01P mount**
+([OQ-05](docs/open-questions.md)), mounting, not electrical; its cage was first printed
+2026-09-29, did not fit, and was revised the same day; the revision's print started that evening. The other blocker named on 2026-09-25, the **camera
+mount**, was printed and fitted on 2026-09-29 ([DEC-09](docs/decisions.md)). The stack harness that worked loose on the first bench
 day ([OQ-03](docs/open-questions.md)) has been inspected and is sound; it is covered by the
 pre-flight visual check.
 
