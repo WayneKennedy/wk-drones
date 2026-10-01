@@ -69,11 +69,25 @@ Decisions true of more than one aircraft. Per-aircraft decisions live in each ai
     stock serves: the one other flow
     sensor owned, a Matek 3901-L0X, was rejected on 2026-09-25 — 2 m range and a VL53L0X
     that sunlight swamps (wk-inventory `docs/stock.md`).
+  - **Which way round it goes depends on the firmware** (MicoAir's MTF-01P manual, its
+    orientation diagram, read 2026-10-01; the MTF-01 diagram on MicoAir's own page says
+    the same). Looking at the lens face, the two big lenses sit along one long edge and
+    a small third window near the other. **ArduPilot / PX4 default: nose toward the
+    small window, the lens pair aft** (`FLOW_ORIENT_YAW` 0). **iNav / FMT default: the
+    opposite, lens pair toward the nose.** Mounted the other way on ArduPilot,
+    `FLOW_ORIENT_YAW` 18000; iNav has its own alignment setting (name not checked). The
+    manual also says the default is adjustable in MicoAssistant. **Whatever the
+    firmware, prove it with the flow-against-attitude check before flying on it:** a
+    wrong orientation inverts the feedback and causes a flyaway (ArduPilot wiki). The
+    owner's note, 2026-10-01: the two conventions being opposite is a trap for the 5",
+    which is the fleet's iNav aircraft. Bee35: mounted ArduPilot's way
+    ([DEC-10](../aircraft/bee35/docs/decisions.md)).
   - **The Holybro carries both it and the TFmini Plus**, whose ToF it duplicates. The
     TFmini stays: 12 m, IP65, bought for accurate height on landing. Which one ArduPilot
     reads as `RNGFND1` there is unsettled.
   - **The 5" needs [F-DEC-06](#f-dec-06) done first** — flow is no use to it on Betaflight.
-  - Mounting is per aircraft and unsolved on both: Bee35 [OQ-05](../aircraft/bee35/docs/open-questions.md).
+  - Mounting is per aircraft. Bee35: done, gel tape under a printed TPU cage
+    ([DEC-10](../aircraft/bee35/docs/decisions.md), 2026-09-30). The others: unsolved.
 
 - **F-DEC-06 — ArduPilot or iNav on every aircraft; no Betaflight** (2026-09-25, owner).
   Anything new, and anything reflashed, runs ArduPilot or iNav. Betaflight is not used:

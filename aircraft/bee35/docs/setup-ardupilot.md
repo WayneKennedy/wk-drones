@@ -73,9 +73,12 @@ hardware is in hand; the settings below are the target configuration. Port map:
     Micolink, MAVLink (APM or PX4) and MSP, chosen with MicoAssistant (MicoAir's steps are written for Windows; via a
     USB-TTL adapter or ArduPilot serial passthrough). So `RNGFND1_MAX` 8 for outdoor
     flying.
-  - Orientation: MicoAir's default is ArduPilot orientation; if mounted the iNav/FMT
-    way, `FLOW_ORIENT_YAW` 18000. Wrong orientation causes a flyaway. Verify flow
-    values move the right way before flight.
+  - Orientation: **as fitted on 2026-09-30 the sensor is in MicoAir's ArduPilot/PX4
+    default** — lens pair aft, the small third window toward the nose — so
+    `FLOW_ORIENT_YAW` stays 0 (the fleet rule and the diagram's source:
+    [F-DEC-07](../../../fleet/decisions.md)). Mounted the iNav/FMT way it would be
+    18000. Wrong orientation causes a flyaway: **still verify** that the flow rates
+    move with the gyro rates (nose down, roll right) before flying on it.
   - Calibrate in flight: `RCx_OPTION` 158 (Optflow Calibration), then rock in pitch
     and roll; this sets `FLOW_FXSCALER`/`FLOW_FYSCALER`.
 - **Walksnail OSD** (ArduPilot DisplayPort page): `SERIAL2_PROTOCOL` 42 (the board

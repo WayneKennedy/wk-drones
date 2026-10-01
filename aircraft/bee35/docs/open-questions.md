@@ -126,7 +126,11 @@ Format: `OQ-nn — question (date raised)`.
   OSD step and the maiden** — with [OQ-05](#), one of the two remaining blockers (owner,
   2026-09-25).
 
-- **OQ-05 — Flow sensor mount** (2026-09-22, owner). The MTF-01P is wired and working on
+- **OQ-05 — Flow sensor mount** (2026-09-22, owner). **Resolved 2026-09-30 by
+  [DEC-10](decisions.md): gel-taped to the VTX heatsink under a printed TPU cage, fitted.**
+  The flow parameters that waited on it are listed there. The record is kept below.
+
+  Original question: the MTF-01P is wired and working on
   UART4 but not mounted. Its mounting is 24.3 × 12 mm, Ø2.5 mm holes (MicoAir; official
   case STL, [`../print/sources.md`](../print/sources.md)).
   - **Location, second decision (owner, 2026-09-25, evening): up front, under the nose,
@@ -173,11 +177,11 @@ Format: `OQ-nn — question (date raised)`.
     for the M2 heads, the window's top edge rounded R1; lip narrowed to clear the lens
     cylinders as measured. **First printed and tried on the
     aircraft 2026-09-29:** 2.5 mm too tall, a loose-ish fit, and it sat on the screws
-    that fasten the VTX to the sink; the cable notch was right. **Revised the same day;
-    its print started that evening.** Still to confirm: the size of the new notches over those screws. Figures: [`../print/sources.md`](../print/sources.md)
+    that fasten the VTX to the sink; the cable notch was right. **Revised the same day,
+    printed that evening and fitted 2026-09-30: "perfect"** (owner), the new notches
+    clearing the screws as drawn. Figures: [`../print/sources.md`](../print/sources.md)
     `flow-cage`.
   - The mount fixes `FLOW_ORIENT_YAW`, `FLOW_POS_*` and `RNGFND1_GNDCLR`, so the direction
     check and calibration wait for it.
 
-  **Blocks the maiden** (owner, 2026-09-25). Since [OQ-04](#) was resolved on
-  2026-09-29 it is the one thing standing between this aircraft and its first flight.
+  **Blocked the maiden** (owner, 2026-09-25) until it was fitted on 2026-09-30.

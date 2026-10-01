@@ -99,3 +99,23 @@ reasoning, not just the outcome. Format: `DEC-nn — decision (date)`.
     Not flown, so neither has been seen.
   - **Alternatives not taken:** sourcing the standoff and balls, and a full TPU head
     replacing the side plates too (OQ-04, paths a and b).
+
+- **DEC-10 — MTF-01P mount: gel tape to the VTX heatsink, under a printed TPU cage**
+  (2026-09-30, owner). Closes [OQ-05](open-questions.md). The sensor is stuck to the
+  heatsink's face, dead centre, long axis across the aircraft; a TPU cage over it screws
+  to the sink's fore and aft M2 holes and carries landing and peel loads. Geometry,
+  source and print record: [`../print/sources.md`](../print/sources.md) `flow-cage`.
+  - **Fitted 2026-09-30, second revision: "Rev 2 flow cage is perfect"** (owner, with a
+    photo of it on the aircraft, sensor in, screwed down). The first print, the day
+    before, was 2.5 mm too tall, loose, and sat on the VTX's screws.
+  - **What it settles for the firmware:** the sensor's place and orientation are now
+    fixed. **As fitted it is in MicoAir's ArduPilot/PX4 default orientation** — lens
+    pair aft, the small third window toward the nose (owner's photo, 2026-10-01, read
+    against MicoAir's diagram; rule in [F-DEC-07](../../../fleet/decisions.md)) — so
+    `FLOW_ORIENT_YAW` stays 0. `FLOW_POS_*` and `RNGFND1_GNDCLR` can now be measured and
+    set, and the flow direction check and in-flight calibration done
+    ([`setup-ardupilot.md`](setup-ardupilot.md)). None of that is done yet.
+  - **Alternatives tried on paper and dropped** (OQ-05): a plate on the sink's M2s with
+    corner legs (too low); a three-point plate under the nose (in the front ducts'
+    downwash). The lip's underside is flat rather than the 45° once intended; in TPU
+    it printed without supports, twice.

@@ -56,14 +56,16 @@ aircraft the same day (owner, with photos):
 | Finding off the first print | Change made, 2026-09-29 |
 |---|---|
 | The cage stood **2.5 mm too tall** | Face height cut by 2.5 (`FACE_TRIM`): 11.75 → **9.25 mm tall**. Which of the 9.25 mm body and the assumed 1 mm tape was out is not known |
-| Its short ends sat on the screws that fasten the VTX to the sink | **A notch in the foot of each short end**, centred, through the wall: 6 wide × 2.5 high (the assistant's figures, not confirmed) |
+| Its short ends sat on the screws that fasten the VTX to the sink | **A notch in the foot of each short end**, centred, through the wall: 6 wide × 2.5 high (the assistant's figures; they clear, per the fit) |
 | The tabs' ends reached the same screws fore and aft | Tabs **1 mm shorter outwards**: 0.9 mm left beyond the M2 hole, tabs end at y = ±16.14 |
 | "A loose-ish fit" | Walls **in 0.5 mm in all**: fit 0.3 → 0.05 mm each side. The window is where it was |
 | "The cable notch works perfectly" | None |
 
-**The revision's print started 2026-09-29 22:09 UTC** in TPU 95A (print host job
+**The revision was printed 2026-09-29** in TPU 95A (print host job
 `bee35_flow_cage_rev2_tpu_orca.gcode`, from `bee35-flow-cage-print-rev2.stl`, 0.2 mm
-layers, supports off); outcome not yet recorded.
+layers, supports off, 21 min, 0.72 m of filament) **and fitted 2026-09-30: "Rev 2 flow
+cage is perfect"** (owner, with a photo of it screwed down over the sensor) —
+[DEC-10](../docs/decisions.md). The end notches clear the VTX's screws as drawn.
 
 **Remodelled in FreeCAD 2026-09-29** ([F-DEC-09](../../../fleet/decisions.md)) from the
 CadQuery model (last at `5fbd1ac`), geometry unchanged at that step (`fef5c14`: boolean

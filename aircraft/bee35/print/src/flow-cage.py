@@ -115,7 +115,8 @@ PARAMS = [
                         "(owner, 2026-09-29, set in FreeCAD; was full height)"),
     ("END_NOTCH_W", "6 mm", "notch in the foot of each short end, over a VTX screw, centred "
                             "on the end (owner, 2026-09-29, off the first print; the 6 "
-                            "and the 2.5 below are the assistant's figures)"),
+                            "and the 2.5 below are the assistant's figures, and the "
+                            "second print clears the screws with them)"),
     ("END_NOTCH_H", "2.5 mm", "its height up from the sink"),
     ("M2_HEAD_D", "3.8 mm", "M2 button/socket head; no recess for it in the ring "
                             "(owner, 2026-09-29)"),
