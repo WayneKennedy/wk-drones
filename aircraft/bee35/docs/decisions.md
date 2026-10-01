@@ -114,8 +114,8 @@ reasoning, not just the outcome. Format: `DEC-nn — decision (date)`.
     against MicoAir's diagram; rule in [F-DEC-07](../../../fleet/decisions.md)) — so
     `FLOW_ORIENT_YAW` stays 0 — **proved by the flow-against-rate check on the bench,
     2026-10-01** (owner; details in [`setup-ardupilot.md`](setup-ardupilot.md)).
-    `FLOW_POS_*` and `RNGFND1_GNDCLR` can now be measured and set, and the in-flight
-    calibration done. Those are not done yet.
+    `FLOW_POS_*` and `RNGFND1_GNDCLR` were set the same day
+    ([`tuning.md`](tuning.md)). The in-flight calibration is not done.
   - **Alternatives tried on paper and dropped** (OQ-05): a plate on the sink's M2s with
     corner legs (too low); a three-point plate under the nose (in the front ducts'
     downwash). The lip's underside is flat rather than the 45° once intended; in TPU

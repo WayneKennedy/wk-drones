@@ -87,6 +87,16 @@ hardware is in hand; the settings below are the target configuration. Port map:
     ArduPilot fills `flow_comp_m_x/y` with flow rate minus gyro rate, so those sit near
     zero in pure rotation when the scale is right; the in-flight calibration below sets
     the scale.
+  - Position and ground clearance, **set 2026-10-01** over MAVLink
+    ([`../config/diff/2026-10-01-flow-position.txt`](../config/diff/2026-10-01-flow-position.txt)):
+    `FLOW_POS_Z` and `RNGFND1_POS_Z` 0.04 (lens ~40 mm below the FC, dead centre, so
+    X and Y stay 0); `RNGFND1_GNDCLR` 0.05, the parameter's minimum — at rest the ToF
+    reads 2 cm, its own floor, so the true clearance is 2 cm or less. Consequence: on
+    the ground neither the ToF nor the flow has a usable view; they come in a few
+    centimetres up. `ground_distance` in the `OPTICAL_FLOW` message is the EKF's
+    height, not the sensor; the sensor's reading is `DISTANCE_SENSOR` from component 1
+    (`RANGEFINDER` is not streamed here). QGC's MAVLink Inspector has no search; the
+    list is alphabetical per component.
   - Calibrate in flight: `RCx_OPTION` 158 (Optflow Calibration), then rock in pitch
     and roll; this sets `FLOW_FXSCALER`/`FLOW_FYSCALER`.
 - **Walksnail OSD** (ArduPilot DisplayPort page): `SERIAL2_PROTOCOL` 42 (the board
@@ -160,8 +170,8 @@ Stub. Fill in as each step is done, in order.
    **MAVLink1** `OPTICAL_FLOW` and `DISTANCE_SENSOR` from system 1, component 88. Why it
    changed is not established. It reports system 1, the ID MicoAir says to avoid on
    ArduPilot 4.5+; the FC accepts its data anyway (range 0.10–1.07 m tracked a hand and
-   the floor; flow quality 103–136 indoors). Still to do: in-flight calibration, `RNGFND1_GNDCLR`, `FLOW_POS_*`
-   (the direction check passed 2026-10-01, step 7 above). If the sensor ever
+   the floor; flow quality 103–136 indoors). Still to do: in-flight calibration (the direction check passed and the
+   position and ground-clearance parameters were set on 2026-10-01, step 7 above). If the sensor ever
    reverts to MSP, ArduPilot reads MSP too (`SERIAL4_PROTOCOL` 32, `FLOW_TYPE` 7,
    `RNGFND1_TYPE` 32; drivers present in this build)
 8. EKF source sets and their switch

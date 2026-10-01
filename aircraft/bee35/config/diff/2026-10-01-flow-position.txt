@@ -1,0 +1,22 @@
+# ArduCopter 4.7.1 (git dbe79216), board MicoAir743v2 (Bee35)
+# Changes from config/dump/2026-09-22-flow.params; full result in
+# config/dump/2026-10-01-flow-position.params (saved over MAVLink by
+# fleet/tools/ap-params.py, QGC closed). Setup checklist step 7, docs/setup-ardupilot.md.
+# After the MTF-01P was fitted in its printed cage (DEC-10) and its orientation proved on
+# the bench (flow rates follow the gyro rates in sign on both axes, FLOW_ORIENT_YAW 0).
+# Bench-verified: each value read back after writing. Flow not calibrated; not in any EKF
+# source set yet. Not flown.
+
+# Set by hand (owner's measurements, 2026-10-01)
+FLOW_POS_Z 0.04         # m, body frame, +z down: the sensor's lens is ~40 mm below the FC;
+                        # which part of the sensor carries the measurement is within the
+                        # parameter's 0.01 step. FLOW_POS_X/Y stay 0: dead centre
+RNGFND1_POS_Z 0.04      # the ToF is in the same housing
+RNGFND1_GNDCLR 0.05     # m; the parameter's minimum. With the aircraft sitting as it lands
+                        # the ToF reads 2 cm, its own floor (RNGFND1_MIN), so the real
+                        # clearance is 2 cm or less; 0.05 is as close as it can be set
+
+# Set by the firmware, not by hand (seen in the dump, expected)
+# BARO1_GND_PRESS, COMPASS_DEC, INS_GYR*OFFS_*, INS_GYR*_CALTEMP: boot-time calibration
+# MAV1_*: stream rates QGC requested in this session; runtime values
+# STAT_BOOTCNT 49, STAT_RUNTIME 25758

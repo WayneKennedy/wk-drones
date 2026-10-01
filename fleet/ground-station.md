@@ -37,6 +37,15 @@ until required setup is complete, so live attitude is read in Analyze → MAVLin
 appears as `/dev/ttyACM0` (seen 2026-09-22). If `lsusb` does not show it, suspect a
 charge-only cable.
 
+## From the terminal, without a GCS
+
+[`tools/ap-params.py`](tools/ap-params.py) reads, sets, dumps and watches an ArduPilot
+aircraft over USB with pymavlink (`uv run --with pymavlink python fleet/tools/ap-params.py
+--help`). It writes `config/dump/` files in QGroundControl's layout, with the firmware
+version and git hash in the header, and refuses to keep a dump that is not every
+parameter. The GCS must be disconnected first; the two cannot share the port. First used
+2026-10-01 on the Bee35 (its `config/diff/2026-10-01-flow-position.txt`).
+
 ## Phones and the MicoAir743 V2's Bluetooth
 
 Checked 2026-10-01, when the owner asked for an iPhone app:
