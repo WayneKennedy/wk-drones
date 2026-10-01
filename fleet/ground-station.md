@@ -36,3 +36,22 @@ until required setup is complete, so live attitude is read in Analyze → MAVLin
 **USB check:** the MicoAir743 V2 enumerates as `1209:5741 Generic MicoAir743v2` and
 appears as `/dev/ttyACM0` (seen 2026-09-22). If `lsusb` does not show it, suspect a
 charge-only cable.
+
+## Phones and the MicoAir743 V2's Bluetooth
+
+Checked 2026-10-01, when the owner asked for an iPhone app:
+
+- **MicoAir publishes no phone app.** Its documented wireless path is **QGroundControl on
+  Android** over the board's own Bluetooth (internally UART8, 115200; it broadcasts as
+  `MicoAir743v2-xxxxx`, no pairing code; the board's Bluetooth LED goes solid when
+  connected). Source: [MicoAir743v2 page](https://micoair.com/flightcontroller_micoair743v2/)
+  and the [H743 V2 manual](https://docs.robofusion.net/flight-controllers/h743-v2-user-manual).
+  MicoAssistant, for the MTF-01P, is a Windows program.
+- **An iPhone cannot use that Bluetooth.** QGroundControl's Bluetooth link needs the Serial
+  Port Profile, which iOS does not offer, and QGC has no BLE link; QGC on iOS connects over
+  Wi-Fi (TCP/UDP) only — ArduPilot forum threads
+  [74792](https://discuss.ardupilot.org/t/no-bluetooth-support-on-ios-version-of-qgroundcontrol/74792)
+  and [41737](https://discuss.ardupilot.org/t/some-advice-for-qgc-ios-version/41737). So an
+  iPhone needs a Wi-Fi MAVLink bridge on a spare UART, or the ELRS MAVLink route the Bee35's
+  OQ-02 holds open; neither is set up or decided.
+- The owner has no Android phone on record; whether one is owned is not known here.
