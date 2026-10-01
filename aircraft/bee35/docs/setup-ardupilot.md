@@ -77,8 +77,16 @@ hardware is in hand; the settings below are the target configuration. Port map:
     default** — lens pair aft, the small third window toward the nose — so
     `FLOW_ORIENT_YAW` stays 0 (the fleet rule and the diagram's source:
     [F-DEC-07](../../../fleet/decisions.md)). Mounted the iNav/FMT way it would be
-    18000. Wrong orientation causes a flyaway: **still verify** that the flow rates
-    move with the gyro rates (nose down, roll right) before flying on it.
+    18000. Wrong orientation causes a flyaway, so the flow-against-rate check was done
+    first. **Passed 2026-10-01 (owner, on the bench, `OPTICAL_FLOW` and `ATTITUDE` in
+    the MAVLink inspector): nose down, `flow_rate_y` and `pitchspeed` both negative;
+    roll right, `flow_rate_x` and `rollspeed` both positive.** Same sign on the same
+    axis each time is what a correct `FLOW_ORIENT_YAW` looks like — ArduPilot's
+    `flowRate` and `bodyRate` share one convention, a right-hand rotation about an
+    axis is positive — and pitch appearing on y, not x, rules out a 90° error too.
+    ArduPilot fills `flow_comp_m_x/y` with flow rate minus gyro rate, so those sit near
+    zero in pure rotation when the scale is right; the in-flight calibration below sets
+    the scale.
   - Calibrate in flight: `RCx_OPTION` 158 (Optflow Calibration), then rock in pitch
     and roll; this sets `FLOW_FXSCALER`/`FLOW_FYSCALER`.
 - **Walksnail OSD** (ArduPilot DisplayPort page): `SERIAL2_PROTOCOL` 42 (the board
@@ -152,8 +160,8 @@ Stub. Fill in as each step is done, in order.
    **MAVLink1** `OPTICAL_FLOW` and `DISTANCE_SENSOR` from system 1, component 88. Why it
    changed is not established. It reports system 1, the ID MicoAir says to avoid on
    ArduPilot 4.5+; the FC accepts its data anyway (range 0.10–1.07 m tracked a hand and
-   the floor; flow quality 103–136 indoors). Still to do: flow direction check
-   (`FLOW_ORIENT_YAW`), in-flight calibration, `RNGFND1_GNDCLR`. If the sensor ever
+   the floor; flow quality 103–136 indoors). Still to do: in-flight calibration, `RNGFND1_GNDCLR`, `FLOW_POS_*`
+   (the direction check passed 2026-10-01, step 7 above). If the sensor ever
    reverts to MSP, ArduPilot reads MSP too (`SERIAL4_PROTOCOL` 32, `FLOW_TYPE` 7,
    `RNGFND1_TYPE` 32; drivers present in this build)
 8. EKF source sets and their switch

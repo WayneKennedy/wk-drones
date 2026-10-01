@@ -112,9 +112,10 @@ reasoning, not just the outcome. Format: `DEC-nn — decision (date)`.
     fixed. **As fitted it is in MicoAir's ArduPilot/PX4 default orientation** — lens
     pair aft, the small third window toward the nose (owner's photo, 2026-10-01, read
     against MicoAir's diagram; rule in [F-DEC-07](../../../fleet/decisions.md)) — so
-    `FLOW_ORIENT_YAW` stays 0. `FLOW_POS_*` and `RNGFND1_GNDCLR` can now be measured and
-    set, and the flow direction check and in-flight calibration done
-    ([`setup-ardupilot.md`](setup-ardupilot.md)). None of that is done yet.
+    `FLOW_ORIENT_YAW` stays 0 — **proved by the flow-against-rate check on the bench,
+    2026-10-01** (owner; details in [`setup-ardupilot.md`](setup-ardupilot.md)).
+    `FLOW_POS_*` and `RNGFND1_GNDCLR` can now be measured and set, and the in-flight
+    calibration done. Those are not done yet.
   - **Alternatives tried on paper and dropped** (OQ-05): a plate on the sink's M2s with
     corner legs (too low); a three-point plate under the nose (in the front ducts'
     downwash). The lip's underside is flat rather than the 45° once intended; in TPU
