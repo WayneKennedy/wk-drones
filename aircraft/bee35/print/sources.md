@@ -7,7 +7,7 @@ record that licence here.
 
 ## Parts designed here
 
-### `cam-head` — printed replacements for the mislaid CNC head hardware ([OQ-04](../docs/open-questions.md))
+### `cam-head` — printed replacements for the mislaid CNC head hardware ([OQ-04](memory://main/drones/bee35/bee35-open-questions))
 
 **The one-piece mount is a FreeCAD model:** source [`src/cam-mount.py`](src/cam-mount.py),
 which emits [`src/cam-mount.FCStd`](src/cam-mount.FCStd) — a `Params` spreadsheet driving
@@ -22,7 +22,7 @@ the 25.5 mm standoff and the four damping balls. Parts are added as geometry is 
 
 | Part | Size | What it does |
 |---|---|---|
-| `bee35-cam-mount` | 25.5 × 16.5 × 35.3 mm | **The whole head as one print** — two cheeks **rounded over the crossbar** (owner, 2026-09-29: a cap R3.8 about the bar's own axis, 0.3 mm outside the bar all round its top, met on each side by an arc that leaves the front or back edge vertically at z = −16 and runs tangent into the cap — R40.24 in front, R31.02 behind), a 2 mm floor, and a roof between the cheeks where the top stands above the pocket ceiling; the crossbar is embedded in the crown. **Pocket 19.0 mm wide** (owner). The camera hangs on M2 screws through the 2.85 mm cheeks; the two posts are shortened to 4.25 mm under the floor (at 10 mm their tops would sit inside the camera body). Front and back open. **`bee35-cam-mount-print.stl` is the same part laid front-face-down for printing** (owner's orientation, 2026-09-25); the front of the top overhangs for its first ~4.8 mm, its slope below 45° that far. **In TPU it needs no supports:** the first print, whose top overhung the same way for ~5.5 mm, was sliced with supports off and "came out perfect" (owner, 2026-09-29: "TPU is pretty sticky when it prints up a hanging slope"). Not tried in a rigid filament. **Designed 2026-09-25 on unmeasured camera assumptions, listed in the source: 19 × 19 body, pivots 5 mm behind the face on the mid-height line, face flush with the posts' front, axis at z = −14.75.** **Printed once, 2026-09-29, in TPU 95A** (print host job `bee35_cam_mount_tpu_orca.gcode`, OrcaSlicer 2.4.2, 0.2 mm layers, supports off, 61 min, 2.22 m of filament); **Revised 2026-09-29 off that print (owner): 3.5 mm shorter fore-aft from the front** — posts, front face and camera pivots all 3.5 mm aft, back face where it was (20 → 16.5 mm deep; post axes 7.5 → 4.0 mm ahead of the crossbar; pivots y 6.0 → 2.5). **The top redrawn the same day (owner)**, as above: the first print's top was one semi-ellipse over the whole depth (owner's sketch, 2026-09-25), which on the shorter part let the bar come 0.18 mm through it. **The revision was printed 2026-09-29 in TPU 95A and fits: "This latest camera mount is perfect"** (owner, fitted between the side plates with the camera in; print host job `bee35_cam_mount_rev2_tpu_orca.gcode`, from `bee35-cam-mount-print-rev2.stl`, 0.2 mm layers, supports off, 50 min, 1.84 m of filament) — [DEC-09](../docs/decisions.md). |
+| `bee35-cam-mount` | 25.5 × 16.5 × 35.3 mm | **The whole head as one print** — two cheeks **rounded over the crossbar** (owner, 2026-09-29: a cap R3.8 about the bar's own axis, 0.3 mm outside the bar all round its top, met on each side by an arc that leaves the front or back edge vertically at z = −16 and runs tangent into the cap — R40.24 in front, R31.02 behind), a 2 mm floor, and a roof between the cheeks where the top stands above the pocket ceiling; the crossbar is embedded in the crown. **Pocket 19.0 mm wide** (owner). The camera hangs on M2 screws through the 2.85 mm cheeks; the two posts are shortened to 4.25 mm under the floor (at 10 mm their tops would sit inside the camera body). Front and back open. **`bee35-cam-mount-print.stl` is the same part laid front-face-down for printing** (owner's orientation, 2026-09-25); the front of the top overhangs for its first ~4.8 mm, its slope below 45° that far. **In TPU it needs no supports:** the first print, whose top overhung the same way for ~5.5 mm, was sliced with supports off and "came out perfect" (owner, 2026-09-29: "TPU is pretty sticky when it prints up a hanging slope"). Not tried in a rigid filament. **Designed 2026-09-25 on unmeasured camera assumptions, listed in the source: 19 × 19 body, pivots 5 mm behind the face on the mid-height line, face flush with the posts' front, axis at z = −14.75.** **Printed once, 2026-09-29, in TPU 95A** (print host job `bee35_cam_mount_tpu_orca.gcode`, OrcaSlicer 2.4.2, 0.2 mm layers, supports off, 61 min, 2.22 m of filament); **Revised 2026-09-29 off that print (owner): 3.5 mm shorter fore-aft from the front** — posts, front face and camera pivots all 3.5 mm aft, back face where it was (20 → 16.5 mm deep; post axes 7.5 → 4.0 mm ahead of the crossbar; pivots y 6.0 → 2.5). **The top redrawn the same day (owner)**, as above: the first print's top was one semi-ellipse over the whole depth (owner's sketch, 2026-09-25), which on the shorter part let the bar come 0.18 mm through it. **The revision was printed 2026-09-29 in TPU 95A and fits: "This latest camera mount is perfect"** (owner, fitted between the side plates with the camera in; print host job `bee35_cam_mount_rev2_tpu_orca.gcode`, from `bee35-cam-mount-print-rev2.stl`, 0.2 mm layers, supports off, 50 min, 1.84 m of filament) — [DEC-09](memory://main/drones/bee35/bee35-decisions). |
 | `bee35-cam-crossbar` | Ø7.0 × 25.5 mm, 2.5 mm hole through | Spans the two side plates and sets their spacing — the standoff's job. An **M3 self-tapping** screw at each end passes through the plate's own M3-clearance hole (one of the four the damping balls would have used) into the bar. **Designed 2026-09-25, not printed, not offered up to the hardware.** |
 
 - **Measured, 2026-09-25 (owner, callipers):** 25.5 mm plate face to plate face; the posts'
@@ -40,7 +40,7 @@ the 25.5 mm standoff and the four damping balls. Parts are added as geometry is 
 - **PETG or similar rigid filament, not TPU.** This part holds a spacing under screw
   preload and TPU creeps. Damping belongs in the camera-holding part, still to be designed.
 
-### `flow-cage` — TPU strap over the MTF-01P, taped to the VTX heatsink ([OQ-05](../docs/open-questions.md))
+### `flow-cage` — TPU strap over the MTF-01P, taped to the VTX heatsink ([OQ-05](memory://main/drones/bee35/bee35-open-questions))
 
 Source [`src/flow-cage.py`](src/flow-cage.py), a FreeCAD script (FreeCAD 1.1; how to run
 it is in its header, the rules in [`AGENTS.md`](../../../AGENTS.md#cad-in-freecad)). It
@@ -65,9 +65,9 @@ aircraft the same day (owner, with photos):
 `bee35_flow_cage_rev2_tpu_orca.gcode`, from `bee35-flow-cage-print-rev2.stl`, 0.2 mm
 layers, supports off, 21 min, 0.72 m of filament) **and fitted 2026-09-30: "Rev 2 flow
 cage is perfect"** (owner, with a photo of it screwed down over the sensor) —
-[DEC-10](../docs/decisions.md). The end notches clear the VTX's screws as drawn.
+[DEC-10](memory://main/drones/bee35/bee35-decisions). The end notches clear the VTX's screws as drawn.
 
-**Remodelled in FreeCAD 2026-09-29** ([F-DEC-09](../../../fleet/decisions.md)) from the
+**Remodelled in FreeCAD 2026-09-29** ([F-DEC-09](memory://main/drones/fleet-decisions)) from the
 CadQuery model (last at `5fbd1ac`), geometry unchanged at that step (`fef5c14`: boolean
 difference between the two solids 0.000000 mm³). **Revised the same day** from a calliper
 measurement and the owner's changes, and again off the first print; now
@@ -111,7 +111,7 @@ and the tape thickness. Also unchecked: whether the side M2 hardware under the s
 footprint stands proud of the sink, which would stop the sensor sitting flat on the tape.
 
 **Known defect, found 2026-09-29 by measuring the solid in FreeCAD; not fixed, the fix
-is the owner's choice** ([OQ-05](../docs/open-questions.md)): **the lip's underside is
+is the owner's choice** ([OQ-05](memory://main/drones/bee35/bee35-open-questions)): **the lip's underside is
 flat, not 45°.** The CadQuery model cut its 45° slope from inside the sensor cavity,
 where there was nothing left to cut, so the solid never had a sloped face: the lip is an
 overhang printed over air, 1.25 mm wide now, 2 mm then. **The first print's lip, 1.5 mm
@@ -138,7 +138,7 @@ legs as feet (`f4b3763`, `223e6c5`; too low) and a three-point plate under the n
 - [O4 Air Unit Pro aluminium head module installation tutorial](https://support.speedybee.cn/pdf?f=hg2h&l=en)
   (2025-08-06) — the head's full fastener schedule, including the 25.5 mm aluminium
   standoff and the four camera vibration damping balls of
-  [OQ-04](../docs/open-questions.md).
+  [OQ-04](memory://main/drones/bee35/bee35-open-questions).
 
 Neither is committed here: SpeedyBee's copyright, and this repo is public.
 
@@ -179,7 +179,7 @@ Lens damping inserts are on the separate speedybee.com Bee35 frame download page
 
 ### GPS mount for the Matek M10Q-5883 (2026-09-19)
 
-The GM10 is mislaid ([`../docs/bom.md`](../docs/bom.md)); the spare M10Q-5883 does not fit
+The GM10 is mislaid ([*Bee35 BOM*](memory://main/drones/bee35/bee35-bom)); the spare M10Q-5883 does not fit
 the frame's supplied TPU mount, which is ~12 × 16 (owner). The M10Q-5883 PCB is 20 × 20 mm (owner, and Matek:
 20 × 20 × 12.4 mm, 8 g, JST-GH 6-pin; STEP in `M10Q-5883_step.zip` on Matek's product page).
 

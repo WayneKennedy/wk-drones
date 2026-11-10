@@ -22,18 +22,19 @@ The Holybro is indexed as a project in
 a supporting record. The 4Cs standard and the placement rule from
 [wk-robotics `AGENTS.md`](https://github.com/WayneKennedy/wk-robotics/blob/main/AGENTS.md)
 apply here in full: correct, complete, coherent, concise; a fact lives in exactly one
-place; the repo is the memory and nothing durable lives only in chat or in one
+place; Basic Memory is the memory, this repo holds config, code and artefacts (split
+rule: [*Memory Map*](memory://main/memory-map)), and nothing durable lives only in chat or in one
 assistant's private memory. Facts true of more than one *robot* in the family live in
-wk-robotics `docs/common.md`. Facts true of more than one *aircraft* live in `fleet/`.
+[*Robotics Common*](memory://main/robotics/robotics-common). Facts true of more than one *aircraft* live in the fleet notes (Basic Memory, folder `drones/`).
 
 ## Layout and the placement rule
 
 | The fact is… | It lives… |
 |---|---|
-| True of one aircraft | `aircraft/<name>/` — its `README.md`, `docs/`, `config/`, `print/`, `logs/`, `maintenance.md` |
-| True of more than one aircraft | [`fleet/`](fleet/README.md) — link, video, packs, tooling, procedures |
-| A decision | Per aircraft: `aircraft/<name>/docs/decisions.md` as `DEC-nn`. Fleet-wide: [`fleet/decisions.md`](fleet/decisions.md) as `F-DEC-nn` |
-| Still open | Per aircraft: `docs/open-questions.md` as `OQ-nn`. Fleet-wide: [`fleet/open-questions.md`](fleet/open-questions.md) as `F-OQ-nn` |
+| True of one aircraft | Its notes in Basic Memory (folder `drones/`, or `drones/<name>/`); here `aircraft/<name>/` keeps `config/`, `print/`, `logs/` and the setup, tuning and wiring docs |
+| True of more than one aircraft | [*Drone Fleet*](memory://main/drones/drone-fleet) and the fleet notes — link, video, packs, procedures; here [`fleet/`](fleet/README.md) keeps CAD and tools |
+| A decision | Per aircraft: its *Decisions* note as `DEC-nn`. Fleet-wide: [*Fleet Decisions*](memory://main/drones/fleet-decisions) as `F-DEC-nn` |
+| Still open | Per aircraft: its *Open Questions* note as `OQ-nn`. Fleet-wide: [*Fleet Open Questions*](memory://main/drones/fleet-open-questions) as `F-OQ-nn` |
 
 `DEC-nn` and `OQ-nn` numbers are scoped to their aircraft folder; two aircraft may both
 have a `DEC-01`. Cite them with the folder when linking from outside it.
@@ -47,9 +48,9 @@ for. New aircraft copy that shape; empty folders are not created ahead of conten
 - **Never state an open question as settled.** Decisions and open questions are separate
   files at both levels.
 - **Check what is owned before suggesting a purchase.** Read the private
-  [wk-inventory `docs/stock.md`](https://github.com/WayneKennedy/wk-inventory/blob/main/docs/stock.md) and search the owner's invoices, and say what was found. Full rule and
+  [*Stock*](memory://main/inventory/stock) and search the owner's invoices, and say what was found. Full rule and
   the owner's goal (fewer unused parts, more finished projects):
-  [wk-inventory `AGENTS.md`](https://github.com/WayneKennedy/wk-inventory/blob/main/AGENTS.md#before-anything-is-bought).
+  [*Inventory Guide*](memory://main/inventory/inventory-guide).
 - **TBC means TBC.** Do not fill in a value that has not been confirmed against hardware,
   an invoice or a datasheet. **Unknown** is a valid entry in the fleet table.
 - **Config discipline.** Every `config/diff/` file is `YYYY-MM-DD-description.txt` with a
@@ -62,8 +63,8 @@ for. New aircraft copy that shape; empty folders are not created ahead of conten
 ## CAD in FreeCAD
 
 CAD is done in FreeCAD, in the GUI where the owner can watch
-([F-DEC-09](fleet/decisions.md)); a part's source is a Python script with the `.FCStd`
-it emits checked in beside it ([F-DEC-10](fleet/decisions.md)). A part script holds
+([F-DEC-09](memory://main/drones/fleet-decisions)); a part's source is a Python script with the `.FCStd`
+it emits checked in beside it ([F-DEC-10](memory://main/drones/fleet-decisions)). A part script holds
 only the part; what all of them share — the spreadsheet, bound sketches, the checks, the
 exports, the run — is [`fleet/cad/fcpart.py`](fleet/cad/fcpart.py): use it, do not copy
 it. Worked examples: the Bee35's

@@ -1,6 +1,6 @@
 # ArduPilot setup
 
-First flash through maiden, per [DEC-08](decisions.md). Checklist steps are stubs until
+First flash through maiden, per [DEC-08](memory://main/drones/bee35/bee35-decisions). Checklist steps are stubs until
 hardware is in hand; the settings below are the target configuration. Port map:
 [`wiring.md`](wiring.md). Nothing here is tested on this airframe yet.
 
@@ -11,7 +11,7 @@ hardware is in hand; the settings below are the target configuration. Port map:
   (git `1ebd4d99`, read over MAVLink 2026-09-22); updated to 4.7.1 the same day.
 - **A ground station is for setup only.** Mission Planner (Windows) or QGroundControl
   (Windows/macOS/Linux/Android/iOS) over USB on the bench; Linux install:
-  [`fleet/ground-station.md`](../../../fleet/ground-station.md). The FC also has an on-board
+  [*Ground Station*](memory://main/drones/ground-station). The FC also has an on-board
   Bluetooth module on UART8 (MAVLink2, 115200; BOOT button toggles its power), for
   field changes without a cable; whether a phone GCS connects to it is unverified. In
   flight the aircraft needs only the radio and goggles. `FS_GCS_ENABLE` stays 0.
@@ -39,11 +39,11 @@ hardware is in hand; the settings below are the target configuration. Port map:
 - **Hands-off hold is the goal (DEC-08): fly in Loiter.** Sticks centred, it holds
   position and height. Flight modes on **SB** (`FLTMODE_CH` 6): **back Stabilize, middle
   AltHold, toward the pilot Loiter** — back is the safe pre-flight position on every
-  model ([F-DEC-05](../../../fleet/decisions.md)). Loiter is the normal flying mode;
+  model ([F-DEC-05](memory://main/drones/fleet-decisions)). Loiter is the normal flying mode;
   AltHold holds height only, for when GPS is poor; Stabilize is the manual last resort.
   **Arm on SH** (channel 5, `RC5_OPTION` 153), **RTL on SF** (`RC7_OPTION` 4),
   lost-copter sound on SI (`RC8_OPTION` 30, played through the motors by DShot,
-  `NTF_BUZZ_TYPES` 2; no buzzer is fitted). Layout: [`fleet/radio.md`](../../../fleet/radio.md).
+  `NTF_BUZZ_TYPES` 2; no buzzer is fitted). Layout: [*Fleet Radio*](memory://main/drones/fleet-radio).
   Loiter will not arm without a good position estimate.
 - **Compass: external primary; internal off unless CompassMot clears it.** The GPS
   unit's QMC5883L is on the GPS plug's I2C1 (probed as external); the board's own
@@ -76,7 +76,7 @@ hardware is in hand; the settings below are the target configuration. Port map:
   - Orientation: **as fitted on 2026-09-30 the sensor is in MicoAir's ArduPilot/PX4
     default** — lens pair aft, the small third window toward the nose — so
     `FLOW_ORIENT_YAW` stays 0 (the fleet rule and the diagram's source:
-    [F-DEC-07](../../../fleet/decisions.md)). Mounted the iNav/FMT way it would be
+    [F-DEC-07](memory://main/drones/fleet-decisions)). Mounted the iNav/FMT way it would be
     18000. Wrong orientation causes a flyaway, so the flow-against-rate check was done
     first. **Passed 2026-10-01 (owner, on the bench, `OPTICAL_FLOW` and `ATTITUDE` in
     the MAVLink inspector): nose down, `flow_rate_y` and `pitchspeed` both negative;

@@ -1,6 +1,6 @@
 # Config
 
-ArduPilot parameter snapshots ([DEC-08](../docs/decisions.md)). These are the source of
+ArduPilot parameter snapshots ([DEC-08](memory://main/drones/bee35/bee35-decisions)). These are the source of
 truth for the aircraft's configuration.
 
 - `diff/` — the parameters changed from the firmware defaults, one file per dated

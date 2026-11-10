@@ -10,11 +10,11 @@ redistribution, and record that licence here.
 ### `h743-deck` — flight-controller deck
 
 Carries the Matek H743-WING V3 on a raised deck above the X500 V2 **upper** plate
-([DEC-02](../docs/decisions.md)). Source of truth is the parametric model
+([DEC-02](memory://main/drones/holybro-10/holybro-10-decisions)). Source of truth is the parametric model
 [`src/h743-deck.py`](src/h743-deck.py) (CadQuery ≥ 2.8); `stl/` holds what it emits.
 **Designed 2026-09-17. First one printed 2026-09-18** — red PETG, `petg_riser` profile,
 4 h 40 m, 11.29 m of filament, against a slice estimate of 4 h 42 m
-([3d-printing print log](https://github.com/WayneKennedy/3d-printing/blob/main/docs/print-log.md)).
+([3d-printing print log](memory://main/3d-printing/3-d-printing-print-log)).
 **Not yet inspected and not yet offered up to the hardware.** MIT, like the rest of this repo.
 
 | | |
@@ -26,8 +26,7 @@ Carries the Matek H743-WING V3 on a raised deck above the X500 V2 **upper** plat
 | Bolt access | Every one of the eight heads is outside the 54 × 36 mm board outline, so the board does not have to come off to unbolt the deck |
 | Beam ends | Every beam stops on the centre line of the anchor it reaches; the pillar diameter equals the flange width, so the pillar caps the beam tangentially and no corner of a rib or flare stands proud of it |
 
-Hardware, none of it confirmed in stock (the bits boxes are unaudited — [wk-inventory
-`docs/stock.md`](https://github.com/WayneKennedy/wk-inventory/blob/main/docs/stock.md)):
+Hardware, none of it confirmed in stock (the bits boxes are unaudited — [*Stock*](memory://main/inventory/stock)):
 
 - **Plate:** 4 × **M3 × 22 cap head + M3 lock nut** (owner's choice, 2026-09-17). The
   Ø6.4 × 3.2 counterbore takes the 3.0 mm head flush; grip from counterbore floor to under
@@ -85,7 +84,7 @@ here (the Holybro file has the frame's vertical along its Y axis).
 ### X500 V2 plates
 
 Both plates are **143.72 × 143.72 × 2.0 mm** — the 144 mm in
-[`../docs/bom.md`](../docs/bom.md) is the seller's rounded figure. In the assembly the
+[*Holybro 10 BOM*](memory://main/drones/holybro-10/holybro-10-bom) is the seller's rounded figure. In the assembly the
 lower plate's top face and the upper plate's lower face are **28.0 mm** apart.
 
 **Upper plate — this is the one to mount on, and it has no flight-controller pattern.** Its

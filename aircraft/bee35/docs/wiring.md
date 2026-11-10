@@ -6,7 +6,7 @@ taken from the board's published definitions (ArduPilot hwdef and README for
 `MICOAIR743V2`; read 2026-09-19). Confirm each against the hardware as it is wired.
 **Verified so far:** the GPS row and its compass, the RP3 on UART6, and the MTF-01P on
 UART4 (all 2026-09-22; setup-ardupilot.md checklist); every other row is untested.
-Firmware is ArduPilot ([DEC-08](decisions.md)); parameters in
+Firmware is ArduPilot ([DEC-08](memory://main/drones/bee35/bee35-decisions)); parameters in
 [`setup-ardupilot.md`](setup-ardupilot.md).
 
 ## Port map
@@ -18,14 +18,14 @@ the same wiring would serve either firmware.
 | Peripheral | Protocol | FC port (plug) | ArduPilot | Notes |
 |---|---|---|---|---|
 | RadioMaster RP3 V2 | CRSF | UART6 (SBUS/CRSF plug: GND 5V TX6 RX6) | SERIAL6, RCIN (default) | CRSF needs both TX6 and RX6 |
-| Matek M10Q-5883 (GPS), fitted in place of the mislaid GM10 ([`bom.md`](bom.md)) | UBX | UART3 (GPS plug: GND 5V TX3 RX3 SCL SDA) | SERIAL3, GPS (default) | |
+| Matek M10Q-5883 (GPS), fitted in place of the mislaid GM10 ([*Bee35 BOM*](memory://main/drones/bee35/bee35-bom)) | UBX | UART3 (GPS plug: GND 5V TX3 RX3 SCL SDA) | SERIAL3, GPS (default) | |
 | Matek M10Q-5883 (compass) | I2C | I2C1, same GPS plug | Probed as external | QMC5883L. Mounted tilted, see [`setup-ardupilot.md`](setup-ardupilot.md). The FC's own QMC5883L is on I2C2 and is disabled, see [`setup-ardupilot.md`](setup-ardupilot.md). I2C1 is also on its own 4-pin plug on the board's underside (SDA1, SCL1, 5V, GND; MicoAir diagram) |
 | MicoAir MTF-01P | MAVLink ("mav-apm") | UART4 (UART4 plug: GND 5V TX4 RX4) | SERIAL4, set to MAVLink1 | Default there is MAVLink2; parameters in the setup doc. UART1 is kept free, below |
 | Walksnail Avatar VTX | MSP DisplayPort | UART2 (HD VTX plug) | SERIAL2, DisplayPort (default) | See the VTX plug notes below |
 | ESC telemetry | ESC serial | UART7, RX only (RX7 pin on the ESC plug) | SERIAL7, ESC telemetry (default) | Part of the stack harness |
 | On-board Bluetooth | MAVLink2 115200 | UART8, internal | SERIAL8 (default) | Field configuration link |
 | Camera tilt servo (optional) | PWM | S5 (8-pin M5–M10 plug) | Servo mount | S5/S6 are timer group TIM3, separate from motors S1–4 (TIM1), so PWM on S5 alongside DShot motors is supported |
-| — spare — | | UART1 (TELEM1), UART5 | | UART1 kept for a telemetry radio if [OQ-02](open-questions.md) ever takes option 2 |
+| — spare — | | UART1 (TELEM1), UART5 | | UART1 kept for a telemetry radio if [OQ-02](memory://main/drones/bee35/bee35-open-questions) ever takes option 2 |
 
 ### HD VTX plug (SH1.0 6-pin)
 
@@ -67,7 +67,7 @@ MicoAir's diagram: **12V, GND, TX2, RX2, GND, RX6.**
   [`setup-ardupilot.md`](setup-ardupilot.md) checklist step 2.
   **The harness works loose** — twice on 2026-09-22, the second after the frame was
   screwed down, cutting battery power to the FC. Securing it is
-  [OQ-03](open-questions.md). **Inspected and sound, 2026-09-25 (owner); it no longer
+  [OQ-03](memory://main/drones/bee35/bee35-open-questions). **Inspected and sound, 2026-09-25 (owner); it no longer
   blocks the maiden**, being covered by the pre-flight visual check every aircraft gets.
   After any closing of the frame, check `voltage_battery` (~16 V on a charged pack) and
   run the motor test.
