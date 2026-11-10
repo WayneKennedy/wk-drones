@@ -1,5 +1,9 @@
 # wk-drones
 
+> **The project record moved to Basic Memory on 2026-11-10** (project `main`, folder `drones/`; start at the
+> *Drones* note). Fleet and per-aircraft READMEs, BOMs, decisions, open questions and maintenance are canonical there; the copies here were deleted on 2026-11-10 (git history keeps them). This repo keeps what is about the artefacts: `config/`, `print/`, `fleet/cad`,
+> `fleet/tools`, and each aircraft's `setup-ardupilot.md`, `tuning.md` and `wiring.md`.
+
 Build, configuration and maintenance records for a small fleet of DIY aircraft,
 multirotors and planes, and the kit they share. Every aircraft flies ELRS into a flight
 controller ([F-DEC-02](fleet/decisions.md)). One folder per aircraft; fleet-wide facts live once, in `fleet/`.

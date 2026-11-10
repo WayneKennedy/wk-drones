@@ -1,5 +1,9 @@
 # wk-drones — agent / contributor onboarding
 
+> **The project record moved to Basic Memory on 2026-11-10** (project `main`, folder `drones/`; start at the
+> *Drones* note). Fleet and per-aircraft READMEs, BOMs, decisions, open questions and maintenance are canonical there; the copies here were deleted on 2026-11-10 (git history keeps them). This repo keeps what is about the artefacts: `config/`, `print/`, `fleet/cad`,
+> `fleet/tools`, and each aircraft's `setup-ardupilot.md`, `tuning.md` and `wiring.md`.
+
 Read this first. It is provider-neutral: every AI assistant or human working here reads
 this same file.
 
